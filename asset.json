@@ -1,0 +1,30 @@
+{
+    "-1":{
+        "name":"",
+        "brand":"",
+        "instrument":"",
+        "price":"",
+        "image":""
+    },
+    "0":{
+        "name":"Taylor GS Mini-e RW Acoustic Guitar",
+        "brand":"Taylor",
+        "instrument":"Guitar",
+        "price":11550000,
+        "image":"https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FT25-GS-MINI-E-RW_2FT25-GS-MINI-E-RW_1605244466600_735x735.jpg?v=1605244479"
+    },
+    "1":{
+        "name":"Taylor Big Baby Acoustic Guitar",
+        "brand":"Taylor",
+        "instrument":"Guitar",
+        "price":8450000,
+        "image":"https://cdn.shopify.com/s/files/1/0117/8740/3323/products/T25-BBT_1567051680400_735x735.jpg?v=1567051689"
+    },
+    "2":{
+        "name":"Taylor GS Mini (Mahogany Top) Acoustic Guitar",
+        "brand":"Taylor",
+        "instrument":"Guitar",
+        "price":9250000,
+        "image":"https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FT25-GS-MINI-MAH_2FT25-GS-MINI-MAH_1634017570330_735x735.jpg?v=1634017578"
+    }
+}
