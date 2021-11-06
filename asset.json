@@ -6,201 +6,180 @@
 		"price": 0,
 		"image": ""
 	},
-	"CONTOH 1": {
+	"1": {
 		"name": "Taylor GS Mini-e RW Acoustic Guitar",
 		"brand": "Taylor",
 		"instrument": "Guitar",
 		"price": 11550000,
 		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FT25-GS-MINI-E-RW_2FT25-GS-MINI-E-RW_1605244466600_735x735.jpg?v=1605244479"
 	},
-	"CONTOH 2": {
+	"2": {
 		"name": "Taylor Big Baby Acoustic Guitar",
 		"brand": "Taylor",
 		"instrument": "Guitar",
 		"price": 8450000,
 		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/T25-BBT_1567051680400_735x735.jpg?v=1567051689"
 	},
-	"CONTOH 3": {
+	"3": {
 		"name": "Taylor GS Mini (Mahogany Top) Acoustic Guitar",
 		"brand": "Taylor",
 		"instrument": "Guitar",
 		"price": 9250000,
 		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FT25-GS-MINI-MAH_2FT25-GS-MINI-MAH_1634017570330_735x735.jpg?v=1634017578"
 	},
-	"1": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
-	},
-	"2": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
-	},
-	"3": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
-	},
 	"4": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Taylor Baby Mahogany Acoustic Guitar",
+		"brand": "Taylor",
+		"instrument": "Guitar",
+		"price": 6350000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/T25-BT2_1545816573465_735x735.jpg?v=1566787063"
 	},
 	"5": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Taylor 210ce Plus Rosewood/Spruce Dreadnought Acoustic Guitar",
+		"brand": "Taylor",
+		"instrument": "Guitar",
+		"price": 20250000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FT25-210CE-PLUS_2FT25-210CE-PLUS_1589432319210_735x735.jpg?v=1597297252"
 	},
 	"6": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Taylor 814ce LTD V-Class Cocobolo/Lutz Grand Auditorium Acoustic Guitar",
+		"brand": "Taylor",
+		"instrument": "Guitar",
+		"price": 72800000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FT25-814CE-LTD-V-COCOBOLO_2FT25-814CE-LTD-V-COCOBOLO_1588231541460_735x735.jpg?v=1594283100"
 	},
 	"7": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "D'Angelico Deluxe DC Semi-Hollow Electric Guitar w/Stairstep Tailpiece",
+		"brand": "D'Angelico",
+		"instrument": "Guitar",
+		"price": 29000000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/D41-DADDCMCHGTCB_1543288413158_735x735.jpg?v=1553151140"
 	},
 	"8": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "D'Angelico Excel 175 Hollow-Body Electric Guitar w/Bigsby",
+		"brand": "D'Angelico",
+		"instrument": "Guitar",
+		"price": 27000000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FD41-DAE175NATCB_2FD41-DAE175NATCB_1573185605980_735x735.jpg?v=1593530951"
 	},
 	"9": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "D'Angelico Excel DC Semi-Hollow Electric Guitar w/Stairstep Tailpiece",
+		"brand": "D'Angelico",
+		"instrument": "Guitar",
+		"price": 26000000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/D41-DAEDCCHRGTCB_1524541194408_735x735.jpg?v=1593530856"
 	},
 	"10": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Yamaha PSR-E373 61-key Portable Keyboard",
+		"brand": "Yamaha",
+		"instrument": "Keyboard",
+		"price": 2950000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FY01-PSRE373_2FY01-PSRE373_1619583193230.jpg?v=1623682551"
 	},
 	"11": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Yamaha PSR-E273 61-key Portable Arranger",
+		"brand": "Yamaha",
+		"instrument": "Keyboard",
+		"price": 2000000,
+		"image": "cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FY01-PSRE273_2FY01-PSRE273_1619586538660.jpg?v=1623681793"
 	},
 	"12": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Casio CT-X5000 61-Key Portable Keyboard",
+		"brand": "Casio",
+		"instrument": "Keyboard",
+		"price": 6067000,
+		"image": "cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FC32-CT-X5000_2FC32-CT-X5000_1622175245030.jpg?v=1631182662"
 	},
 	"13": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Casio CT-X800 61-Key Portable Keyboard",
+		"brand": "Casio",
+		"instrument": "Keyboard",
+		"price": 3224800,
+		"image": "cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FC32-CT-X800_2FC32-CT-X800_1622174202860.jpg?v=1623321949"
 	},
 	"14": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Casio Casiotone CT-S200 61-key Portable Keyboard Black",
+		"brand": "Casio",
+		"instrument": "Keyboard",
+		"price": 1990000,
+		"image": "cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FC32-CT-S200BK_2FC32-CT-S200BK_1622185877480.jpg?v=1623294341"
 	},
 	"15": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "KORG Pa300 61-Key Arranger Keyboard",
+		"brand": "KORG",
+		"instrument": "Keyboard",
+		"price": 10800000,
+		"image": "cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FK32-PA300_2FK32-PA300_1625151086550.jpg?v=1625151096"
 	},
 	"16": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "KORG EK-50 61-keys Entertainer Keyboard",
+		"brand": "KORG",
+		"instrument": "Keyboard",
+		"price": 5560000,
+		"image": "cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FK32-EK-50_2FK32-EK-50_1629261556690.jpg?v=1629261569"
 	},
 	"17": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Mackie EM-USB White Limited Condenser Microphone",
+		"brand": "Mackie",
+		"instrument": "Microphone",
+		"price": 2080000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FM01-EM-USB-WHITE-LTD_2FM01-EM-USB-WHITE-LTD_1634631461100_735x735.jpg?v=1634631470"
 	},
 	"18": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Mackie EM-USB Condenser Microphone",
+		"brand": "Mackie",
+		"instrument": "Microphone",
+		"price": 2437000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FM01-EM-USB_2FM01-EM-USB_1634609845260_735x735.jpg?v=1634609855"
 	},
 	"19": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Behringer SL 85S Dynamic Cardioid Handheld Microphone",
+		"brand": "Behringer",
+		"instrument": "Microphone",
+		"price": 292000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FB03-000-E7Q00_2FB03-000-E7Q00_1622457994050_735x735.jpg?v=1628177143"
 	},
 	"20": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Behringer ULM300USB Wireless USB Microphone ",
+		"brand": "Behringer",
+		"instrument": "Microphone",
+		"price": 1290000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FB03-000-BQW00_2FB03-000-BQW00_1622085828420_735x735.jpg?v=1632040829"
 	},
 	"21": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Behringer ULM300MIC Wireless Handheld Microphone System",
+		"brand": "Behringer",
+		"instrument": "Microphone",
+		"price": 1435000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FB03-000-BQX01_2FB03-000-BQX01_1622086310540_735x735.jpg?v=1632040827"
 	},
 	"22": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "IK Multimedia Irig Mic HD 2 - Handheld Microphone",
+		"brand": "IK Multimedia",
+		"instrument": "Microphone",
+		"price": 2090000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/I10-IP-IRIG-MICHD2-IN_0.51563700_201519812474_735x735.jpg?v=1619877411"
 	},
 	"23": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "IK Multimedia iRig Mic HD-A Handheld Digital Microphone",
+		"brand": "IK Multimedia",
+		"instrument": "Microphone",
+		"price": 2090000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/I10-IP-IRIG-MICHDA-SAM_001_735x735.jpg?v=1554804369"
 	},
 	"24": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "IK Multimedia iRig Voice Handheld Microphone, White",
+		"brand": "IK Multimedia",
+		"instrument": "Microphone",
+		"price": 730000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FI10-IP-IRIG-MICVOW-AS_2FI10-IP-IRIG-MICVOW-AS_1573715026570_735x735.jpg?v=1578023858"
 	},
 	"25": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Behringer SL 84C Dynamic Cardioid Microphone",
+		"brand": "Behringer",
+		"instrument": "Microphone",
+		"price": 180000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FB03-000-E7R00_2FB03-000-E7R00_1622458610580_735x735.jpg?v=1628178117"
 	},
 	"26": {
 		"name": "",
@@ -728,81 +707,81 @@
 		"image": ""
 	},
 	"101": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Behringer SL 75C Cardioid Dynamic Microphone",
+		"brand": "Behringer",
+		"instrument": "Microphone",
+		"price": 292000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FB03-000-E7S00_2FB03-000-E7S00_1622458930560_735x735.jpg?v=1628178110"
 	},
 	"102": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Behringer XM8500 Ultravoice Dynamic Cardioid Vocal Microphone",
+		"brand": "Behringer",
+		"instrument": "Microphone",
+		"price": 300000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FB03-000-12000_2FB03-000-12000_1621754864590_735x735.jpg?v=1628177132"
 	},
 	"103": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Yamaha Drum Electronic DTX-6K2X",
+		"brand": "Yamaha",
+		"instrument": "Drum",
+		"price": 13050000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FY01-DTX6K2X_2FY01-DTX6K2X_1625200063630_735x735.jpg?v=1625200075"
 	},
 	"104": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "Yamaha Drum Electronic DTX-6KX",
+		"brand": "Yamaha",
+		"instrument": "Drum",
+		"price": 9500000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FY01-DTX6KX_2FY01-DTX6KX_1624337829340_735x735.jpg?v=1624337838"
 	},
 	"105": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "TAMA CL52KRSP-GGP Superstar Classic Exotix 5-Piece Drum Shell Kit Gloss Garnet Lacebark Pine",
+		"brand": "TAMA",
+		"instrument": "Drum",
+		"price": 12200000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FT03-CL52KRSP-GGP_2FT03-CL52KRSP-GGP_1608630129080_735x735.jpg?v=1623681762"
 	},
 	"106": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "TAMA CL52KRS-BAB Superstar Classic Maple 5-Piece Drum Shell Kit Blue Lacquer Burst",
+		"brand": "TAMA",
+		"instrument": "Drum",
+		"price": 12200000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/T03-CL52KRS-BAB_1553833994292_735x735.jpg?v=1623681639"
 	},
 	"107": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "MEINL Percussion CAJ3WN-M Traditional String Cajon Walnut",
+		"brand": "MEINL",
+		"instrument": "Cajoon",
+		"price": 2000000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/R14-CAJ3WN-M_001_735x735.jpg?v=1569679853"
 	},
 	"108": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "MEINL Percussion CAJ2GO-2 Backpacker Cajon Natural",
+		"brand": "MEINL",
+		"instrument": "Cajoon",
+		"price": 1550000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/R14-CAJ2GO-2_001_735x735.jpg?v=1569679853"
 	},
 	"109": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "MEINL Percussion MC1AB-B Mini Cajon",
+		"brand": "MEINL",
+		"instrument": "Cajoon",
+		"price": 800000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/R14-MC1AB-B_1528770692812_735x735.jpg?v=1580266270"
 	},
 	"110": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "MEINL Percussion PSC100B Snarecraft Pickup Cajon Baltic Birch Frontplate",
+		"brand": "MEINL",
+		"instrument": "Cajoon",
+		"price": 2300000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FR14-PSC100B_2FR14-PSC100B_1586404284450_735x735.jpg?v=1586404292"
 	},
 	"111": {
-		"name": "",
-		"brand": "",
-		"instrument": "",
-		"price": 0,
-		"image": ""
+		"name": "MEINL Percussion JC50AB-B Jam Cajon Baltic Birch",
+		"brand": "MEINL",
+		"instrument": "Cajoon",
+		"price": 1050000,
+		"image": "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FR14-JC50AB-B_2FR14-JC50AB-B_1597922954550_735x735.jpg?v=1597922964"
 	},
 	"112": {
 		"name": "",
