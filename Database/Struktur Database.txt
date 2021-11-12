@@ -1,0 +1,25 @@
+Database memiliki 3 table :
+
+- Items -> Field :
+  -> name => primary
+  -> brand
+  -> instrument
+  -> price
+  -> image
+  -> quantity (tambahan)
+
+- Transaction -> Field :
+  -> id => primary, AI (Auto Increment)
+  -> user_email
+  -> items_name
+  -> quantity
+  -> total
+
+- User -> Field :
+  -> email => primary
+  -> username => unique
+  -> password
+  -> name
+  -> alamat
+  -> birth_date
+  -> status => (1 = Aktif, 2 = Ban)
