@@ -12,4 +12,8 @@
         global $conn;
         return $conn->query("SELECT $columns FROM $tableName WHERE $condition")->fetch_all(MYSQLI_ASSOC);
     }
+
+    function getPageName(){
+        return basename($_SERVER["PHP_SELF"]);
+    }
 ?>

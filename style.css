@@ -1,34 +1,9 @@
-/* Navbar */
-/* nav{
-    width: 100vw;
-    height: 10vh;
-    background-color: #999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.card>div:last-child{
+    opacity: 0;
+    transform: scaleY(0);
 }
 
-nav ul{
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
+.card>div:first-child:hover+div{
+    opacity: 1;
+    transform: scaleY(1);
 }
-
-nav li{
-    font-size: 1.2em;
-    margin: 0px 1vw;
-    color: white;
-    transition: 250ms ease-in-out;
-}
-
-nav li:hover{
-    text-shadow: 3px 2px #777;
-    text-decoration: underline;
-    transform: translate(-1px,-1px);
-}
-
-nav #loginBtn, nav #registerBtn{
-    border: 2px solid white;
-    padding: 2px 10px;
-    border-radius: 10px;
-} */ 
