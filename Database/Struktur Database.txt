@@ -1,12 +1,14 @@
-Database memiliki 3 table :
+Database memiliki 8 table :
 
 - Items -> Field :
   -> name => primary
-  -> brand
-  -> instrument
+  -> id_brand
+  -> id_instrument
   -> price
   -> image
-  -> quantity (tambahan)
+  -> description
+  -> stock
+  -> id_diskon (bisa null, kalau ga ada diskon)
 
 - Transaction -> Field :
   -> id => primary, AI (Auto Increment)
@@ -14,6 +16,7 @@ Database memiliki 3 table :
   -> items_name
   -> quantity
   -> total
+  -> status (1 = Menunggu konfirmasi, 2 = Sedang di perjalanan, 3 = Sudah  Sampai)
 
 - User -> Field :
   -> email => primary
@@ -23,3 +26,30 @@ Database memiliki 3 table :
   -> alamat
   -> birth_date
   -> status => (1 = Aktif, 2 = Ban)
+
+- Brand -> Field : 
+  -> id => primary, AI (Auto Increment)
+  -> name
+  -> image
+
+- Instrument -> Field :
+  -> id => primary, AI (Auto Increment)
+  -> name
+  -> image
+
+- Diskon -> Field :
+  -> id => primary, AI (Auto Increment)
+  -> name
+  -> value (double)
+
+- Rating -> Field :
+  -> id => primary, AI (Auto Increment)
+  -> items_name
+  -> Value (double)
+  -> user_email
+
+- Review -> Field :
+  -> id => primary, AI (Auto Increment)
+  -> items_name
+  -> user_email
+  -> content 
