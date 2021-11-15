@@ -1,5 +1,5 @@
 <?php
-    require_once("./docOpen.php");
+    // require_once("./docOpen.php");
 ?>
     <nav class="bg-gray-400 flex justify-between py-4 px-4">
         <ul class="flex ">
@@ -34,5 +34,5 @@
     </nav>
 
 <?php
-    require_once("./docClose.php");
+    // require_once("./docClose.php");
 ?>

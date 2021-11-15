@@ -1,5 +1,5 @@
 <?php
-    require_once("./docOpen.php");
+    // require_once("./docOpen.php");
 ?>
     <footer class="flex-col bg-gray-200 px-10 pt-6 pb-2">
         <div class="flex justify-between py-3">
@@ -35,5 +35,5 @@
         <div class="text-xs text-center pt-3">&copy 2021 Kelompok PW</div>
     </footer>
 <?php
-    require_once("./docClose.php");
+    // require_once("./docClose.php");
 ?>
