@@ -8,16 +8,19 @@
         $start = ($page - 1) * $num;
         if ($type == "instrument") {
             $arr = query("SELECT * FROM instrument LIMIT $start, $num;")->fetch_all(MYSQLI_ASSOC);
+            $count = query("SELECT count(*) FROM instrument")->fetch_all(MYSQLI_NUM)[0][0];
         } else if ($type == "brand") {
             $arr = query("SELECT * FROM brand LIMIT $start, $num;")->fetch_all(MYSQLI_ASSOC);
+            $count = query("SELECT count(*) FROM brand")->fetch_all(MYSQLI_NUM)[0][0];
         }
         foreach ($arr as $key => $value) {
             $image = $value["image"];
 ?>
-    <div class="w-40 h-40 border-2 rounded-xl border-black mr-6">
-        <img src="<?= $image ?>" alt="<?= $value["name"] ?>" class="w-full h-full rounded-xl">
-    </div>
+<div class="w-40 h-40 border-2 rounded-xl border-black mr-6 flex justify-center items-center">
+    <img src="<?= $image ?>" alt="<?= $value["name"] ?>" class="w-32 h-32 rounded-xl">
+</div>   
 <?php
         }
     }
 ?>
+<input type="hidden" id="max<?= ucwords($type) ?>Page" value='<?= intval($count / $num) + 1 ?>'>
