@@ -108,19 +108,19 @@ CREATE TABLE `instrument` (
 --
 
 INSERT INTO `instrument` (`id`, `name`, `image`) VALUES
-(1, 'Accessory', 'img'),
-(2, 'Bass', 'img'),
-(3, 'Cajoon', 'img'),
-(4, 'Drum', 'img'),
-(5, 'Guitar', 'img'),
-(6, 'Keyboard', 'img'),
-(7, 'Microphone', 'img'),
-(8, 'Mixer', 'img'),
-(9, 'Piano', 'img'),
-(10, 'Speaker', 'img'),
-(11, 'Synthesizer', 'img'),
-(12, 'Ukulele', 'img'),
-(13, 'Violin', 'img');
+(1, 'Accessory', 'https://cdn.shopify.com/s/files/1/0117/8740/3323/products/T03-HRM5B_1520849057039.jpg?v=1623681633'),
+(2, 'Bass', 'https://cdn.shopify.com/s/files/1/0117/8740/3323/products/F03-037-4530-504_1562752550631.jpg?v=1562810185'),
+(3, 'Cajoon', 'https://cdn.shopify.com/s/files/1/0117/8740/3323/products/R14-CAJ3WN-M_001_735x735.jpg?v=1569679853'),
+(4, 'Drum', 'https://images.tokopedia.net/img/cache/900/VqbcmM/2021/8/31/a5a95e39-110c-4ba1-a066-b94aa41b772d.png'),
+(5, 'Guitar', 'https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FT25-GS-MINI-E-RW_2FT25-GS-MINI-E-RW_1605244466600_735x735.jpg?v=1605244479'),
+(6, 'Keyboard', 'https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FY01-PSRE373_2FY01-PSRE373_1619583193230.jpg?v=1623682551'),
+(7, 'Microphone', 'https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FM01-EM-USB-WHITE-LTD_2FM01-EM-USB-WHITE-LTD_1634631461100_735x735.jpg?v=1634631470'),
+(8, 'Mixer', 'https://hariharimusik.id/wp-content/uploads/2021/09/QX2442USB_P0AL3_Top_B.png'),
+(9, 'Piano', 'https://cdn.shopify.com/s/files/1/1369/1865/products/kawai-k-300-pm-48-inch-polished-mahogany-upright-piano-for-sale-in-waukegan-illinois-family-piano-co_360x.jpg?v=1634572763'),
+(10, 'Speaker', 'https://hariharimusik.id/wp-content/uploads/2021/08/13149961_800.jpg'),
+(11, 'Synthesizer', 'https://www.melodiamusik.com/wp-content/uploads/2016/08/evolver.jpg'),
+(12, 'Ukulele', 'https://cdn.shopify.com/s/files/1/1369/1865/products/kala-ka-smhc-solid-mahogany-concert-ukulele-for-sale-waukegan-il-family-piano_3_360x.jpg?v=1588387163'),
+(13, 'Violin', 'https://images.tokopedia.net/img/cache/900/product-1/2020/8/26/1128348734/1128348734_ee64d67e-b71a-43f0-9d9e-495145ba4276_1279_1279.jpg');
 
 -- --------------------------------------------------------
 

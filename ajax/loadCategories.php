@@ -14,7 +14,9 @@
         foreach ($arr as $key => $value) {
             $image = $value["image"];
 ?>
-    <div class="w-40 h-40 border-2 rounded-xl border-black mr-6" style="background-image: url(<?= $image ?>);"><?= $value["name"] ?></div>
+    <div class="w-40 h-40 border-2 rounded-xl border-black mr-6">
+        <img src="<?= $image ?>" alt="<?= $value["name"] ?>" class="w-full h-full rounded-xl">
+    </div>
 <?php
         }
     }
