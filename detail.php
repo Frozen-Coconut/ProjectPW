@@ -1,16 +1,25 @@
 <?php
     require_once("./util/docOpen.php");
     require_once("./util/navbar.php");
+
+    if(isset($_REQUEST["itemname"])){
+        $itemname = $_REQUEST["itemname"];
+        $stmt = $conn->query("SELECT i.name as itemname, b.name as brandname, n.name as instrumentname, i.price as price, i.image as itemimg, i.description as itemdesc, i.stock as itemstock FROM items i, brand b, instrument n WHERE i.name='$itemname' AND i.id_brand=b.id AND i.id_instrument=n.id;");
+        $item = $stmt->fetch_assoc();
+    }
 ?>
     <div class="container min-h-screen flex justify-evenly">
         <div class="flex flex-col items-center w-11/12 min-h-screen">
-            <a href="" class="my-5 text-lg w-full"><b>< Back to Catalog</b></a>
             <div class= "w-full h-4/5 flex justify-evenly">
-                <div class="w-1/2 h-full bg-gray-100 shadow-md"></div>
-                <div class="w-4/12 h-full">
-                    <div class="uppercase text-gray-400 text-xl font-medium mb-3">instrument</div>
-                    <div class="text-5xl font-medium my-3">Ini Nama Item Ini Nama Item Ini Nama Item </div>
-                    <div class="text-3xl font-medium text-yellow-600 my-3">Rp 000.000.000.000.-</div>
+                <div class="flex flex-col w-1/2">
+                    <a href="" class="my-5 text-lg hover:text-yellow-600"><b>< Back to Catalog</b></a>
+                    <div class="w-full h-full bg-gray-100 shadow-md bg-cover bg-center bg-no-repeat" style='background-image:url(<?$item["itemimg"]?>);'></div>
+                </div>
+                <div class="w-4/12 h-full pt-16">
+                    <div class="uppercase text-gray-400 text-xl font-medium mb-3"><?=$item["instrumentname"]?></div>
+                    <div class="text-5xl font-medium my-3"><?=$item["itemname"]?></div>
+                    <div class="text-3xl font-medium text-yellow-600 my-3">Rp <?=getCurrencyFormatting($item["price"])?></div>
+                    <div class="uppercase text-xl font-medium mb-3"><?=$item["brandname"]?></div>
                     <div class="my-3">
                         <i class="far fa-star text-yellow-400 cursor-pointer text-lg"></i>
                         <i class="far fa-star text-yellow-400 cursor-pointer text-lg"></i>
@@ -56,7 +65,7 @@
                     <div class="w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300">Review</div>
                 </div>
                 <div class="w-3/4 bg-gray-400 flex flex-col items-center mt-2 py-5 rounded-xl shadow-lg">
-                    <div class="w-5/6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt magnam eveniet neque dolor est quas ab porro quae deserunt. Ullam, cumque nemo asperiores laboriosam suscipit sequi culpa provident. Totam, excepturi!</div>
+                    <div class="w-5/6"><?=$item["itemdesc"]?></div>
                 </div>
             </div>
         </div>

@@ -16,4 +16,8 @@
     function getPageName(){
         return basename($_SERVER["PHP_SELF"]);
     }
+    
+    function getCurrencyFormatting($price){
+        return number_format($price, 2, ',' , '.');
+    }
 ?>
