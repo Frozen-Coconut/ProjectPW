@@ -1,5 +1,5 @@
 <?php
-    require_once("../connection.php");
+    require_once("../util/connection.php");
 
     if (isset($_REQUEST["type"])) {
         $type = strval($_REQUEST["type"]);

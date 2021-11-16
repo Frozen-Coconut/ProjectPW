@@ -1,6 +1,6 @@
 <?php
-    require_once("./docOpen.php");
-    require_once("./navbar.php");
+    require_once("./util/docOpen.php");
+    require_once("./util/navbar.php");
 ?>
     <div class="container min-h-screen flex justify-evenly">
         <div class="flex flex-col items-center w-11/12 min-h-screen">
@@ -97,6 +97,6 @@
         });
     </script>
 <?php
-    require_once("./footer.php");
-    require_once("./docClose.php");
+    require_once("./util/footer.php");
+    require_once("./util/docClose.php");
 ?>
