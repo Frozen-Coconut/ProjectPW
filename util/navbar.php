@@ -6,7 +6,7 @@
         <a href="">
             <li class="text-xl text-gray-100 mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-gray-600">Products</li>
         </a>
-        <a href="">
+        <a href="aboutus.php">
             <li class="text-xl text-gray-100 mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-gray-600">About Us</li>
         </a>
         <a href="">
