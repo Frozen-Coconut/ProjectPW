@@ -1,6 +1,4 @@
-<?php
-    require_once("./util/docOpen.php")
-?>
+<?php require_once("./util/docOpen.php") ?>
     <div class="min-h-screen flex flex-col">
         <?php require_once("./util/navbar.php") ?>
 
@@ -68,6 +66,4 @@
             });
         }
     </script>
-<?php
-    require_once("./util/docClose.php");
-?>
+<?php  require_once("./util/docClose.php"); ?>
