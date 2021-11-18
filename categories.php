@@ -62,8 +62,14 @@
                         maxBrandPage = parseInt($('#maxBrandPage').val());
                         container.append($('<button onclick="if(currentBrandPage<maxBrandPage)currentBrandPage++;initBrand();"><img src="https://cdn2.iconfinder.com/data/icons/250-perfect-vector-pictograms/48/9.5-512.png" class="w-10 h-10"></img></button>'));
                     }
-                    let category = $('[name=category]');
-                    category.css('cursor', 'pointer');
+                    $('div>p', container).hide();
+                    $('div', container).hover(function() {
+                        $('p', this).toggle();
+                    });
+                    $('div', container).click(function(e) { 
+                        e.preventDefault();
+                        alert($('p', this).html());
+                    });
                 }
             });
         }

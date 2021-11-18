@@ -16,9 +16,9 @@
         foreach ($arr as $key => $value) {
             $image = $value["image"];
 ?>
-<div class="w-40 h-40 border-2 rounded-xl border-black mr-6 flex justify-center items-center" name="category">
+<div class="w-40 h-40 border-2 rounded-xl border-black mr-6 flex flex-col justify-center items-center cursor-pointer">
     <img src="<?= $image ?>" alt="<?= $value["name"] ?>" class="w-32 h-32 rounded-xl">
-    <p class="hidden"><?= $value["name"] ?></p>
+    <p><?= $value["name"] ?></p>
 </div>   
 <?php
         }

@@ -6,30 +6,35 @@
             <div class="flex flex-col border-2 border-gray-400 rounded-3xl shadow-lg pl-5 pt-5 pb-8 w-60">
                 <p class="text-2xl font-bold">Filter</p>
                 <div class="flex flex-col ml-4 mt-2">
-                    <label for="topRated" class="inline-flex items-center">
-                        <input type="checkbox" value="Top Rated" class="rounded" name="filter">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" value="Top Rated" class="rounded cursor-pointer" name="filter">
                         <span class="ml-2">Top Rated</span>
                     </label>
-                    <label for="newRelease" class="inline-flex items-center">
-                        <input type="checkbox" value="New Release" class="rounded" name="filter">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" value="New Release" class="rounded cursor-pointer" name="filter">
                         <span class="ml-2">New Release</span>
                     </label>
-                    <label for="topSeller" class="inline-flex items-center">
-                        <input type="checkbox" value="Top Seller" class="rounded" name="filter">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" value="Top Seller" class="rounded cursor-pointer" name="filter">
                         <span class="ml-2">Top Seller</span>
                     </label>
-                    <label for="discount" class="inline-flex items-center">
-                        <input type="checkbox" value="Discount" class="rounded" name="filter">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" value="Discount" class="rounded cursor-pointer" name="filter">
                         <span class="ml-2">Discount</span>
                     </label>
-                    <p class="inline-flex items-center my-1" name="toggle"><img src="https://icon-library.com/images/dropdown-icon/dropdown-icon-14.jpg" alt="*" class="w-4 h-4 mr-2"><span>By Instrument</span></p>
+                    <p class="inline-flex items-center my-1 cursor-pointer" name="toggle"><img src="https://icon-library.com/images/dropdown-icon/dropdown-icon-14.jpg" alt="*" class="w-4 h-4 mr-2"><span>By Instrument</span></p>
                     <div id="byInstrument" class="flex flex-col ml-4"></div>
-                    <p class="inline-flex items-center my-1 toggle" name="toggle"><img src="https://icon-library.com/images/dropdown-icon/dropdown-icon-14.jpg" alt="*" class="w-4 h-4 mr-2"><span>By Brand</span></p>
+                    <p class="inline-flex items-center my-1 toggle cursor-pointer" name="toggle"><img src="https://icon-library.com/images/dropdown-icon/dropdown-icon-14.jpg" alt="*" class="w-4 h-4 mr-2"><span>By Brand</span></p>
                     <div id="byBrand" class="flex flex-col ml-4"></div>
                 </div>
             </div>
-            <div class="flex flex-col">
-                <div></div> <!-- Search -->
+            <div class="flex flex-col ml-10" style="width: 55vw;">
+                <div>
+                    <div class="relative">
+                        <input type="text" class="w-full h-14 pl-5 pr-8 rounded-xl" placeholder="Search anything..." name="search">
+                        <div class="absolute top-4 right-3"><i class="fa fa-search text-gray-400 z-20 hover:text-gray-500 cursor-pointer" onclick="search();"></i></div>
+                    </div>
+                </div>
                 <div></div> <!-- Catalogs -->
             </div>
         </div>
@@ -41,9 +46,11 @@
             listCategories($('#byInstrument'), 'instrument');
             listCategories($('#byBrand'), 'brand');
 
-            let toggle = $('[name=toggle]');
-            toggle.css('cursor', 'pointer');
-            toggle.click(function(e) { 
+            $('[name=filter]').click(function(e) {
+                alert($(this).val());
+            });
+
+            $('[name=toggle]').click(function(e) { 
                 e.preventDefault();
                 $(this).next().slideToggle('slow');
                 $('img', this).toggleClass('transform -rotate-90');
@@ -59,9 +66,16 @@
                 },
                 success: function (response) {
                     container.html(response);
-                    $('[name=filter]').css('cursor', 'pointer');
+                    $('label>input', container).click(function(e) {
+                        alert($(this).val());
+                    });
                 }
             });
+        }
+
+        function search() {
+            alert($('[name=search]').val());
+            $('[name=search]').val('');
         }
     </script>
 <?php require_once("./util/docClose.php"); ?>
