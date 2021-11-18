@@ -3,9 +3,9 @@
         <?php require_once("./util/navbar.php") ?>
 
         <div id="container" class="flex flex-col p-20">
-            <h2 class="text-3xl">By Instrument</h2>
+            <p class="text-3xl">By Instrument</p>
             <div id="containerInstrument" class="flex py-6 mb-3"></div>
-            <h2 class="text-3xl">By Brand</h2>
+            <p class="text-3xl">By Brand</p>
             <div id="containerBrand" class="flex py-6 mb-3"></div>
         </div>
 
@@ -62,8 +62,10 @@
                         maxBrandPage = parseInt($('#maxBrandPage').val());
                         container.append($('<button onclick="if(currentBrandPage<maxBrandPage)currentBrandPage++;initBrand();"><img src="https://cdn2.iconfinder.com/data/icons/250-perfect-vector-pictograms/48/9.5-512.png" class="w-10 h-10"></img></button>'));
                     }
+                    let category = $('[name=category]');
+                    category.css('cursor', 'pointer');
                 }
             });
         }
     </script>
-<?php  require_once("./util/docClose.php"); ?>
+<?php require_once("./util/docClose.php"); ?>
