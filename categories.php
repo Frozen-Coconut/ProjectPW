@@ -18,7 +18,7 @@
         let maxInstrumentPage = 0;
         let maxBrandPage = 0;
 
-        $(document).ready(function () {
+        $(document).ready(function() {
             init();
 
             $(window).resize(function() {
