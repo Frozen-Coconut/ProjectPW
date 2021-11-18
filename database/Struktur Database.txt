@@ -1,4 +1,4 @@
-Database memiliki 8 table :
+Database memiliki 12 table :
 
 - Items -> Field :
   -> name => primary
@@ -23,7 +23,9 @@ Database memiliki 8 table :
   -> username => unique
   -> password
   -> name
-  -> alamat
+  -> id_provinsi
+  -> id_kota
+  -> gender (1 = Male, 2 = Female)
   -> birth_date
   -> status => (1 = Aktif, 2 = Ban)
 
@@ -53,3 +55,22 @@ Database memiliki 8 table :
   -> items_name
   -> user_email
   -> content 
+
+- Color -> Field :
+  -> id => primary, AI
+  -> name
+  -> value
+
+- Color_items -> Field : 
+  -> id => primary, AI
+  -> id_color
+  -> items_name
+
+- Provinsi -> Field :
+  -> id => primary, AI
+  -> name
+
+- Kota -> Field :
+  -> id => primary, AI
+  -> name
+  -> id_provinsi
