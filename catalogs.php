@@ -79,7 +79,6 @@
         }
 
         function search() {
-            alert($('[name=search]').val());
             searchStr = $('[name=search]').val();
             loadCatalogs();
             $('[name=search]').val('');

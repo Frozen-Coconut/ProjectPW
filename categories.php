@@ -68,7 +68,7 @@
                     });
                     $('div', container).click(function(e) { 
                         e.preventDefault();
-                        alert($('p', this).html());
+                        window.location.assign(`./catalogs.php?filter=${$('p', this).html()}`);
                     });
                 }
             });
