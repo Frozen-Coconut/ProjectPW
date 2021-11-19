@@ -35,14 +35,17 @@
                         <div class="absolute top-4 right-3"><i class="fa fa-search text-gray-400 z-20 hover:text-gray-500 cursor-pointer" onclick="search();"></i></div>
                     </div>
                 </div>
-                <div></div> <!-- Catalogs -->
+                <div id="catalogs" class="grid grid-cols-4 gap-4 mt-4"></div>
             </div>
         </div>
 
         <?php require_once("./util/footer.php") ?>
     </div>
     <script>
-        $(document).ready(function () {
+        let filterArr = [];
+        let searchStr = '';
+
+        $(document).ready(function() {
             listCategories($('#byInstrument'), 'instrument');
             listCategories($('#byBrand'), 'brand');
 
@@ -55,6 +58,8 @@
                 $(this).next().slideToggle('slow');
                 $('img', this).toggleClass('transform -rotate-90');
             });
+            
+            loadCatalogs();
         });
 
         function listCategories(container, type) {
@@ -75,7 +80,24 @@
 
         function search() {
             alert($('[name=search]').val());
+            searchStr = $('[name=search]').val();
+            loadCatalogs();
             $('[name=search]').val('');
+        }
+
+        function loadCatalogs() {
+            $.ajax({
+                type: "get",
+                url: "./ajax/loadCatalogs.php",
+                data: {
+                    "filter": filterArr,
+                    "search": searchStr
+                },
+                success: function (response) {
+                    $('#catalogs').html(response);
+                    $('[name=catalog]>img').css('height', $('[name=catalog]>img').css('width'));
+                }
+            });
         }
     </script>
 <?php require_once("./util/docClose.php"); ?>
