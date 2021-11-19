@@ -19,6 +19,10 @@
         }
         else echo("Message"); // Kasi pesan semua input harus di isi
     }
+    
+    if(isset($_POST["register"])){
+        header("Location:register.php");
+    }
 ?>
     <!-- <h1>Login</h1>
     <form action="#" method="post">
@@ -41,11 +45,11 @@
                 <div class="rounded-md shadow-sm -space-y-px">
                     <div>
                     <label for="username" class="sr-only" text-gray-300 text-opacity-50>Username</label>
-                    <input id="username" name="username" type="text" autocomplete="" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
+                    <input id="username" name="username" type="text" autocomplete="" class="my-2 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
                     </div>
                     <div>
                     <label for="password" class="sr-only" text-gray-300 text-opacity-50>Password</label>
-                    <input id="password" name="password" type="password" autocomplete="current-password" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+                    <input id="password" name="password" type="password" autocomplete="current-password" class="my-2 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
                     </div>
                 </div>
         
@@ -78,7 +82,7 @@
                 </form>
                 <div>
                     <a href="register.php">
-                    <button class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                    <button name="register" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                         Register
                     </button>
                     </a>

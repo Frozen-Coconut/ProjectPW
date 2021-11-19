@@ -131,6 +131,17 @@
         return $hasil;
     }
 
+    function cekKembar($data) {
+        global $conn;
+
+        $user = selectUser();
+        $hasil = 0;
+        foreach($user as $key => $x) {
+            if ($data["username"] == $x["username"] || $data["email"] == $x["email"]) $hasil+=1;
+        }
+        return $hasil;
+    }
+
     function getPageName(){
         return basename($_SERVER["PHP_SELF"]);
     }
