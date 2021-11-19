@@ -3,7 +3,7 @@
         <?php require_once("./util/navbar.php") ?>
 
         <div id="container" class="flex px-40 py-20">
-            <div class="flex flex-col border-2 border-gray-400 rounded-3xl shadow-lg pl-5 pt-5 pb-8 w-60">
+            <div class="flex flex-col border-2 border-gray-400 rounded-3xl shadow-xl pl-5 pt-5 pb-8 w-60">
                 <p class="text-2xl font-bold">Filter</p>
                 <div class="flex flex-col ml-4 mt-2">
                     <label class="inline-flex items-center">
@@ -31,11 +31,11 @@
             <div class="flex flex-col ml-10" style="width: 55vw;">
                 <div>
                     <div class="relative">
-                        <input type="text" class="w-full h-14 pl-5 pr-8 rounded-xl" placeholder="Search anything..." name="search">
+                        <input type="text" class="w-full h-14 pl-5 pr-8 border-2 border-gray-400 rounded-xl shadow-lg" placeholder="Search anything..." name="search">
                         <div class="absolute top-4 right-3"><i class="fa fa-search text-gray-400 z-20 hover:text-gray-500 cursor-pointer" onclick="search();"></i></div>
                     </div>
                 </div>
-                <div id="catalogs" class="grid grid-cols-4 gap-4 mt-4"></div>
+                <div id="catalogs" class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-8"></div>
             </div>
         </div>
 
@@ -95,6 +95,9 @@
                 success: function (response) {
                     $('#catalogs').html(response);
                     $('[name=catalog]>img').css('height', $('[name=catalog]>img').css('width'));
+                    $('[name=catalog]').click(function() {
+                        window.location.assign(`./detail.php?filter=${$('input[type=hidden]', this).val()}`);
+                    });
                 }
             });
         }

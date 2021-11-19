@@ -2,11 +2,11 @@
     <div class="min-h-screen flex flex-col">
         <?php require_once("./util/navbar.php") ?>
 
-        <div id="container" class="flex flex-col p-20">
-            <p class="text-3xl">By Instrument</p>
-            <div id="containerInstrument" class="flex py-6 mb-3"></div>
-            <p class="text-3xl">By Brand</p>
-            <div id="containerBrand" class="flex py-6 mb-3"></div>
+        <div id="container" class="flex flex-col py-20 pr-2 items-center">
+            <p class="text-3xl mb-2">By Instrument</p>
+            <div id="containerInstrument" class="flex py-6 mb-6"></div>
+            <p class="text-3xl mb-2">By Brand</p>
+            <div id="containerBrand" class="flex py-6 mb-6"></div>
         </div>
 
         <?php require_once("./util/footer.php") ?>
@@ -29,7 +29,7 @@
         });
         
         function init() {
-            num = $(document).width()/200 - 1;
+            num = $(window).width()/180 - 1;
             initInstrument();
             initBrand();
         }
@@ -54,19 +54,19 @@
                 success: function (response) {
                     container.html(response);
                     if (type == "instrument") {
-                        container.prepend($('<button onclick="if(currentInstrumentPage>1)currentInstrumentPage--;initInstrument();"><img src="https://cdn2.iconfinder.com/data/icons/250-perfect-vector-pictograms/48/9.5-512.png" class="w-10 h-10 mr-6" style="transform: scaleX(-1);"></img></button>'));
+                        container.prepend($('<button onclick="if(currentInstrumentPage>1)currentInstrumentPage--;initInstrument();"><img src="https://cdn2.iconfinder.com/data/icons/250-perfect-vector-pictograms/48/9.5-512.png" class="w-10 h-10 mb-5 mr-8" style="transform: scaleX(-1);"></img></button>'));
                         maxInstrumentPage = parseInt($('#maxInstrumentPage').val());
-                        container.append($('<button onclick="if(currentInstrumentPage<maxInstrumentPage)currentInstrumentPage++;initInstrument();"><img src="https://cdn2.iconfinder.com/data/icons/250-perfect-vector-pictograms/48/9.5-512.png" class="w-10 h-10"></img></button>'));
+                        container.append($('<button onclick="if(currentInstrumentPage<maxInstrumentPage)currentInstrumentPage++;initInstrument();"><img src="https://cdn2.iconfinder.com/data/icons/250-perfect-vector-pictograms/48/9.5-512.png" class="w-10 h-10 mb-5 ml-2"></img></button>'));
                     } else if (type == "brand") {
-                        container.prepend($('<button onclick="if(currentBrandPage>1)currentBrandPage--;initBrand();"><img src="https://cdn2.iconfinder.com/data/icons/250-perfect-vector-pictograms/48/9.5-512.png" class="w-10 h-10 mr-6" style="transform: scaleX(-1);"></img></button>'));
+                        container.prepend($('<button onclick="if(currentBrandPage>1)currentBrandPage--;initBrand();"><img src="https://cdn2.iconfinder.com/data/icons/250-perfect-vector-pictograms/48/9.5-512.png" class="w-10 h-10 mb-5 mr-8" style="transform: scaleX(-1);"></img></button>'));
                         maxBrandPage = parseInt($('#maxBrandPage').val());
-                        container.append($('<button onclick="if(currentBrandPage<maxBrandPage)currentBrandPage++;initBrand();"><img src="https://cdn2.iconfinder.com/data/icons/250-perfect-vector-pictograms/48/9.5-512.png" class="w-10 h-10"></img></button>'));
+                        container.append($('<button onclick="if(currentBrandPage<maxBrandPage)currentBrandPage++;initBrand();"><img src="https://cdn2.iconfinder.com/data/icons/250-perfect-vector-pictograms/48/9.5-512.png" class="w-10 h-10 mb-5 ml-2"></img></button>'));
                     }
-                    $('div>p', container).hide();
-                    $('div', container).hover(function() {
-                        $('p', this).toggle();
-                    });
-                    $('div', container).click(function(e) { 
+                    // $('div>p', container).hide();
+                    // $('div', container).hover(function() {
+                    //     $('p', this).toggle();
+                    // });
+                    $('div>div', container).click(function(e) { 
                         e.preventDefault();
                         window.location.assign(`./catalogs.php?filter=${$('p', this).html()}`);
                     });
