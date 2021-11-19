@@ -11,7 +11,7 @@
         foreach ($arr as $key => $value) {
 ?>
 <label class="inline-flex items-center transform scale-90">
-    <input type="checkbox" value="<?= $value["name"] ?>" class="rounded cursor-pointer">
+    <input type="checkbox" value="<?= $value["id"] ?>" name="by<?= ucwords($type) ?>" class="rounded cursor-pointer">
     <span class="ml-2"><?= $value["name"] ?></span>
 </label>
 <?php

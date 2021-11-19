@@ -1,4 +1,14 @@
 <?php require_once("./util/docOpen.php") ?>
+    <?php
+        if (isset($_REQUEST["filter"])) {
+            $filter = $_REQUEST["filter"];
+            echo "<script>filter='$filter'</script>";
+        }
+        if (isset($_REQUEST["filter"])) {
+            $filterType = $_REQUEST["type"];
+            echo "<script>filterType='$filterType'</script>";
+        }
+    ?>
     <div class="min-h-screen flex flex-col">
         <?php require_once("./util/navbar.php") ?>
 
@@ -72,8 +82,21 @@
                 success: function (response) {
                     container.html(response);
                     $('label>input', container).click(function(e) {
-                        alert($(this).val());
+                        if ($(this).is(':checked')) {
+                            filterArr.push([$(this).val(), $(this.parentElement.parentElement).attr('id') == 'byInstrument' ? 'id_instrument' : $(this.parentElement.parentElement).attr('id') == 'byBrand' ? 'id_brand' : '']);
+                        } else {
+                            let thisVal = $(this).val();
+                            filterArr.splice(filterArr.findIndex(function(sub) {
+                                return sub.indexOf(thisVal) != -1;
+                            }), 1);
+                        }
+                        loadCatalogs();
                     });
+                    if (typeof filter != 'undefined') {
+                        if (!$(`input[value='${filter}']`).is(':checked')) {
+                            $(`input[value='${filter}'][name=${filterType}]`).click();
+                        }
+                    }
                 }
             });
         }

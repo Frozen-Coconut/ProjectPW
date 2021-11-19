@@ -20,6 +20,7 @@
 <div class="mr-6 flex flex-col justify-center items-center">
     <div class="w-40 h-40 border-2 rounded-xl border-black cursor-pointer bg-contain bg-center bg-no-repeat shadow-md hover:shadow-xl hover:opacity-90 mb-3" style="background-image: url(<?= $image ?>);"></div>   
     <p><?= $value["name"] ?></p>
+    <input type="hidden" value='<?= $value["id"] ?>'>
 </div>
 <?php
             $counter--;

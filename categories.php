@@ -4,9 +4,9 @@
 
         <div id="container" class="flex flex-col py-20 pr-2 items-center">
             <p class="text-3xl mb-2">By Instrument</p>
-            <div id="containerInstrument" class="flex py-6 mb-6"></div>
+            <div id="containerInstrument" class="flex py-6 mb-6" name="byInstrument"></div>
             <p class="text-3xl mb-2">By Brand</p>
-            <div id="containerBrand" class="flex py-6 mb-6"></div>
+            <div id="containerBrand" class="flex py-6 mb-6" name="byBrand"></div>
         </div>
 
         <?php require_once("./util/footer.php") ?>
@@ -68,7 +68,7 @@
                     // });
                     $('div>div', container).click(function(e) { 
                         e.preventDefault();
-                        window.location.assign(`./catalogs.php?filter=${$('p', this).html()}`);
+                        window.location.assign(`./catalogs.php?filter=${$('input[type=hidden]', this.parentElement).val()}&type=${$(this.parentElement.parentElement).attr('name')}`);
                     });
                 }
             });

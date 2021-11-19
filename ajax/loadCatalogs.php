@@ -1,10 +1,42 @@
 <?php
     require_once("../util/connection.php");
 
-    $filter = "1 = 1";
+    $filterInstrument = "1 = 1";
+    $filterBrand = "1 = 1";
     if (isset($_REQUEST["filter"])) {
         $temp = $_REQUEST["filter"];
-        // TODO
+        // $type = $temp[0][1];
+        // $value = $temp[0][0];
+        // $filter = "($type=$value";
+        // for ($i = 1; $i < count($temp); $i++) {
+        //     $type = $temp[$i][1];
+        //     $value = $temp[$i][0];
+        //     $filter .= " OR $type=$value";
+        // }
+        // $filter .= ")";
+        for ($i = 0; $i < count($temp); $i++) {
+            $type = $temp[$i][1];
+            $value = $temp[$i][0];
+            if ($type == "id_instrument") {
+                if ($filterInstrument == "1 = 1") {
+                    $filterInstrument = "($type=$value";
+                } else {
+                    $filterInstrument .= " OR $type=$value";
+                }
+            } else if ($type == "id_brand") {
+                if ($filterBrand == "1 = 1") {
+                    $filterBrand = "($type=$value";
+                } else {
+                    $filterBrand .= " OR $type=$value";
+                }
+            }
+        }
+        if ($filterInstrument != "1 = 1") {
+            $filterInstrument .= ")";
+        }
+        if ($filterBrand != "1 = 1") {
+            $filterBrand .= ")";
+        }
         unset($temp);
     }
 
@@ -15,7 +47,7 @@
         unset($temp);
     }
 
-    $item = query("SELECT * FROM items WHERE $filter AND $search");
+    $item = query("SELECT * FROM items WHERE $filterInstrument AND $filterBrand AND $search");
     
     foreach ($item as $key => $value) {
 ?>
