@@ -8,15 +8,15 @@
         </div>
         <div id="pages" class="w-44">
             <div class="font-medium text-lg uppercase">Pages</div>
-            <div class="text-xs my-2 text-gray-700">Home</div>
-            <div class="text-xs my-2 text-gray-700">Products</div>
-            <div class="text-xs my-2 text-gray-700">About Us</div>
-            <div class="text-xs my-2 text-gray-700">Contact</div>
+            <a href="home.php"><div class="text-xs my-2 text-gray-700">Home</div></a>
+            <a href="categories.php"><div class="text-xs my-2 text-gray-700">Products</div></a>
+            <a href="aboutus.php"><div class="text-xs my-2 text-gray-700">About Us</div></a>
+            <a href="profile.php"><div class="text-xs my-2 text-gray-700">Profile</div></a>
         </div>
         <div id="categories" class="w-44">
             <div class="font-medium text-lg uppercase">Categories</div>
-            <div class="text-xs my-2 text-gray-700">Instruments</div>
-            <div class="text-xs my-2 text-gray-700">Brands</div>
+            <a href="categories.php"><div class="text-xs my-2 text-gray-700">Instruments</div></a>
+            <a href="categories.php"><div class="text-xs my-2 text-gray-700">Brands</div></a>
         </div>
         <div id="followus" class="w-44">
             <div class="font-medium text-lg uppercase">Follow Us</div>
