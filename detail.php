@@ -18,20 +18,15 @@
                 <div class="w-4/12 h-full pt-16">
                     <div class="uppercase text-gray-400 text-xl font-medium mb-3"><?=$item["instrumentname"]?></div>
                     <div class="text-5xl font-medium my-3"><?=$item["itemname"]?></div>
-                    <div class="text-3xl font-medium text-yellow-600 my-3">Rp <?=getCurrencyFormatting($item["price"])?></div>
+                    <div class="text-3xl font-medium text-yellow-600 my-3 line-through">Rp <?=getCurrencyFormatting($item["price"])?></div>
                     <div class="uppercase text-xl font-medium mb-3"><?=$item["brandname"]?></div>
                     <div class="my-3">
-                        <i class="far fa-star text-yellow-400 cursor-pointer text-lg"></i>
-                        <i class="far fa-star text-yellow-400 cursor-pointer text-lg"></i>
-                        <i class="far fa-star text-yellow-400 cursor-pointer text-lg"></i>
-                        <i class="far fa-star text-yellow-400 cursor-pointer text-lg"></i>
-                        <i class="far fa-star text-yellow-400 cursor-pointer text-lg"></i>
+                        <i class="fas fa-star text-yellow-400  text-lg"></i>
+                        <i class="fas fa-star text-yellow-400  text-lg"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400 text-lg"></i>
+                        <i class="far fa-star text-yellow-400  text-lg"></i>
+                        <i class="far fa-star text-yellow-400  text-lg"></i>
                         <span class="text-lg font-semibold ml-2">X (n reviews)</span>
-                    </div>
-                    <div class="my-3 flex ">
-                        <div class="text-sm bg-gray-200 w-16 text-center rounded-md py-0.5 text-gray-600 font-semibold mx-0.5">Ini Tag</div>
-                        <div class="text-sm bg-gray-200 w-16 text-center rounded-md py-0.5 text-gray-600 font-semibold mx-0.5">Ini Tag</div>
-                        <div class="text-sm bg-gray-200 w-16 text-center rounded-md py-0.5 text-gray-600 font-semibold mx-0.5">Ini Tag</div>
                     </div>
                     <div class="mt-9 font-semibold">Color</div>
                     <div class="my-3 flex">
@@ -39,11 +34,6 @@
                         <div class="w-5 h-5 bg-gray-300 rounded-full mx-0.5"></div>
                         <div class="w-5 h-5 bg-gray-300 rounded-full mx-0.5"></div>
                         <div class="w-5 h-5 bg-gray-300 rounded-full mx-0.5"></div>
-                    </div>
-                    <div class="mt-5">
-                        <select id="promo">
-                            <option value="-1">No Active Promo</option>
-                        </select>
                     </div>
                     <div class="mt-5 w-56 h-12 border-gray-400 border-solid border-2 flex flex-row">
                         <button id="qtydown" class="w-3/12 h-11 text-lg font-bold border-solid border-r-2 border-gray-400 bg-gray-400">-</button>
@@ -61,7 +51,6 @@
             <div class="w-11/12 my-12 flex flex-col items-center">
                 <div class="w-2/5 h-16  flex justify-center items-center">
                     <div class="w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300 bg-gray-300">Deskripsi</div>
-                    <div class="w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300">Spesifikasi</div>
                     <div class="w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300">Review</div>
                 </div>
                 <div class="w-3/4 bg-gray-400 flex flex-col items-center mt-2 py-5 rounded-xl shadow-lg">
@@ -73,19 +62,19 @@
     <script>
         $(document).ready(function () {
 
-            $(".fa-star").mouseenter(function () { 
-                for (let i = 0; i <= $(this).index()+1; i++) {
-                    $(".fa-star:nth-child("+i+")").removeClass("far");
-                    $(".fa-star:nth-child("+i+")").addClass("fas");
-                }
-            });
+            // $(".fa-star").mouseenter(function () { 
+            //     for (let i = 0; i <= $(this).index()+1; i++) {
+            //         $(".fa-star:nth-child("+i+")").removeClass("far");
+            //         $(".fa-star:nth-child("+i+")").addClass("fas");
+            //     }
+            // });
 
-            $(".fa-star").mouseleave(function () { 
-                for (let i = 0; i <= $(this).index()+1; i++) {
-                    $(".fa-star:nth-child("+i+")").removeClass("fas");
-                    $(".fa-star:nth-child("+i+")").addClass("far");
-                }
-            });
+            // $(".fa-star").mouseleave(function () { 
+            //     for (let i = 0; i <= $(this).index()+1; i++) {
+            //         $(".fa-star:nth-child("+i+")").removeClass("fas");
+            //         $(".fa-star:nth-child("+i+")").addClass("far");
+            //     }
+            // });
 
             $("#qtydown").click(function(){
                 if(parseInt($("#qty").text()) > 0){
