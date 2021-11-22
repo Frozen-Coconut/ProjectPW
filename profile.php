@@ -30,8 +30,8 @@
             <div class="text-5xl font-bold h-16 text-gray-800 w-full">Profile</div>
             <div class="w-5/6 px-5 py-6 shadow-md border-gray-100 border-2 rounded-2xl mt-10">
                 <div class="w-full h-10 mb-12 flex justify-center items-center">
-                    <div class=" border-2 border-gray-800 text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-gray-800 hover:text-white bg-gray-300">User Profile</div>
-                    <div class=" border-2 border-gray-800 text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-gray-800 hover:text-white">Order History</div>
+                    <div class=" border-2 border-gray-800 text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-darker hover:text-white bg-hh-orange-lighter">User Profile</div>
+                    <div class=" border-2 border-gray-800 text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-darker hover:text-white">Order History</div>
                 </div>
 
                 <form action="" method="POST" class="flex justify-center">
@@ -65,8 +65,8 @@
                         <div class="table-row">
                             <div class="table-cell text-xl font-medium border-4 border-white text-right pt-2"></div>
                             <div class="table-cell text-xl font-medium border-4 border-white text-right pt-2 pr-4">
-                                <input type="button" value="Reset" id="reset" class="bg-gray-600 cursor-pointer px-4 py-1 rounded mx-1 text-white" onclick="resetData()">
-                                <input type="submit" value="Save" name="save" id="save" class="bg-gray-600 cursor-pointer px-4 py-1 rounded mx-1 text-white disabled:opacity-50" disabled>
+                                <input type="button" value="Reset" id="reset" class="bg-hh-pink-dark hover:bg-hh-pink-light cursor-pointer px-4 py-1 rounded mx-1 text-white" onclick="resetData()">
+                                <input type="submit" value="Save" name="save" id="save" class="bg-hh-orange-darker cursor-pointer px-4 py-1 rounded mx-1 text-white disabled:opacity-50" disabled>
                             </div>
                         </div>
                     </div>

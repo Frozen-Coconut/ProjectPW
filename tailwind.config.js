@@ -12,12 +12,16 @@ module.exports = {
           light:'#2a2a2a'
         },
         orange:{
+          darker:'#cf5700',
           dark:'#ff8e3c',
-          light:'#ffaf75'
+          light:'#ffaf75',
+          lighter:'#ffcfac'
         },
         pink:{
+          darker:'#b8003e',
           dark:'#d9376e',
-          light:'#ff88b0'
+          light:'#ff6fa0',
+          lighter:'#ffccdd'
         },
         gray:{
           dark:'#c5c5c5',

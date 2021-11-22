@@ -4,7 +4,7 @@
             <div class="mb-3 text-lg uppercase font-medium">get the latest information of our promotion and newest product</div>
             <input type="my-3 text" id="nlmail" placeholder="example@email.com" class="w-72 rounded-l-md p-1 pl-2">
             <input type="button" id="nlbutton" value="Sign Up" class="cursor-pointer text-gray-100 bg-gray-600 w-20 rounded-r-md p-1 pm-2">
-            <div class="my-3 text-xs">by signing up you agree to our <a href="" class="text-hh-pink-dark">terms & conditions</a></div>
+            <div class="my-3 text-xs">by signing up you agree to our <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-hh-pink-dark" target="_blank" title="This is not a rickroll video">terms & conditions</a></div>
         </div>
         <div id="pages" class="w-44">
             <div class="font-medium text-lg uppercase">Pages</div>
