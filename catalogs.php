@@ -157,7 +157,7 @@
                     $('#catalogs').html(response);
                     $('[name=catalog]>div').css('height', $('[name=catalog]>div').css('width'));
                     $('[name=catalog]').click(function() {
-                        window.location.assign(`./detail.php?filter=${$('input[type=hidden]', this).val()}`);
+                        window.location.assign(`./detail.php?itemname=${$('input[type=hidden]', this).val()}`);
                     });
                     maxPage = parseInt($('#maxPage').val());
                     $('#page').html(`${page} / ${maxPage}`);
