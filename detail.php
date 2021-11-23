@@ -78,11 +78,11 @@
             </div>
             <div class="w-11/12 my-12 flex flex-col items-center">
                 <div class="w-2/5 h-16  flex justify-center items-center">
-                    <div class="w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300 bg-hh-orange-light">Deskripsi</div>
-                    <div class="w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300">Review</div>
+                    <div class="w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300 bg-hh-orange-light" onclick="openDesc()">Deskripsi</div>
+                    <div class="w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300" onclick="openReview()">Review</div>
                 </div>
                 <div class="w-3/4 bg-hh-orange-light flex flex-col items-center mt-2 py-5 rounded-xl shadow-lg">
-                    <div class="w-5/6"><?=$item["itemdesc"]?></div>
+                    <div class="w-5/6" id="descContainer"><?=$item["itemdesc"]?></div>
                 </div>
             </div>
         </div>
@@ -126,6 +126,23 @@
                 $(this).addClass("bg-hh-orange-light");
             });
         });
+        function openDesc() {
+            $("#descContainer").html(`<?=$item["itemdesc"]?>`);
+        }
+
+        function openReview(){
+            $.ajax({
+                type: "POST",
+                url: "ajax/productDetail.php",
+                data: {
+                    "action" : "openReview",
+                    "itemname":"<?=$itemname?>"
+                },
+                success: function (response) {
+                    $("#descContainer").html(response);
+                }
+            });
+        }
     </script>
 <?php
     require_once("./util/footer.php");
