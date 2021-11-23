@@ -32,6 +32,7 @@
                 <div class="w-full h-10 mb-12 flex justify-center items-center">
                     <div class=" border-2 border-gray-800 text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-darker hover:text-white bg-hh-orange-lighter">User Profile</div>
                     <div class=" border-2 border-gray-800 text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-darker hover:text-white">Order History</div>
+                    <a href="wishlist.php"><div class=" border-2 border-gray-800 text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-darker hover:text-white">Wishlist</div></a>
                 </div>
 
                 <form action="" method="POST" class="flex justify-center">
