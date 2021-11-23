@@ -1,4 +1,5 @@
 <?php require_once("./util/docOpen.php") ?>
+
 <?php
     // $_SESSION["shoppingCart"]["Fender American Professional Precision Bass Guitar"] = array(
     //     "name" => "Fender American Professional Precision Bass Guitar",
@@ -12,6 +13,8 @@
     } else {
         $item = array();
     }
+
+    $total = 0;
 ?>
 
 <style>
@@ -31,14 +34,16 @@
 <table class="shoppingCartTable table-fixed">
     <thead>
         <tr>
-            <th style="width: 50%;">Product</th>
-            <th style="width: 20%;">Quantity</th>
+            <th style="width: 45%;">Product</th>
+            <th style="width: 15%;">Quantity</th>
             <th style="width: 10%;">Remove</th>
-            <th style="width: 20%;">Price</th>
+            <th style="width: 15%;">Price</th>
+            <th style="width: 15%;">Total</th>
         </tr>
     </thead>
     <tbody>
         <?php foreach ($item as $key => $value) { ?>
+            <?php $total += $value["price"] * $value["qty"] ?>
             <tr>
                 <td style="text-align: left;">
                     <div class="inline-flex items-center">
@@ -54,9 +59,17 @@
                     </div>
                 </td>
                 <td><button onclick="removeItem(this)" class="w-12 h-12 border-2">X</button></td>
-                <td><?= $value["price"] ?></td>
+                <td>Rp <?= number_format($value["price"], 2, ",", ".") ?></td>
+                <td>Rp <?= number_format($value["price"] * $value["qty"], 2, ",", ".") ?></td>
             </tr>
         <?php } ?>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Rp <?= number_format($total, 2, ",", ".") ?></td>
+        </tr>
     </tbody>
 </table>
 
@@ -70,7 +83,8 @@
                 "num": 1
             },
             success: function (response) {
-                $('p[name=qty]', sender.parentElement).html(parseInt($('p[name=qty]', sender.parentElement).html()) + 1);
+                // $('p[name=qty]', sender.parentElement).html(parseInt($('p[name=qty]', sender.parentElement).html()) + 1);
+                location.reload();
             }
         });
     }
@@ -85,7 +99,8 @@
                     "num": -1
                 },
                 success: function (response) {
-                    $('p[name=qty]', sender.parentElement).html($('p[name=qty]', sender.parentElement).html() - 1);
+                    // $('p[name=qty]', sender.parentElement).html($('p[name=qty]', sender.parentElement).html() - 1);
+                    location.reload();
                 }
             });
         }
@@ -99,7 +114,8 @@
                 "name": $('p[name=name]', sender.parentElement.parentElement).html()
             },
             success: function (response) {
-                $(sender.parentElement.parentElement).remove();
+                // $(sender.parentElement.parentElement).remove();
+                location.reload();
             }
         });
     }

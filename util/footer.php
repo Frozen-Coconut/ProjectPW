@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="text-xs text-center pt-3">&copy 2021 Kelompok PW</div>
-    <div id="shoppingCart" class="w-10 h-10 fixed right-10 bottom-10 bg-contain bg-center bg-no-repeat bg-transparent cursor-pointer" style="background-image: url(https://www.freeiconspng.com/uploads/shopping-cart-icon-2.png);"></div>
+    <div id="shoppingCart" class="w-10 h-10 fixed right-10 bottom-10 bg-contain bg-center bg-no-repeat bg-transparent cursor-pointer hover:opacity-80" style="background-image: url(https://www.freeiconspng.com/uploads/shopping-cart-icon-2.png);"></div>
     <script>
         $('#shoppingCart').draggable();
         $('#shoppingCart').dblclick(function(e) {
