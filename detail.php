@@ -2,6 +2,11 @@
     require_once("./util/docOpen.php");
     require_once("./util/navbar.php");
 
+    if(isset($_REQUEST)){
+        echo "<pre>";
+        print_r($_REQUEST);
+        echo "</pre>";
+    }
     if(isset($_REQUEST["itemname"])){
         $itemname = $_REQUEST["itemname"];
         $stmt = $conn->query("SELECT i.name as itemname, b.name as brandname, n.name as instrumentname, i.price as price, i.image as itemimg, i.description as itemdesc, i.stock as itemstock, i.id_diskon as disc FROM items i, brand b, instrument n WHERE i.name='$itemname' AND i.id_brand=b.id AND i.id_instrument=n.id;");
@@ -10,6 +15,17 @@
         $stmt = $conn->prepare("SELECT c.name as cname, c.value as cvalue FROM color_items cc, color c WHERE cc.items_name='$itemname' AND cc.id_color=c.id");
         $stmt->execute();
         $colors= $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+    if(isset($_REQUEST["tocart"])){
+        $_SESSION["shoppingCart"][$itemname]=array(
+            "name" => $itemname,
+            "image" => $item["itemimg"],
+            "price" => $item["price"],
+            "qty" => $_REQUEST["qty"]
+        );
+    }
+    if(isset($_REQUEST["towish"])){
+        
     }
 ?>
     <div class="container min-h-screen flex justify-evenly">
@@ -43,16 +59,20 @@
                             }
                         ?>
                     </div>
-                    <div class="mt-5 w-56 h-12 border-hh-orange-light border-solid border-2 flex flex-row">
-                        <button id="qtydown" class="w-3/12 h-11 text-lg font-bold border-solid border-r-2 border-hh-orange-light bg-hh-orange-light">-</button>
-                        <div class="w-6/12 h-8 mt-1 text-center text-2xl" id="qty">0</div>
-                        <button id="qtyup" class="w-3/12 h-11 text-lg font-bold border-solid border-l-2 border-hh-orange-light bg-hh-orange-light">+</button>
-                    </div>
-                    <div class="mt-6 mb-4">
-                        <button class="w-2/3 h-10 rounded bg-hh-orange-dark text-lg text-hh-black-dark font-semibold">Add to Cart</button>
-                    </div>
-                    <div class="mb-6 mt-4">
-                        <button class="w-2/3 h-10 rounded bg-hh-pink-dark text-lg text-hh-white font-semibold">Add to Wishlist</button>
+                    <div>
+                        <form action="" method="POST">
+                        <div class="mt-5 w-56 h-12 border-hh-orange-light border-solid border-2 flex flex-row">
+                            <button id="qtydown" type="button" class="w-3/12 h-11 text-lg font-bold border-solid border-r-2 border-hh-orange-light bg-hh-orange-light">-</button>
+                            <input type="text" name="qty" style="text-align:center;" class="w-6/12 h-8 mt-1 text-2xl border-0" id="qty" value="0"></input>
+                            <button id="qtyup" type="button" class="w-3/12 h-11 text-lg font-bold border-solid border-l-2 border-hh-orange-light bg-hh-orange-light">+</button>
+                        </div>
+                        <div class="mt-6 mb-4">
+                            <button type="submit" name="tocart" id="tocart" value="clicked" class="w-2/3 h-10 rounded bg-hh-orange-dark text-lg text-hh-black-dark font-semibold disabled:opacity-50" disabled>Add to Cart</button>
+                        </div>
+                        <div class="mb-6 mt-4">
+                            <button type="submit" name="towish" value="clicked" class="w-2/3 h-10 rounded bg-hh-pink-dark text-lg text-hh-white font-semibold">Add to Wishlist</button>
+                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -85,13 +105,18 @@
             // });
 
             $("#qtydown").click(function(){
-                if(parseInt($("#qty").text()) > 0){
-                    $("#qty").text(parseInt($("#qty").text())-1);
+                if(parseInt($("#qty").val()) > 0){
+                    $("#qty").val(parseInt($("#qty").val())-1);
+                }
+                if(parseInt($("#qty").val()) == 0){
+                    $("#tocart").prop("disabled",true);
                 }
             });
 
             $("#qtyup").click(function(){
-                $("#qty").text(parseInt($("#qty").text())+1);
+                $("#qty").val(parseInt($("#qty").val())+1);
+                $("#tocart").prop("disabled",false);
+                console.log($("#tocart").prop("disabled"));
             });
 
             $(".desc").click(function(){
