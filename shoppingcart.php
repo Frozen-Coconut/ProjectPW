@@ -72,6 +72,10 @@
         </tr>
     </tbody>
 </table>
+<div class="fixed right-10 bottom-8">
+    <button onclick="window.history.back()" class="px-5 py-2 bg-gray-300 hover:opacity-80 mr-2">Continue Shopping</button>
+    <button onclick="alert('to check out')" class="px-5 py-2 text-white hover:opacity-80" style="background-color: red;">Checkout</button>
+</div>
 
 <script>
     function addQty(sender) {
@@ -84,7 +88,7 @@
             },
             success: function (response) {
                 // $('p[name=qty]', sender.parentElement).html(parseInt($('p[name=qty]', sender.parentElement).html()) + 1);
-                location.reload();
+                window.location.reload();
             }
         });
     }
@@ -100,7 +104,7 @@
                 },
                 success: function (response) {
                     // $('p[name=qty]', sender.parentElement).html($('p[name=qty]', sender.parentElement).html() - 1);
-                    location.reload();
+                    window.location.reload();
                 }
             });
         }
@@ -115,7 +119,7 @@
             },
             success: function (response) {
                 // $(sender.parentElement.parentElement).remove();
-                location.reload();
+                window.location.reload();
             }
         });
     }
