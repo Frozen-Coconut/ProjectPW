@@ -32,7 +32,7 @@
         <div class="flex flex-col items-center w-11/12 min-h-screen">
             <div class= "w-full h-4/5 flex justify-evenly">
                 <div class="flex flex-col w-1/2">
-                    <a href="catalogs.php" class="my-5 text-lg hover:text-hh-orange-dark"><b>< Back to Catalog</b></a>
+                    <a href="catalogs.php" class="my-5 text-lg hover:text-hh-orange-dark"><b>< Kembali</b></a>
                     <div class="w-full h-full bg-gray-100 shadow-md bg-cover bg-center bg-no-repeat" style='background-image:url(<?=$item["itemimg"]?>);'></div>
                 </div>
                 <div class="w-4/12 h-full pt-16">
@@ -47,9 +47,9 @@
                         <i class="fas fa-star-half-alt text-hh-orange-light text-lg"></i>
                         <i class="far fa-star text-hh-orange-light  text-lg"></i>
                         <i class="far fa-star text-hh-orange-light  text-lg"></i>
-                        <span class="text-lg font-semibold ml-2">X (n reviews)</span>
+                        <span class="text-lg font-semibold ml-2">X (n review)</span>
                     </div>
-                    <div class="mt-9 font-semibold">Color</div>
+                    <div class="mt-9 font-semibold">Warna</div>
                     <div class="my-3 flex">
                         <?php
                             foreach ($colors as $key => $value) {
@@ -67,10 +67,10 @@
                             <button id="qtyup" type="button" class="w-3/12 h-11 text-lg font-bold border-solid border-l-2 border-hh-orange-light bg-hh-orange-light">+</button>
                         </div>
                         <div class="mt-6 mb-4">
-                            <button type="submit" name="tocart" id="tocart" value="clicked" class="w-2/3 h-10 rounded bg-hh-orange-dark text-lg text-hh-black-dark font-semibold disabled:opacity-50" disabled>Add to Cart</button>
+                            <button type="submit" name="tocart" id="tocart" value="clicked" class="w-2/3 h-10 rounded bg-hh-orange-dark text-lg text-hh-black-dark font-semibold disabled:opacity-50" disabled>Masukkan Keranjang</button>
                         </div>
                         <div class="mb-6 mt-4">
-                            <button type="submit" name="towish" value="clicked" class="w-2/3 h-10 rounded bg-hh-pink-dark text-lg text-hh-white font-semibold">Add to Wishlist</button>
+                            <button type="submit" name="towish" value="clicked" class="w-2/3 h-10 rounded bg-hh-pink-dark text-lg text-hh-white font-semibold">Masukkan Wishlist</button>
                         </div>
                         </form>
                     </div>
