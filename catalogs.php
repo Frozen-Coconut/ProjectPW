@@ -38,22 +38,22 @@
                         <option value="selled">Top Seller</option>
                         <option value="discount">Discount</option>
                     </select> -->
-                    <p class="inline-flex items-center my-1 cursor-pointer" name="toggle"><img src="https://icon-library.com/images/dropdown-icon/dropdown-icon-14.jpg" alt="*" class="w-4 h-4 mr-2"><span>By Instrument</span></p>
+                    <p class="inline-flex items-center my-1 cursor-pointer" name="toggle"><img src="https://icon-library.com/images/dropdown-icon/dropdown-icon-14.jpg" alt="*" class="w-4 h-4 mr-2"><span>Instrumen</span></p>
                     <div id="byInstrument" class="flex flex-col ml-4"></div>
-                    <p class="inline-flex items-center my-1 toggle cursor-pointer" name="toggle"><img src="https://icon-library.com/images/dropdown-icon/dropdown-icon-14.jpg" alt="*" class="w-4 h-4 mr-2"><span>By Brand</span></p>
+                    <p class="inline-flex items-center my-1 toggle cursor-pointer" name="toggle"><img src="https://icon-library.com/images/dropdown-icon/dropdown-icon-14.jpg" alt="*" class="w-4 h-4 mr-2"><span>Brand</span></p>
                     <div id="byBrand" class="flex flex-col ml-4"></div>
                 </div>
             </div>
             <div class="flex flex-col ml-10" style="width: 55vw;">
                 <div>
                     <div class="relative">
-                        <input type="text" class="w-full h-14 pl-5 pr-8 border-2 border-gray-400 rounded-xl shadow-lg" placeholder="Search product name (type :ResetSearch to reset)" name="search">
+                        <input type="text" class="w-full h-14 pl-5 pr-8 border-2 border-gray-400 rounded-xl shadow-lg" placeholder="Cari nama produk (ketikan :ResetSearch untuk mereset pencarian)" name="search">
                         <div class="absolute top-4 right-3"><i class="fa fa-search text-gray-400 z-20 hover:text-gray-500 cursor-pointer" onclick="search();"></i></div>
                     </div>
                 </div>
                 <div class="flex justify-end pt-5">
                     <button class="inline-flex items-center my-2 cursor-pointer" onclick="changePage(-1);"><img src="https://icon-library.com/images/dropdown-icon/dropdown-icon-14.jpg" alt="<" class="w-3 h-3 transform rotate-90"></button>
-                    <p class="mx-2">Page : <span id="page"></span></p>
+                    <p class="mx-2">Halaman : <span id="page"></span></p>
                     <button class="inline-flex items-center my-2 cursor-pointer" onclick="changePage(1);"><img src="https://icon-library.com/images/dropdown-icon/dropdown-icon-14.jpg" alt=">" class="w-3 h-3 transform -rotate-90"></button>
                 </div>
                 <div id="catalogs" class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-4"></div>

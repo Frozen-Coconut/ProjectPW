@@ -3,9 +3,9 @@
         <?php require_once("./util/navbar.php") ?>
 
         <div id="container" class="flex flex-col py-20 pr-2 items-center">
-            <p class="text-3xl mb-2">By Instrument</p>
+            <p class="text-3xl mb-2">Berdasarkan Instrumen</p>
             <div id="containerInstrument" class="flex py-6 mb-6" name="byInstrument"></div>
-            <p class="text-3xl mb-2">By Brand</p>
+            <p class="text-3xl mb-2">Berdasarkan Brand</p>
             <div id="containerBrand" class="flex py-6 mb-6" name="byBrand"></div>
         </div>
 

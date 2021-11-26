@@ -31,15 +31,15 @@
 </style>
 
 <div class="min-h-screen flex flex-col items-center relative bg-gray-50">
-    <p class="text-4xl my-10">Shopping Cart</p>
+    <p class="text-4xl my-10">Keranjang Belanja</p>
 
     <table class="shoppingCartTable table-auto mb-28 shadow-lg bg-white">
         <thead>
             <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Remove</th>
-                <th class="w-1/6 lg:w-auto">Price</th>
+                <th>Produk</th>
+                <th>Jumlah</th>
+                <th>Hapus</th>
+                <th class="w-1/6 lg:w-auto">Harga</th>
                 <th class="w-1/5 lg:w-auto">Total</th>
             </tr>
         </thead>
@@ -75,10 +75,10 @@
         </tbody>
     </table>
     <div class="flex absolute right-8 bottom-8">
-        <button onclick="window.history.back()" class="px-5 py-2 bg-gray-400 hover:opacity-80 mr-2 shadow-md">Continue Shopping</button>
+        <button onclick="window.location.assign('./catalogs.php')" class="px-5 py-2 bg-gray-400 hover:opacity-80 mr-2 shadow-md">Lanjutkan Belanja</button>
         <button class="px-5 py-2 text-white hover:opacity-80 shadow-md" style="background-color: red;">Checkout</button>
     </div>
-    <button onclick="window.history.back()" class="absolute left-8 top-8 px-5 py-2 bg-gray-400 hover:opacity-80 shadow-md">Back</button>
+    <button onclick="window.history.back()" class="absolute left-8 top-8 px-5 py-2 bg-gray-400 hover:opacity-80 shadow-md">Kembali</button>
     <!-- <button class="absolute right-8 bottom-8 px-5 py-2 text-white hover:opacity-80 shadow-md" style="background-color: red;">Checkout</button> -->
 </div>
 
