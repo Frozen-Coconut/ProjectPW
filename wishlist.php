@@ -16,7 +16,7 @@
             <tr class="border-b">
                 <td class="py-4 px-7"><img src="" alt=""></td>
                 <td class="py-4 px-7">test</td>
-                <td class="py-4 px-7"> </td>
+                <td class="py-4 px-7"><button>Hapus</button></td>
             </tr>
         </tbody>
     </table>
