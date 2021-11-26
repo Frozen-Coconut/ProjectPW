@@ -47,7 +47,7 @@
             <div class="flex flex-col ml-10" style="width: 55vw;">
                 <div>
                     <div class="relative">
-                        <input type="text" class="w-full h-14 pl-5 pr-8 border-2 border-gray-400 rounded-xl shadow-lg" placeholder="Cari nama produk (ketikan :ResetSearch untuk mereset pencarian)" name="search">
+                        <input type="text" class="w-full h-14 pl-5 pr-8 border-2 border-gray-400 rounded-xl shadow-lg" placeholder="Cari nama produk" name="search">
                         <div class="absolute top-4 right-3"><i class="fa fa-search text-gray-400 z-20 hover:text-gray-500 cursor-pointer" onclick="search();"></i></div>
                     </div>
                 </div>
@@ -100,6 +100,12 @@
                     echo "loadCatalogs();";
                 }
             ?>
+            
+            $('[name=search]').keypress(function(e) {
+                if (e.keyCode == '13') {
+                    search(); 
+                }
+            });
         });
 
         function listCategories(container, type) {
@@ -135,9 +141,9 @@
         function search() {
             page = 1;
             searchStr = $('[name=search]').val();
-            if (searchStr == ':ResetSearch') {
-                searchStr = "";
-            }
+            // if (searchStr == ':ResetSearch') {
+            //     searchStr = "";
+            // }
             loadCatalogs();
             $('[name=search]').val('');
         }
