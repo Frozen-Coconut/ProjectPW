@@ -38,7 +38,7 @@
                         <option value="selled">Top Seller</option>
                         <option value="discount">Discount</option>
                     </select> -->
-                    <p class="inline-flex items-center my-1 cursor-pointer" name="toggle"><img src="https://icon-library.com/images/dropdown-icon/dropdown-icon-14.jpg" alt="*" class="w-4 h-4 mr-2"><span>Instrumen</span></p>
+                    <p class="inline-flex items-center my-1 cursor-pointer" name="toggle"><img src="https://icon-library.com/images/dropdown-icon/dropdown-icon-14.jpg" alt="*" class="w-4 h-4 mr-2"><span>Instrument</span></p>
                     <div id="byInstrument" class="flex flex-col ml-4"></div>
                     <p class="inline-flex items-center my-1 toggle cursor-pointer" name="toggle"><img src="https://icon-library.com/images/dropdown-icon/dropdown-icon-14.jpg" alt="*" class="w-4 h-4 mr-2"><span>Brand</span></p>
                     <div id="byBrand" class="flex flex-col ml-4"></div>

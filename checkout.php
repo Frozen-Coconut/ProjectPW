@@ -33,7 +33,7 @@
 <div class="min-h-screen flex flex-col items-center relative bg-green-50">
     <p class="text-4xl my-10">Check Out</p>
 
-    <table class="shoppingCartTable table-auto mb-28 shadow-lg bg-white">
+    <table class="shoppingCartTable table-auto shadow-lg bg-white">
         <thead>
             <tr>
                 <th>Produk</th>
@@ -67,8 +67,13 @@
             </tr>
         </tbody>
     </table>
+    <!-- action ke pembayaran midtrans -->
+    <form action="SOMEWHERE" method="post" class="mt-8 mb-28" style="width: 96%;">
+        <label for="alamat">Alamat Pengiriman</label><br>
+        <input type="text" name="alamat" id="alamat" placeholder="Alamat Pengiriman" class="w-full mt-3"><br>
+        <button class="flex absolute right-8 bottom-8 px-5 py-2 text-white hover:opacity-80 shadow-md bg-green-600">Bayar</button>
+    </form>
     <button onclick="window.history.back()" class="absolute left-8 top-8 px-5 py-2 bg-gray-400 hover:opacity-80 shadow-md">Kembali</button>
-    <button class="flex absolute right-8 bottom-8 px-5 py-2 text-white hover:opacity-80 shadow-md bg-green-600">Bayar</button>
 </div>
 
 <?php require_once("./util/docClose.php") ?>
