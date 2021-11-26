@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2021 at 07:58 PM
+-- Generation Time: Nov 25, 2021 at 11:33 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -954,20 +954,6 @@ INSERT INTO `provinsi` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rating`
---
-
-DROP TABLE IF EXISTS `rating`;
-CREATE TABLE `rating` (
-  `id` int(11) NOT NULL,
-  `items_name` varchar(250) NOT NULL,
-  `value` double NOT NULL,
-  `user_email` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `review`
 --
 
@@ -976,7 +962,8 @@ CREATE TABLE `review` (
   `id` int(11) NOT NULL,
   `items_name` varchar(250) NOT NULL,
   `user_email` varchar(250) NOT NULL,
-  `content` varchar(500) NOT NULL
+  `content` varchar(500) NOT NULL,
+  `value` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1012,6 +999,26 @@ CREATE TABLE `user` (
   `birth_date` date NOT NULL,
   `gender` int(11) NOT NULL COMMENT '1=>Male, 2=>Female',
   `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`email`, `username`, `password`, `name`, `id_provinsi`, `id_kota`, `birth_date`, `gender`, `status`) VALUES
+('naruto@gmail.com', 'narutottebayo', 'iloveramen', 'Uzumaki Naruto', 15, 265, '1991-10-10', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlist`
+--
+
+DROP TABLE IF EXISTS `wishlist`;
+CREATE TABLE `wishlist` (
+  `wishlist_id` int(11) NOT NULL,
+  `user_email` int(250) NOT NULL,
+  `item_name` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -1061,12 +1068,6 @@ ALTER TABLE `provinsi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `rating`
---
-ALTER TABLE `rating`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `review`
 --
 ALTER TABLE `review`
@@ -1084,6 +1085,12 @@ ALTER TABLE `transaction`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`email`),
   ADD UNIQUE KEY `username` (`username`);
+
+--
+-- Indexes for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD PRIMARY KEY (`wishlist_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1126,12 +1133,6 @@ ALTER TABLE `provinsi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT for table `rating`
---
-ALTER TABLE `rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
@@ -1142,6 +1143,12 @@ ALTER TABLE `review`
 --
 ALTER TABLE `transaction`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  MODIFY `wishlist_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
