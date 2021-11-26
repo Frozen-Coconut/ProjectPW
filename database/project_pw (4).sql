@@ -249,7 +249,7 @@ CREATE TABLE `items` (
   `id_instrument` int(11) NOT NULL,
   `price` int(11) NOT NULL,
   `image` varchar(500) NOT NULL,
-  `description` varchar(1000) NOT NULL,
+  `description` varchar(5000) NOT NULL,
   `stock` int(11) NOT NULL,
   `id_diskon` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
