@@ -7,7 +7,7 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
         if ($username == "admin" && $password == "admin") {
-            //Masukan ke dalam halaman admin
+            header("Location: adminUser.php");
         }
         if ($username != "" && $password != "") {
             $hasil = login(["username" => $username, "password" => $password]);
@@ -24,14 +24,6 @@
         header("Location:register.php");
     }
 ?>
-    <!-- <h1>Login</h1>
-    <form action="#" method="post">
-        <input type="text" name="username" id="" placeholder="Username">
-        <input type="password" name="password" id="" placeholder="Password">
-        <a href="">Forget Password?</a>
-        <button name="login">Login</button>
-        <a href="register.php"><button>Register</button></a>
-    </form> -->
     <div class="min-h-screen flex items-center justify-center bg-gray-500">
         <div class="border-2 border-black border-opacity-25 rounded-lg flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-400 bg-opacity-50">
             <div class="max-w-md w-full space-y-8">
@@ -66,14 +58,6 @@
                     </a>
                     </div>
                 </div>
-                <!-- <div class="flex items-center justify-center">
-                <p class="text-center text-sm text-gray-600">
-                    You haven't sign up ? 
-                    <a href="register.php" class="font-medium text-black hover:text-gray-300 text-opacity-50">
-                    Sign up now
-                    </a>
-                </p>
-                </div> -->
                 <div>
                     <button type="submit" name="login" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                     Login

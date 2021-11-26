@@ -16,6 +16,7 @@ Database memiliki 12 table :
   -> items_name
   -> quantity
   -> total
+  -> alamat
   -> status (1 = Menunggu konfirmasi, 2 = Sedang di perjalanan, 3 = Sudah  Sampai)
 
 - User -> Field :
@@ -44,17 +45,12 @@ Database memiliki 12 table :
   -> name
   -> value (double)
 
-- Rating -> Field :
-  -> id => primary, AI (Auto Increment)
-  -> items_name
-  -> Value (double)
+- Review -> Field : 
+  -> id => primary, AI
   -> user_email
-
-- Review -> Field :
-  -> id => primary, AI (Auto Increment)
   -> items_name
-  -> user_email
-  -> content 
+  -> review
+  -> rating (double)
 
 - Color -> Field :
   -> id => primary, AI
@@ -74,3 +70,8 @@ Database memiliki 12 table :
   -> id => primary, AI
   -> name
   -> id_provinsi
+
+- Wishlist -> Field :
+  -> id => primary, AI
+  -> user_email
+  -> items_name

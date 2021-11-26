@@ -47,32 +47,6 @@
 
     $provinsi = selectProvinsi();
 ?>
-    <!-- <h1>Register</h1> -->
-    <!-- <form action="#" method="post">
-        <input type="text" name="name" id="" placeholder="Name">
-        <input type="text" name="username" id="" placeholder="Username">
-        <input type="email" name="email" id="" placeholder="Email">
-        <input type="password" name="password" id="" placeholder="Password">
-        <input type="password" name="confirm" id="" placeholder="Confirm Password">
-        <input type="text" name="phone" id="" placeholder="Phone Number">
-        <select name="provinsi" id="prov">
-            <option value="" disabled selected hidden>Provinsi</option>
-            <?php foreach($provinsi as $key => $x) :?>
-                <option value="<?= $x["id"] ?>"><?= $x["name"] ?></option>
-            <?php endforeach; ?>
-        </select>
-        <div id="kota"></div>
-        <input type="date" name="birthDate" id="" placeholder="Date of Birth">
-        <select name="gender" id="">
-            <option value="" disabled selected hidden>Gender</option>
-            <option value="1">Male</option>
-            <option value="2">Female</option>
-        </select>
-        <input type="checkbox" name="agree" id=""><label for="agree">I Agree to Terms & Conditions</label>
-
-        <button name="register">Register</button>
-        <a href="login.php"><button>Login</button></a>
-    </form> -->
     <div class="min-h-screen flex items-center justify-center bg-gray-500">
         <div class="border-2 border-black border-opacity-25 rounded-lg flex items-center justify-center py-4 px-4 sm:px-6 lg:px-8 bg-gray-400 bg-opacity-50">
             <div class="max-w-md w-full space-y-8">
@@ -86,7 +60,7 @@
                 <div class="rounded-md -space-y-px bg-dark">
                     <div>
                     <label for="name" class="sr-only" text-gray-300 text-opacity-50>Name</label>
-                    <input id="name" type="text" name="name" autocomplete="" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
+                    <input id="name" type="text" name="name" autocomplete="" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Name">
                     </div>
                     <div>
                     <label for="username" class="sr-only" text-gray-300 text-opacity-50>Username</label>
@@ -139,14 +113,6 @@
                     </label>
                     </div>
                 </div>
-                <!-- <div class="flex items-center justify-center">
-                <p class="text-center text-sm text-gray-600">
-                    You haven't sign up ? 
-                    <a href="register.php" class="font-medium text-black hover:text-gray-300 text-opacity-50">
-                    Sign up now
-                    </a>
-                </p>
-                </div> -->
                 <div>
                     <button type="submit" name="register" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                     Register

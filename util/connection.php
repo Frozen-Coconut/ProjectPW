@@ -19,8 +19,52 @@
 
         $query = 'SELECT u.email as "email", u.username as "username", u.password as "password"
         , u.name as "name", p.name as "provinsi", k.name as "kota", u.birth_date as "birth_date", 
-        u.gender as "gender"  FROM user u, provinsi p, kota k WHERE u.id_provinsi = p.id 
+        u.gender as "gender", u.status as "status" FROM user u, provinsi p, kota k WHERE u.id_provinsi = p.id 
         AND u.id_kota = k.id';
+
+        return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function selectUserLike ($like) {
+        global $conn;
+
+        $query = 'SELECT u.email as "email", u.username as "username", u.password as "password"
+        , u.name as "name", p.name as "provinsi", k.name as "kota", u.birth_date as "birth_date", 
+        u.gender as "gender", u.status as "status" FROM user u, provinsi p, kota k WHERE u.id_provinsi = p.id 
+        AND u.id_kota = k.id AND u.name LIKE "%'.$like.'%"';
+
+        return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function selectUserEmail ($email) {
+        global $conn;
+
+        $query = 'SELECT u.email as "email", u.username as "username", u.password as "password"
+        , u.name as "name",p.id as "id_provinsi", p.name as "provinsi", k.id as "id_kota", k.name as "kota", u.birth_date as "birth_date", 
+        u.gender as "gender", u.status as "status" FROM user u, provinsi p, kota k WHERE u.id_provinsi = p.id 
+        AND u.id_kota = k.id AND u.email = "'.$email.'"';
+
+        return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function selectItem() {
+        global $conn;
+
+        $query = 'SELECT i.name as "name", i.price as "price", i.image as "image", 
+        i.description as "desc", i.stock as "stock", b.name as "brand", ins.name as "instrument"
+        FROM items i, brand b, instrument ins
+        WHERE i.id_brand = b.id AND i.id_instrument = ins.id';
+
+        return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function selectItemsName ($name) {
+        global $conn;
+
+        $query = 'SELECT i.name as "name", i.price as "price", i.image as "image", 
+        i.description as "desc", i.stock as "stock", b.name as "brand", ins.name as "instrument"
+        FROM items i, brand b, instrument ins
+        WHERE i.id_brand = b.id AND i.id_instrument = ins.id AND i.name = "'.$name.'"';
 
         return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
     }
@@ -31,7 +75,7 @@
         $query = 'SELECT i.name as "name", i.price as "price", i.image as "image", 
         i.description as "desc", i.stock as "stock", b.name as "brand", ins.name as "instrument", 
         d.name as "diskon", d.value as "besarDiskon" 
-        FROM items i, brand b, instruments ins, diskon d 
+        FROM items i, brand b, instrument ins, diskon d 
         WHERE i.id_brand = b.id AND i.id_instrument = ins.id AND i.id_diskon = d.id AND b.name = \''.$brand.'\'';
 
         $data = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
@@ -55,14 +99,14 @@
     function selectRating ($itemsName) {
         global $conn;
 
-        $data = $conn->query('SELECT AVG(r.value) as "avgRating" FROM rating r WHERE r.items_name = \''.$itemsName.'\'')->fetch_all(MYSQLI_ASSOC);
+        $data = $conn->query('SELECT AVG(r.rating) as "avgRating" FROM review r WHERE r.items_name = \''.$itemsName.'\'')->fetch_all(MYSQLI_ASSOC);
         return $data["avgRating"];
     }
 
     function selectReview ($itemsName) {
         global $conn;
         
-        return $conn->query('SELECT r.user_email as "reviewer", r.content as "content" FROM review r WHERE r.items_name = \''.$itemsName.'\'')->fetch_all(MYSQLI_ASSOC);
+        return $conn->query('SELECT r.user_email as "reviewer", r.review as "content" FROM review r WHERE r.items_name = \''.$itemsName.'\'')->fetch_all(MYSQLI_ASSOC);
     }
 
     function selectProvinsi () {
@@ -76,6 +120,34 @@
         
         return $conn->query('SELECT * FROM kota WHERE id_provinsi = '.$idProv)->fetch_all(MYSQLI_ASSOC);
     } 
+
+    function selectDiscount () {
+        global $conn;
+
+        return $conn->query('SELECT * FROM diskon')->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function selectTransaction () {
+        $query = 'SELECT t.id as "id", t.quantity as "quantity", t.total as "total", t.status as "status", 
+        u.email as "email", u.username as "username", u.name as "user_name", i.name as "item_name", 
+        i.image as "image" FROM transaction t, user u, items i WHERE t.user_email = u.email AND t.items_name = i.name';
+        global $conn;
+                
+        $data = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+
+        return $data;
+    }
+
+    function selectTransactionId($id) {
+        $query = 'SELECT t.id as "id", t.quantity as "quantity", t.total as "total", t.status as "status", t.alamat as "alamat",
+        u.email as "email", u.username as "username", u.name as "user_name", i.name as "item_name", 
+        i.image as "image", i.price as "price" FROM transaction t, user u, items i WHERE t.user_email = u.email AND t.items_name = i.name AND t.id = '.$id;
+        global $conn;
+                
+        $data = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+
+        return $data;
+    }
 
     //Function Insert
 
@@ -100,7 +172,7 @@
     }
 
     function insertItems($data) {
-
+        
     }
 
     function insertDiskon($data) {
@@ -109,7 +181,48 @@
 
     //Function Delete
 
+    function deleteItem($name) {
+        global $conn;
+
+        $query = "DELETE FROM items WHERE items.name = '".$name."'";
+
+        $hasil = mysqli_query($conn, $query);
+    }
+
     //Function Edit
+    function updateStatusUser($status, $email) {
+        global $conn;
+        $status = $status % 2;
+        $status += 1;
+        $query = "UPDATE user u SET status = $status WHERE u.email = '".$email."'";
+        $hasil = mysqli_query($conn, $query);
+        return mysqli_affected_rows($conn);
+    }
+
+    function updateProfileUser($data, $email) {
+        global $conn;
+        $stmt = $conn->prepare("UPDATE user u SET u.name = ?, u.password = ?, u.id_provinsi = ?, u.id_kota = ?, u.birth_date = ? WHERE u.email = '".$email."'");
+        
+        $stmt->bind_param("ssiis", $data["name"], $data["password"], $data["provinsi"], $data["kota"], $data["birth_date"]);
+
+        $stmt->execute();
+    }
+
+    function updateStock($stockBaru, $name) {
+        global $conn;
+        
+        $query = ("UPDATE items SET stock = ".$stockBaru." WHERE name = '".$name."'");
+
+        mysqli_query($conn,$query);
+    }
+
+    function updateStatusTransaction($id, $statusBaru) {
+        global $conn;
+        
+        $query = ("UPDATE transaction SET status = $statusBaru WHERE id = $id");
+
+        mysqli_query($conn,$query);
+    }
 
     //Function Tambahan
 
