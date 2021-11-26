@@ -46,7 +46,7 @@
           <div class="text-sm text-gray-500"><?= $x["quantity"] ?></div>
         </td>
         <td class="px-6 py-4 whitespace-nowrap">
-          <div class="text-sm text-gray-500"><?= $x["total"] ?></div>
+          <div class="text-sm text-gray-500"><?= "Rp. ". getCurrencyFormatting($x["total"]) ?></div>
         </td>
         <td class="px-6 py-5 whitespace-nowrap flex justify-center items-center">
             <?php
@@ -65,7 +65,7 @@
             } else {
             ?>
             <span class="text-sm rounded-full border-4 border-green-300 p-1.5 -mx-1.5">
-                Sudah Sampai
+                Selesai
             </span>
             <?php
             }

@@ -55,7 +55,7 @@
         <div class="text-sm text-gray-500"><?= $x["instrument"] ?></div>
       </td>
       <td class="px-6 py-4 whitespace-nowrap">
-        <div class="text-sm text-gray-500"><?= $x["price"] ?></div>
+        <div class="text-sm text-gray-500"><?= "Rp. ".getCurrencyFormatting($x["price"]) ?></div>
       </td>
       <td class="px-6 py-4 whitespace-nowrap">
         <div class="text-sm text-gray-500"><?= $x["stock"] ?></div>
