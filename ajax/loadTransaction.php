@@ -16,16 +16,18 @@
     <tr>
         <td class="px-4 py-4 whitespace-nowrap"><?= $x["id"] ?></td>
         <td class="pr-6 py-4 whitespace-nowrap">
-            <div class="flex items-center">
-            <div class="flex-shrink-0 h-10 w-10">
-                <img class="h-10 w-10 rounded-full" src="<?= $x["image"] ?>" alt="">
-            </div>
-            <div class="ml-4">
-                <div class="text-sm font-medium text-gray-900 break-word">
-                    <?= $x["item_name"] ?>
+            <?php foreach($x["item"] as $y) :?>
+                <div class="flex items-center">
+                <div class="flex-shrink-0 h-10 w-10">
+                    <img class="h-10 w-10 rounded-full" src="<?= $y["image"] ?>" alt="">
                 </div>
-            </div>
-            </div>
+                <div class="ml-4">
+                    <div class="text-sm font-medium text-gray-900 break-word">
+                        <?= $y["item_name"]." - ".$y["quantity"] . " - ".$y["warna"] ?>
+                    </div>
+                </div>
+                </div>
+            <?php endforeach; ?>
         </td>
         <td class="pr-6 py-4 whitespace-nowrap">
             <div class="flex items-center">
@@ -43,12 +45,9 @@
             </div>
         </td>
         <td class="px-6 py-4 whitespace-nowrap">
-          <div class="text-sm text-gray-500"><?= $x["quantity"] ?></div>
-        </td>
-        <td class="px-6 py-4 whitespace-nowrap">
           <div class="text-sm text-gray-500"><?= "Rp. ". getCurrencyFormatting($x["total"]) ?></div>
         </td>
-        <td class="px-6 py-5 whitespace-nowrap flex justify-center items-center">
+        <td class="px-6 py-5 whitespace-nowrap">
             <?php
             if ($x["status"] == 1) {
             ?>

@@ -20,14 +20,14 @@
           </svg>
         </button>
         <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-700 text-opacity-75">
-            Edit
+            Edit User
         </h2>
         </div class="mt-8 space-y-6 px-3">
         <input type="hidden" name="remember" value="true">
         <div class="rounded-md -space-y-px bg-dark">
             <div>
             <label for="name" class="sr-only" text-gray-300 text-opacity-50>Name</label>
-            <input id="nameEdit" type="text" name="name" autocomplete="" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Name" value="<?= $userEdit[0]["name"] ?>">
+            <input id="nameEdit" type="text" name="name" autocomplete="" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Nama" value="<?= $userEdit[0]["name"] ?>">
             </div>
             <div>
             <label for="username" class="sr-only" text-gray-300 text-opacity-50>Username</label>
@@ -53,8 +53,8 @@
                 
             </div>
             <div>
-            <label for="birthDate" class="sr-only" text-gray-300 text-opacity-50>Birth Date</label>
-            <input type="date" name="birthDate" id="birthEdit" placeholder="Date of Birth" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" value="<?= $userEdit[0]["birth_date"] ?>">
+            <label for="birthDate" class="sr-only" text-gray-300 text-opacity-50>Tanggal Lahir</label>
+            <input type="date" name="birthDate" id="birthEdit" placeholder="Tanggal Lahir" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" value="<?= $userEdit[0]["birth_date"] ?>">
             </div>
         </div>
         <div>

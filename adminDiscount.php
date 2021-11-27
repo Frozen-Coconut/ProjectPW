@@ -1,12 +1,6 @@
 <?php
     require_once("./util/docOpen.php");
     require_once("./util/navbarAdmin.php");
-    unset($_SESSION["filterBrand"]);
-    unset($_SESSION["filterInstrument"]);
-    unset($_SESSION["filterName"]);
-
-    $brand = query('SELECT * FROM brand');
-    $instrument = query('SELECT * FROM instrument');
 ?>
 <header class="bg-white shadow">
   <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -17,8 +11,9 @@
 </header>
 <div class="p-2 pt-5 relative mx-auto text-gray-600 flex justify-end">
   <div class="mr-12">
-  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addDiscount()">Add Discount</button>
-  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addItemsDiscount()">Give Discount to Item</button>
+  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addDiscount()">Tambah Diskon</button>
+  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addItemsDiscount()">Menambahkan Diskon ke Item</button>
+  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="reset()">Hilangkan Filter</button>
     <input class="border-2 border-gray-300 bg-white h-10 px-5 rounded-lg text-sm focus:outline-none"
       type="search" name="search" placeholder="Search" id="inputSearch">
     <button type="submit" class="ml-2" onclick="search()">
@@ -42,10 +37,10 @@
                 Id
               </th>
               <th scope="col" class="pr-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                Name
+                Nama
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                Value
+                Besar Diskon
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                 
@@ -76,6 +71,122 @@
       }).then(res=>{
           $("#tableBody").html(res);
       })
+    }
+
+    function addDiscount () {
+      $.ajax({
+          type: "get",
+          url: "./ajax/formAddDiscount.php",
+          data: {
+              
+          }
+      }).then(res=>{
+          $("#formEdit").html(res);
+          $("#formEdit").css('display','flex');
+      })
+    }
+
+    function addDiscountForm() {
+      $.ajax({
+          type: "get",
+          url: "./ajax/loadDiscount.php",
+          data: {
+              "add" : 1,
+              "nama" : $("#addName").val(),
+              "value" : $("#addValue").val()
+          }
+      }).then(res=>{
+          $("#tableBody").html(res);
+          $("#formEdit").css('display','none');
+      })
+    }
+
+    function editDiscount (id) {
+      $.ajax({
+          type: "get",
+          url: "./ajax/formAddDiscount.php",
+          data: {
+              "idEdit" : id
+          }
+      }).then(res=>{
+          $("#formEdit").html(res);
+          $("#formEdit").css('display','flex');
+      })
+    }
+
+    function editDiscountForm(id) {
+      $.ajax({
+          type: "get",
+          url: "./ajax/loadDiscount.php",
+          data: {
+              "edit" : 1,
+              "id" : id,
+              "nama" : $("#editName").val(),
+              "value" : $("#editValue").val()
+          }
+      }).then(res=>{
+          $("#tableBody").html(res);
+          $("#formEdit").css('display','none');
+      })
+    }
+
+    function deleteDiscount(id) {
+      $.ajax({
+          type: "get",
+          url: "./ajax/loadDiscount.php",
+          data: {
+              "delete" : id
+          }
+      }).then(res=>{
+          $("#tableBody").html(res);
+      })
+    }
+
+    function addItemsDiscount() {
+      $.ajax({
+          type: "get",
+          url: "./ajax/formAddItemsDiscount.php",
+          data: {
+
+          }
+      }).then(res=>{
+          $("#formEdit").html(res);
+          $("#formEdit").css('display','flex');
+      })
+    }
+
+    function addDiscountItemForm() {
+      $.ajax({
+          type: "get",
+          url: "./ajax/addDiscountItem.php",
+          data: {
+            "item" : $("#itemPilihan").val(),
+            "diskon" : $("#diskonPilihan").val()
+          }
+      }).then(res=>{
+        alert("Success!");
+      })
+    }
+
+    function closeForm() {
+      $("#formEdit").css('display','none');
+    }
+
+    function search() {
+      $.ajax({
+          type: "get",
+          url: "./ajax/loadDiscount.php",
+          data: {
+              "search" : $("#inputSearch").val()
+          }
+      }).then(res=>{
+          $("#tableBody").html(res);
+      })
+    }
+
+    function reset() {
+      $("#inputSearch").val("");
+      loadDiscount();
     }
 </script>
 <?php

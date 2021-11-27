@@ -1,7 +1,14 @@
 <?php require_once("./util/docOpen.php") ?>
 
-<?php require_once("./util/navbar.php")?>
+<?php
 
+    if(isset($_POST["logout"])){
+        unset($_SESSION["loggedIn"]);
+        setcookie("loggedIn", "", time()-(60*60*24*10));
+    }
+?>
+
+<?php require_once("./util/navbar.php")?>
 
 <section class="w-full h-screen bg-center bg-no-repeat bg-cover flex" style="background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80');">
     <div class="w-full h-screen bg-opacity-70 bg-black flex justify-center items-center">

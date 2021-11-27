@@ -15,12 +15,12 @@
         </svg>
       </button>
       <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-700 text-opacity-75">
-          Add Items
+          Tambah Item
       </h2>
       </div class="mt-8 space-y-6 px-3">
       <div class="rounded-md -space-y-px bg-dark">
           <div>
-          <input type="text" name="" placeholder="Item name" id="addName" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+          <input type="text" name="" placeholder="Nama Item" id="addName" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
           </div>
           <div>
             <select name="" id="addBrand" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
@@ -39,18 +39,18 @@
             </select>
           </div>
           <div>
-          <input type="number" name="" id="addPrice" placeholder="Price" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+          <input type="number" name="" id="addPrice" placeholder="Harga" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
           </div>
           <div>
           <input type="number" name="" id="addStock" placeholder="Stock"  class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
           </div>
           <div>
-          <textarea name="" id="addDesc" rows="4" placeholder="Description" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"></textarea>
+          <textarea name="" id="addDesc" rows="4" placeholder="Deskripsi" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"></textarea>
           </div>
       </div>
       <div>
           <button id="addStock" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" onclick="addStock('<?= $itemSekarang[0]['name'] ?>')">
-          Add Item
+          Tambah
           </button>
       </div>
     </div>

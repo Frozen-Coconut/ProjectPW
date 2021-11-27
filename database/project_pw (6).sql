@@ -3,9 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
+-- Generation Time: Nov 27, 2021 at 02:20 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.23
+=======
 -- Generation Time: Nov 27, 2021 at 02:12 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +26,11 @@ SET time_zone = "+00:00";
 --
 -- Database: `project_pw`
 --
+<<<<<<< HEAD
+CREATE DATABASE IF NOT EXISTS `project_pw` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `project_pw`;
+=======
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 
 -- --------------------------------------------------------
 
@@ -27,6 +38,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `brand`
 --
 
+<<<<<<< HEAD
+DROP TABLE IF EXISTS `brand`;
+=======
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 CREATE TABLE `brand` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
@@ -80,6 +95,10 @@ INSERT INTO `brand` (`id`, `name`, `image`) VALUES
 -- Table structure for table `color`
 --
 
+<<<<<<< HEAD
+DROP TABLE IF EXISTS `color`;
+=======
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 CREATE TABLE `color` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
@@ -118,6 +137,10 @@ INSERT INTO `color` (`id`, `name`, `value`) VALUES
 -- Table structure for table `color_items`
 --
 
+<<<<<<< HEAD
+DROP TABLE IF EXISTS `color_items`;
+=======
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 CREATE TABLE `color_items` (
   `id` int(11) NOT NULL,
   `id_color` int(11) NOT NULL,
@@ -185,6 +208,10 @@ INSERT INTO `color_items` (`id`, `id_color`, `items_name`) VALUES
 -- Table structure for table `diskon`
 --
 
+<<<<<<< HEAD
+DROP TABLE IF EXISTS `diskon`;
+=======
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 CREATE TABLE `diskon` (
   `id` int(11) NOT NULL,
   `name` varchar(500) NOT NULL,
@@ -204,6 +231,10 @@ INSERT INTO `diskon` (`id`, `name`, `value`) VALUES
 -- Table structure for table `instrument`
 --
 
+<<<<<<< HEAD
+DROP TABLE IF EXISTS `instrument`;
+=======
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 CREATE TABLE `instrument` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
@@ -235,6 +266,10 @@ INSERT INTO `instrument` (`id`, `name`, `image`) VALUES
 -- Table structure for table `items`
 --
 
+<<<<<<< HEAD
+DROP TABLE IF EXISTS `items`;
+=======
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 CREATE TABLE `items` (
   `name` varchar(250) NOT NULL,
   `id_brand` int(11) NOT NULL,
@@ -371,6 +406,10 @@ INSERT INTO `items` (`name`, `id_brand`, `id_instrument`, `price`, `image`, `des
 -- Table structure for table `kota`
 --
 
+<<<<<<< HEAD
+DROP TABLE IF EXISTS `kota`;
+=======
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 CREATE TABLE `kota` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
@@ -903,6 +942,10 @@ INSERT INTO `kota` (`id`, `name`, `id_provinsi`) VALUES
 -- Table structure for table `provinsi`
 --
 
+<<<<<<< HEAD
+DROP TABLE IF EXISTS `provinsi`;
+=======
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 CREATE TABLE `provinsi` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
@@ -954,6 +997,10 @@ INSERT INTO `provinsi` (`id`, `name`) VALUES
 -- Table structure for table `review`
 --
 
+<<<<<<< HEAD
+DROP TABLE IF EXISTS `review`;
+=======
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 CREATE TABLE `review` (
   `id` int(11) NOT NULL,
   `user_email` varchar(250) NOT NULL,
@@ -968,22 +1015,46 @@ CREATE TABLE `review` (
 -- Table structure for table `transaction`
 --
 
+<<<<<<< HEAD
+DROP TABLE IF EXISTS `transaction`;
+CREATE TABLE `transaction` (
+  `id` int(11) NOT NULL,
+  `user_email` varchar(250) NOT NULL,
+=======
 CREATE TABLE `transaction` (
   `id` int(11) NOT NULL,
   `user_email` varchar(250) NOT NULL,
   `items_name` varchar(250) NOT NULL,
   `quantity` int(11) NOT NULL,
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
   `total` int(11) NOT NULL,
   `alamat` varchar(500) NOT NULL,
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+<<<<<<< HEAD
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transaction_items`
+--
+
+DROP TABLE IF EXISTS `transaction_items`;
+CREATE TABLE `transaction_items` (
+  `id` int(11) NOT NULL,
+  `transaction_id` int(11) NOT NULL,
+  `items_name` varchar(250) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `color_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+=======
 --
 -- Dumping data for table `transaction`
 --
 
 INSERT INTO `transaction` (`id`, `user_email`, `items_name`, `quantity`, `total`, `alamat`, `status`) VALUES
 (1, 'weifuk@gmail.com', 'Ludwig Classic Maple Drums', 1, 31296717, 'Jl. Permata Gatsu no 14, Denpasar, Bali', 2);
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 
 -- --------------------------------------------------------
 
@@ -991,6 +1062,10 @@ INSERT INTO `transaction` (`id`, `user_email`, `items_name`, `quantity`, `total`
 -- Table structure for table `user`
 --
 
+<<<<<<< HEAD
+DROP TABLE IF EXISTS `user`;
+=======
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 CREATE TABLE `user` (
   `email` varchar(250) NOT NULL,
   `username` varchar(250) NOT NULL,
@@ -1016,6 +1091,10 @@ INSERT INTO `user` (`email`, `username`, `password`, `name`, `id_provinsi`, `id_
 -- Table structure for table `wishlist`
 --
 
+<<<<<<< HEAD
+DROP TABLE IF EXISTS `wishlist`;
+=======
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 CREATE TABLE `wishlist` (
   `id` int(11) NOT NULL,
   `user_email` varchar(250) NOT NULL,
@@ -1087,6 +1166,15 @@ ALTER TABLE `transaction`
   ADD PRIMARY KEY (`id`);
 
 --
+<<<<<<< HEAD
+-- Indexes for table `transaction_items`
+--
+ALTER TABLE `transaction_items`
+  ADD PRIMARY KEY (`id`);
+
+--
+=======
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -1155,7 +1243,17 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
+<<<<<<< HEAD
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `transaction_items`
+--
+ALTER TABLE `transaction_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+=======
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+>>>>>>> 1ff7bb5fda4cb06c0f6076b11e59cb9942ffb38b
 
 --
 -- AUTO_INCREMENT for table `wishlist`

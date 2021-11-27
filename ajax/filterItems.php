@@ -12,4 +12,10 @@
     if(isset($_GET["name"])){
         $_SESSION["filterName"] = $_GET["name"];
     }
+
+    if(isset($_GET["reset"])){
+        unset($_SESSION["filterBrand"]);
+        unset($_SESSION["filterInstrument"]);
+        unset($_SESSION["filterName"]);
+    }
 ?>

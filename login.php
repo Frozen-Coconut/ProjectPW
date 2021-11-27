@@ -11,13 +11,18 @@
         }
         if ($username != "" && $password != "") {
             $hasil = login(["username" => $username, "password" => $password]);
-            if ($hasil == 0) echo("Message1"); //Kasi pesan username tidak ketemu
-            else if ($hasil == 1) echo("Message2"); //Kasi pesan password salah
-            else echo("Message3"); //Masuk ke halaman home, karena login berhasil
+            if ($hasil == 0) echo("<script>alert('Username / Email salah!')</script>"); //Kasi pesan username tidak ketemu
+            else if ($hasil == 1) echo("<script>alert('Password salah!')</script>"); //Kasi pesan password salah
+            else {
+                if(isset($_POST["remember"])){
+                    setcookie("loggedIn", json_encode($_SESSION["loggedIn"]), time() + (60*60*24*10));
+                }
+                header("Location:index.php");
+            }//Masuk ke halaman home, karena login berhasil
             //Apabila login berhasil, user login yang sedang masuk tersimpan dalam $_SESSION["login"]
             //Apabila ada remember me masukkan ke dalam cookie.
         }
-        else echo("Message"); // Kasi pesan semua input harus di isi
+        else echo("<script>alert('Isi semua input!')</script>"); // Kasi pesan semua input harus di isi
     }
     
     if(isset($_POST["register"])){
@@ -37,7 +42,7 @@
                 <div class="rounded-md shadow-sm -space-y-px">
                     <div>
                     <label for="username" class="sr-only" text-gray-300 text-opacity-50>Username</label>
-                    <input id="username" name="username" type="text" autocomplete="" class="my-2 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
+                    <input id="username" name="username" type="text" autocomplete="" class="my-2 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username / Email">
                     </div>
                     <div>
                     <label for="password" class="sr-only" text-gray-300 text-opacity-50>Password</label>

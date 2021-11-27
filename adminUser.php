@@ -11,6 +11,7 @@
 </header>
 <div class="p-2 pt-5 relative mx-auto text-gray-600 flex justify-end">
   <div class="mr-12">
+  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="reset()">Hilangkan Filter</button>
   <input class="border-2 border-gray-300 bg-white h-10 px-5 rounded-lg text-sm focus:outline-none"
     type="search" name="search" placeholder="Search" id="inputSearch">
   <button type="submit" class="ml-2" onclick="search()">
@@ -46,7 +47,7 @@
                 Tanggal Lahir
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                Gender
+                Jenis Kelamin
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                 Status
@@ -167,6 +168,11 @@
 
     function closeForm() {
       $("#formEdit").css('display','none');
+    }
+
+    function reset() {
+      $("#inputSearch").val("");
+      loadUser();
     }
 </script>
 
