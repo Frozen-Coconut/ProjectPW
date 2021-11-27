@@ -1,0 +1,34 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/tokokit2/public_html/
+    - /bin/cp -R ajax $DEPLOYPATH
+    - /bin/cp -R asset $DEPLOYPATH
+    - /bin/cp -R database $DEPLOYPATH
+    - /bin/cp -R node_modules $DEPLOYPATH
+    - /bin/cp -R other $DEPLOYPATH
+    - /bin/cp -R util $DEPLOYPATH
+    - /bin/cp index.php $DEPLOYPATH
+    - /bin/cp aboutus.php $DEPLOYPATH
+    - /bin/cp adminDiscount.php $DEPLOYPATH
+    - /bin/cp adminItems.php $DEPLOYPATH
+    - /bin/cp adminReports.php $DEPLOYPATH
+    - /bin/cp adminTransaction.php $DEPLOYPATH
+    - /bin/cp adminUser.php $DEPLOYPATH
+    - /bin/cp catalogs.php $DEPLOYPATH
+    - /bin/cp categories.php $DEPLOYPATH
+    - /bin/cp checkout.php $DEPLOYPATH
+    - /bin/cp detail.php $DEPLOYPATH
+    - /bin/cp home.php $DEPLOYPATH
+    - /bin/cp login.php $DEPLOYPATH
+    - /bin/cp profile.php $DEPLOYPATH
+    - /bin/cp register.php $DEPLOYPATH
+    - /bin/cp shoppingcart.php $DEPLOYPATH
+    - /bin/cp source.css $DEPLOYPATH
+    - /bin/cp style.css $DEPLOYPATH
+    - /bin/cp tailwind.config.js $DEPLOYPATH
+    - /bin/cp tailwindcss.css $DEPLOYPATH
+    - /bin/cp template.php $DEPLOYPATH
+    - /bin/cp wishlist.php $DEPLOYPATH
+    - /bin/cp package.json $DEPLOYPATH
+    - /bin/cp package-lock.json $DEPLOYPATH
