@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $conn = new mysqli("103.146.203.49", "tokokit2_bebas", "siapayangcarry", "tokokit2_project_pw");
+    $conn = new mysqli("localhost", "root", "", "project_pw");
 
     function query($query) {
         global $conn;
@@ -139,9 +139,9 @@
     }
 
     function selectTransactionId($id) {
-        $query = 'SELECT t.id as "id", t.quantity as "quantity", t.total as "total", t.status as "status", t.alamat as "alamat",
-        u.email as "email", u.username as "username", u.name as "user_name", i.name as "item_name", 
-        i.image as "image", i.price as "price" FROM transaction t, user u, items i WHERE t.user_email = u.email AND t.items_name = i.name AND t.id = '.$id;
+        $query = 'SELECT t.id as "id", t.total as "total", t.status as "status", t.alamat as "alamat",
+        u.email as "email", u.username as "username", u.name as "user_name", i.name as "item_name", i.image as "image", i.price as "price", ti.quantity as "quantity"
+         FROM transaction t, user u, items i WHERE t.user_email = u.email AND t.items_name = i.name AND t.id = '.$id;
         global $conn;
                 
         $data = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
@@ -187,6 +187,18 @@
         $query = "DELETE FROM items WHERE items.name = '".$name."'";
 
         $hasil = mysqli_query($conn, $query);
+    }
+
+    function deleteDiscount($id) {
+        global $conn;
+
+        $query = "UPDATE items i SET i.id_diskon = NULL WHERE i.id_diskon = $id";
+
+        mysqli_query($conn, $query);
+
+        $query = "DELETE FROM diskon WHERE diskon.id = $id";
+
+        mysqli_query($conn,$query);
     }
 
     //Function Edit
