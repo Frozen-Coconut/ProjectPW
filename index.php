@@ -22,7 +22,7 @@
 </section>
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
     <div class="text-center pb-12">
-        <h2 class="text-base font-bold text-indigo-600">
+        <h2 class="text-base font-bold text-hh-orange-dark">
             Bingung mulai darimana?
         </h2>
         <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-900">
@@ -81,10 +81,10 @@
                     <button href="" class="text-lg transition-all text-gray-100 ring-2 px-4 py-0.5 rounded ring-white hover:bg-white hover:text-gray-500">
                         Buy Now
                     </button>
-                </div>
+                </div> 
             </div>
             <div class="w-1/3">
-                <img class ="shadow-inner" src="https://kawaius.com/wp-content/uploads/2018/04/K-300-Polished-Ebony-600x600.jpg" alt="Image of Kawaii K-300">
+                <img class ="shadow-inner" src="./asset/img/K-300-Polished-Ebony-600x600-removebg.png" alt="Image of Kawaii K-300">
             </div>    
     </div>
 </section>
