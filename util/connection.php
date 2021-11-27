@@ -127,26 +127,54 @@
         return $conn->query('SELECT * FROM diskon')->fetch_all(MYSQLI_ASSOC);
     }
 
+    function selectDiscountSearch ($name) {
+        global $conn;
+
+        return $conn->query('SELECT * FROM diskon WHERE diskon.name LIKE "%'.$name.'%"')->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function selectDiscountId ($id) {
+        global $conn;
+
+        return $conn->query('SELECT * FROM diskon WHERE diskon.id = '.$id)->fetch_all(MYSQLI_ASSOC);
+    }
+
     function selectTransaction () {
-        $query = 'SELECT t.id as "id", t.quantity as "quantity", t.total as "total", t.status as "status", 
-        u.email as "email", u.username as "username", u.name as "user_name", i.name as "item_name", 
-        i.image as "image" FROM transaction t, user u, items i WHERE t.user_email = u.email AND t.items_name = i.name';
+        $query = 'SELECT t.id as "id", t.total as "total", t.status as "status", 
+        u.email as "email", u.username as "username", u.name as "user_name" FROM transaction t, user u WHERE t.user_email = u.email';
         global $conn;
                 
         $data = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+
+        foreach($data as $key=>$x) {
+            $data[$key]["item"] = selectItemTransaction($data[$key]["id"]);
+        }
 
         return $data;
     }
 
     function selectTransactionId($id) {
         $query = 'SELECT t.id as "id", t.total as "total", t.status as "status", t.alamat as "alamat",
-        u.email as "email", u.username as "username", u.name as "user_name", i.name as "item_name", i.image as "image", i.price as "price", ti.quantity as "quantity"
-         FROM transaction t, user u, items i WHERE t.user_email = u.email AND t.items_name = i.name AND t.id = '.$id;
+        u.email as "email", u.username as "username", u.name as "user_name" FROM transaction t, user u WHERE t.user_email = u.email AND t.id = '.$id;
         global $conn;
                 
         $data = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
 
+        foreach($data as $key=>$x) {
+            $data[$key]["item"] = selectItemTransaction($data[$key]["id"]);
+        }
+
         return $data;
+    }
+
+    function selectItemTransaction($id) {
+        global $conn;
+
+        $query = 'SELECT i.name as "item_name", i.image as "image", i.price as "price", ti.quantity as "quantity",
+        c.name as "warna", c.value as "warna_value" FROM items i, transaction_items ti, color c WHERE i.name = ti.items_name AND ti.color_id = c.id
+        AND ti.transaction_id = '.$id;
+
+        return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
     }
 
     //Function Insert
@@ -176,7 +204,13 @@
     }
 
     function insertDiskon($data) {
+        global $conn;
 
+        $stmt = $conn->prepare("INSERT INTO diskon(name, value) VALUES(?, ?)");
+
+        $stmt->bind_param("si", $data["nama"], $data["value"]);
+
+        $stmt->execute();
     }
 
     //Function Delete
@@ -236,6 +270,24 @@
         mysqli_query($conn,$query);
     }
 
+    function updateDiscount ($id, $data) {
+        global $conn;
+
+        $stmt = $conn->prepare("UPDATE diskon d SET d.name = ?, d.value = ? WHERE d.id = $id");
+
+        $stmt->bind_param("si", $data["nama"], $data["value"]);
+        
+        $stmt->execute();
+    }
+
+    function updateDiscountItem ($idDiscount, $idItem) {
+        global $conn;
+
+        $query = ("UPDATE items SET id_diskon = ".$idDiscount." WHERE name = '".$idItem."'");
+
+        mysqli_query($conn,$query);
+    }
+
     //Function Tambahan
 
     function login($data){
@@ -245,12 +297,12 @@
         $cek = -1;
         $hasil = 0;
         foreach($user as $key => $x) {
-            if ($data["username"] == $x["username"]){ $cek = $key; $hasil+=1;}
+            if ($data["username"] == $x["username"] || $data["username"] == $x["email"]){ $cek = $key; $hasil+=1;}
         }
         if ($cek != -1) {
             if ($data["password"] == $user[$cek]["password"]) {
                 $hasil +=1;
-                $_SESSION["login"] = $user[$cek];
+                $_SESSION["loggedIn"] = $user[$cek];
             }
         }
         return $hasil;

@@ -61,8 +61,8 @@
         <div class="text-sm text-gray-500"><?= $x["stock"] ?></div>
       </td>
       <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-      <button class="text-indigo-600 hover:text-indigo-900 p-2" onclick="editItem('<?= $x['name'] ?>')">Add Stock</button>
-      <button class="text-indigo-600 hover:text-indigo-900 p-2" onclick="deleteItem('<?= $x['name'] ?>')">Delete</button>
+      <button class="text-indigo-600 hover:text-indigo-900 p-2" onclick="editItem('<?= $x['name'] ?>')">Tambah Stock</button>
+      <button class="text-indigo-600 hover:text-indigo-900 p-2" onclick="deleteItem('<?= $x['name'] ?>')">Hapus</button>
       </td>
     </tr>
 <?php endforeach; ?>

@@ -16,7 +16,7 @@
         </svg>
       </button>
       <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-700 text-opacity-75">
-          Add Stock
+          Tambah Stock
       </h2>
       </div class="mt-8 space-y-6 px-3">
       <div class="rounded-md -space-y-px bg-dark">
@@ -27,7 +27,7 @@
       </div>
       <div>
           <button id="addStock" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" onclick="addStock('<?= $itemSekarang[0]['name'] ?>')">
-          Add Stock
+          Tambah Stock
           </button>
       </div>
     </div>
