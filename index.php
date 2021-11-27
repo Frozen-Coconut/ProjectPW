@@ -11,7 +11,7 @@
             <h1 class="font-bold text-6xl mb-4">TokoKita</h1>
             <p class="text-1xl mb-4">Toko alat musik terlengkap di Indonesia! Kami menyediakan alat musik professional dan pro audio dari merek ternama.</p>
             <div>
-                <input type="text" class="rounded-md px-7    py-3 transition duration-300 ease-in-out text-black" placeholder="Telusuri Toko">
+                <input type="text" class="rounded-md px-7 py-3 transition duration-300 ease-in-out text-black" placeholder="Telusuri Toko">
                 <button href="" class="bg-red-500 rounded-md font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-red-600 ml-2">
                     Search
                 </button>
@@ -29,46 +29,8 @@
             Lihat Kategori Kami
         </h1>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="w-full bg-white p-12 flex flex-col justify-center items-center">
-            <div class="mb-8">
-                <img class="object-center object-cover h-36 w-36" src="https://cdn.shopify.com/s/files/1/0117/8740/3323/products/F03-014-9933-515_1545619811889.jpg?v=1557222725" alt="photo">
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-700 font-bold mb-2">instrument</p>
-            </div>
-        </div>
-        <div class="w-full bg-white p-12 flex flex-col justify-center items-center">
-            <div class="mb-8">
-                <img class="object-center object-cover h-36 w-36" src="https://cdn.shopify.com/s/files/1/0117/8740/3323/products/F03-014-9933-515_1545619811889.jpg?v=1557222725" alt="photo">
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-700 font-bold mb-2">instrument</p>
-            </div>
-        </div>
-        <div class="w-full bg-white-lg p-12 flex flex-col justify-center items-center">
-            <div class="mb-8">
-                <img class="object-center object-cover h-36 w-36" src="https://cdn.shopify.com/s/files/1/0117/8740/3323/products/F03-014-9933-515_1545619811889.jpg?v=1557222725" alt="photo">
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-700 font-bold mb-2">instrument</p>
-            </div>
-        </div><div class="w-full bg-white p-12 flex flex-col justify-center items-center">
-            <div class="mb-8">
-                <img class="object-center object-cover h-36 w-36" src="https://cdn.shopify.com/s/files/1/0117/8740/3323/products/F03-014-9933-515_1545619811889.jpg?v=1557222725" alt="photo">
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-700 font-bold mb-2">instrument</p>
-            </div>
-        </div>
-        <div class="w-full bg-white p-12 flex flex-col justify-center items-center">
-            <div class="mb-8">
-                <img class="object-center object-cover h-36 w-36" src="https://cdn.shopify.com/s/files/1/0117/8740/3323/products/F03-014-9933-515_1545619811889.jpg?v=1557222725" alt="photo">
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-700 font-bold mb-2">instrument</p>
-            </div>
-        </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6" id="categories">
+
     </div>
 </section>
 <section class="w-full h-screen bg-center bg-no-repeat bg-cover flex" style="background-image: url('https://images.unsplash.com/photo-1620812097331-ff636155488f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80');">
@@ -96,7 +58,19 @@
     </div>
 </section>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "get",
+            url: "./ajax/homeCategories.php",
+            data: "",
+            success: function (response) {
+                $('#categories').html(response);
+            }
+        });
+    });
+</script>
 
 <?php require_once("./util/footer.php") ?>
 <?php require_once("./util/docClose.php") ?>
