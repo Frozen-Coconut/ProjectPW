@@ -7,11 +7,16 @@
         $onalert = $_SESSION["onalert"];
         unset($_SESSION["onalert"]);
     }
+
+    if(isset($_SESSION["onnotice"])){
+        $onnotice = $_SESSION["onnotice"];
+        unset($_SESSION["onnotice"]);
+    }
 ?>
 
 <nav class="bg-hh-orange-dark flex justify-between py-4 px-4">
     <ul class="flex ">
-        <a href="home.php">
+        <a href="index.php">
             <li class="text-xl text-hh-black-light mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-hh-white"><div id="logo">Ini Logo Gais</div></li>
         </a>
         <a href="categories.php">
@@ -40,13 +45,24 @@
 <?php
     if(isset($onalert)){
 ?>
-    <div class="flex justify-between fixed w-1/3 bg-hh-pink-light opacity-80 top-20 right-2 p-3 rounded-lg font-semibold" id="msgbox">
+    <div class="flex justify-between fixed w-1/3 bg-hh-pink-light opacity-80 top-20 right-2 p-3 rounded-lg font-semibold" id="alertbox">
         <?=$onalert?>
-        <div class="cursor-pointer border-2 border-hh-black-light text-hh-black-light w-5 text-center h-5 rounded-full text leading-none" id="closemsgbox">X</div>
+        <div class="cursor-pointer border-2 border-hh-black-light text-hh-black-light w-5 text-center h-5 rounded-full text leading-none" id="closealertbox">X</div>
     </div>
 <?php
     }
 ?>
+<?php
+    if(isset($onnotice)){
+?>
+    <div class="flex justify-between fixed w-1/3 bg-hh-orange-dark opacity-80 top-20 right-2 p-3 rounded-lg font-semibold" id="noticebox">
+        <?=$onnotice?>
+        <div class="cursor-pointer border-2 border-hh-black-light text-hh-black-light w-5 text-center h-5 rounded-full text leading-none" id="closenoticebox">X</div>
+    </div>
+<?php
+    }
+?>
+
 <script>
     $(document).ready(function () {
         $("#profileButtonForHover").click(function(){
@@ -61,8 +77,12 @@
             $("#profileMenuList").addClass("hidden");
         });
 
-        $("#closemsgbox").click(function () {
-            $("#msgbox").remove();
+        $("#closealertbox").click(function () {
+            $("#alertbox").remove();
+        })
+
+        $("#closenoticebox").click(function () {
+            $("#noticebox").remove();
         })
     });
     
