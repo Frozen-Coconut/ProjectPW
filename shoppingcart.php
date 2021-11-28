@@ -18,11 +18,11 @@
 ?>
 
 <style>
-    .shoppingCartTable {
+    #shoppingCartTable {
         width: 96%;
     }
 
-    .shoppingCartTable > * > tr > * {
+    #shoppingCartTable > * > tr > * {
         padding: 0.5rem;
         border-width: 1px 0;
         vertical-align: center;
@@ -33,7 +33,7 @@
 <div class="min-h-screen flex flex-col items-center relative bg-gray-50">
     <p class="text-4xl my-10">Keranjang Belanja</p>
 
-    <table class="shoppingCartTable table-auto mb-28 shadow-lg bg-white">
+    <table id="shoppingCartTable" class="table-auto mb-28 shadow-lg bg-white">
         <thead>
             <tr>
                 <th>Produk</th>
@@ -76,7 +76,7 @@
     </table>
     <div class="flex absolute right-8 bottom-8">
         <button onclick="window.location.assign('./catalogs.php')" class="px-5 py-2 bg-gray-400 hover:opacity-80 mr-2 shadow-md">Lanjutkan Belanja</button>
-        <button onclick="window.location.assign('./checkout.php')" class="px-5 py-2 text-white hover:opacity-80 shadow-md" style="background-color: red;">Checkout</button>
+        <button onclick="toCheckOut()" class="px-5 py-2 text-white hover:opacity-80 shadow-md" style="background-color: red;">Checkout</button>
     </div>
     <button onclick="window.history.back()" class="absolute left-8 top-8 px-5 py-2 bg-gray-400 hover:opacity-80 shadow-md">Kembali</button>
     <!-- <button onclick="window.location.assign('./checkout.php')" class="absolute right-8 bottom-8 px-5 py-2 text-white hover:opacity-80 shadow-md" style="background-color: red;">Checkout</button> -->
@@ -127,6 +127,14 @@
                 window.location.reload();
             }
         });
+    }
+
+    function toCheckOut() {
+        // if ($('#shoppingCartTable tbody tr').length > 1) {
+            window.location.assign('./checkout.php');
+        // } else {
+        //     alert('Shopping cart masih kosong!');
+        // }
     }
 </script>
 
