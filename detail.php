@@ -12,7 +12,7 @@
         $colors= $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
     if(isset($_REQUEST["tocart"])){
-        if(isset($_SESSION["loggedin"])){
+        if(isset($_SESSION["loggedIn"])){
             $_SESSION["shoppingCart"][$itemname]=array(
                 "name" => $itemname,
                 "image" => $item["itemimg"],
@@ -26,13 +26,14 @@
         }
     }
     if(isset($_REQUEST["towish"])){
-        if(isset($_SESSION["loggedin"])){
-            $loggedin = $_SESSION["loggedin"];
-            $stmt = $conn->prepare("SELECT * FROM wishlist WHERE user_email='$loggedin' AND items_name='$itemname'");
+        if(isset($_SESSION["loggedIn"])){
+            $loggedin = $_SESSION["loggedIn"];
+            $email = $loggedin["email"];
+            $stmt = $conn->prepare("SELECT * FROM wishlist WHERE user_email='$email' AND items_name='$itemname'");
             $stmt->execute();
             $result= $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
             if(count($result) == 0){
-                $stmt = $conn->prepare("INSERT INTO wishlist(user_email, items_name) VALUES($loggedin, $itemname)");
+                $stmt = $conn->prepare("INSERT INTO wishlist(user_email, items_name) VALUES('$email', '$itemname')");
                 $stmt->execute();
                 $_SESSION["onnotice"] = "Berhasil memasukkan wishlist!";
             }
