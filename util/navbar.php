@@ -2,6 +2,11 @@
     if(isset($_COOKIE["loggedIn"])){
         $_SESSION["loggedIn"] = json_decode($_COOKIE["loggedIn"],true);
     }
+
+    if(isset($_SESSION["onalert"])){
+        $onalert = $_SESSION["onalert"];
+        unset($_SESSION["onalert"]);
+    }
 ?>
 
 <nav class="bg-hh-orange-dark flex justify-between py-4 px-4">
@@ -32,3 +37,33 @@
         ?>
     </ul>
 </nav>
+<?php
+    if(isset($onalert)){
+?>
+    <div class="flex justify-between fixed w-1/3 bg-hh-pink-light opacity-80 top-20 right-2 p-3 rounded-lg font-semibold" id="msgbox">
+        <?=$onalert?>
+        <div class="cursor-pointer border-2 border-hh-black-light text-hh-black-light w-5 text-center h-5 rounded-full text leading-none" id="closemsgbox">X</div>
+    </div>
+<?php
+    }
+?>
+<script>
+    $(document).ready(function () {
+        $("#profileButtonForHover").click(function(){
+            console.log("A");
+            $("#profileMenuList").toggleClass("flex");
+            $("#profileMenuList").toggleClass("hidden");
+        });
+
+        $("#profileButtonForHover").focusout(function(){
+            console.log("A");
+            $("#profileMenuList").removeClass("flex");
+            $("#profileMenuList").addClass("hidden");
+        });
+
+        $("#closemsgbox").click(function () {
+            $("#msgbox").remove();
+        })
+    });
+    
+</script>

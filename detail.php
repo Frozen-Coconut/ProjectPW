@@ -1,12 +1,7 @@
 <?php
     require_once("./util/docOpen.php");
     require_once("./util/navbar.php");
-
-    if(isset($_REQUEST)){
-        echo "<pre>";
-        print_r($_REQUEST);
-        echo "</pre>";
-    }
+    
     if(isset($_REQUEST["itemname"])){
         $itemname = $_REQUEST["itemname"];
         $stmt = $conn->query("SELECT i.name as itemname, b.name as brandname, n.name as instrumentname, i.price as price, i.image as itemimg, i.description as itemdesc, i.stock as itemstock, i.id_diskon as disc FROM items i, brand b, instrument n WHERE i.name='$itemname' AND i.id_brand=b.id AND i.id_instrument=n.id;");
@@ -17,15 +12,35 @@
         $colors= $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
     if(isset($_REQUEST["tocart"])){
-        $_SESSION["shoppingCart"][$itemname]=array(
-            "name" => $itemname,
-            "image" => $item["itemimg"],
-            "price" => $item["price"],
-            "qty" => $_REQUEST["qty"]
-        );
+        if(isset($_SESSION["loggedin"])){
+            $_SESSION["shoppingCart"][$itemname]=array(
+                "name" => $itemname,
+                "image" => $item["itemimg"],
+                "price" => $item["price"],
+                "qty" => $_REQUEST["qty"]
+            );
+        }
+        else{
+            $_SESSION["onalert"] = "Anda harus login terlebih dahulu!";
+        }
     }
     if(isset($_REQUEST["towish"])){
-        
+        if(isset($_SESSION["loggedin"])){
+            // $loggedin = $_SESSION["loggedin"];
+            // $stmt = $conn->prepare("SELECT * FROM wishlist WHERE user_email='$loggedin' AND items_name='$itemname'");
+            // $stmt->execute();
+            // $result= $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+            // if(count($result) == 0){
+            //     $stmt = $conn->prepare("INSERT INTO wishlist(user_email, items_name) VALUES($loggedin, $itemname)");
+            //     $stmt->execute();
+            // }
+            // else{
+                
+            // }
+        }
+        else{
+            $_SESSION["onalert"] = "Anda harus login terlebih dahulu!";
+        }
     }
 ?>
     <div class="container min-h-screen flex justify-evenly">
