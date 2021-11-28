@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $conn = new mysqli("localhost", "root", "", "project_pw");
+    $conn = new mysqli("103.146.203.49", "tokokit2_bebas", "siapayangcarry", "tokokit2_project_pw");
 
     function query($query) {
         global $conn;
