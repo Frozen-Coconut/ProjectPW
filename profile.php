@@ -21,6 +21,9 @@
     
     $provinsi = selectProvinsi();
 ?>
+    <script>
+        document.title = 'Profile';
+    </script>
     <div class="container min-h-screen flex justify-evenly">
         <div class="flex flex-col items-center w-4/6 pt-3 px-10  mt-10">
             <div class="text-5xl font-bold h-16 text-gray-800 w-full">Profil</div>
