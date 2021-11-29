@@ -58,6 +58,7 @@
     // $item = query("SELECT * FROM items WHERE $filterInstrument AND $filterBrand AND $search ORDER BY $sort DESC;");
     
     foreach ($item as $key => $value) {
+        // $nameList[] = $value["name"];
 ?>
 <div class="flex flex-col p-4 border-2 rounded-xl bg-gray-50 cursor-pointer shadow-md hover:shadow-lg hover:opacity-90" name="catalog">
     <div class="border-2 rounded-xl mb-4 bg-contain bg-center bg-no-repeat bg-white" style="background-image: url(<?= $value["image"] ?>)"></div>
@@ -69,3 +70,4 @@
     }
 ?>
 <input type="hidden" id="maxPage" value='<?= intval(($count - 1) / 20) + 1 ?>'>
+<!-- <input type="hidden" id="nameList" value='<?php // echo json_encode($nameList ?? array()) ?>'> -->

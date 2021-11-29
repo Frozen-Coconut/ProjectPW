@@ -8,7 +8,7 @@
         </div>
         <div id="pages" class="w-44">
             <div class="font-medium text-lg uppercase">Halaman</div>
-            <a href="home.php"><div class="text-xs my-2 text-gray-700">Home</div></a>
+            <a href="index.php"><div class="text-xs my-2 text-gray-700">Home</div></a>
             <a href="categories.php"><div class="text-xs my-2 text-gray-700">Produk</div></a>
             <a href="aboutus.php"><div class="text-xs my-2 text-gray-700">Tentang Kami</div></a>
             <a href="profile.php"><div class="text-xs my-2 text-gray-700">Profil</div></a>

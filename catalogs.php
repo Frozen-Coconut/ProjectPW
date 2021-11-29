@@ -8,6 +8,11 @@
             $filterType = $_REQUEST["type"];
             echo "<script>filterType='$filterType'</script>";
         }
+        if (isset($_REQUEST["search"])) {
+            $search = $_REQUEST["search"];
+        } else {
+            $search = "";
+        }
     ?>
     <div class="min-h-screen flex flex-col">
         <?php require_once("./util/navbar.php") ?>
@@ -47,7 +52,7 @@
             <div class="flex flex-col ml-10" style="width: 55vw;">
                 <div>
                     <div class="relative">
-                        <input type="text" class="w-full h-14 pl-5 pr-8 border-2 border-gray-400 rounded-xl shadow-lg" placeholder="Cari nama produk" name="search">
+                        <input type="text" class="w-full h-14 pl-5 pr-8 border-2 border-gray-400 rounded-xl shadow-lg" placeholder="Cari nama produk" name="search" value="<?= $search ?>">
                         <div class="absolute top-4 right-3"><i class="fa fa-search text-gray-400 z-20 hover:text-gray-500 cursor-pointer" onclick="search();"></i></div>
                     </div>
                 </div>
@@ -69,6 +74,7 @@
         // let sortStr = '';
         let page = 1;
         let maxPage = 1;
+        // let nameList = [];
 
         $(document).ready(function() {
             listCategories($('#byInstrument'), 'instrument');
@@ -97,7 +103,11 @@
 
             <?php
                 if (!isset($_REQUEST["filter"])) {
-                    echo "loadCatalogs();";
+                    if (isset($_REQUEST["search"])) {
+                        echo "search();";
+                    } else {
+                        echo "loadCatalogs();";
+                    }
                 }
             ?>
             
@@ -167,6 +177,10 @@
                     });
                     maxPage = parseInt($('#maxPage').val());
                     $('#page').html(`${page} / ${maxPage}`);
+                    // nameList = JSON.parse($('#nameList').val());
+                    // $('[name=search]').autocomplete({
+                    //     source: nameList
+                    // });
                 }
             });
         }

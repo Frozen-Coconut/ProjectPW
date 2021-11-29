@@ -17,12 +17,12 @@
         <div class="mx-4 text-left text-white px-10">
             <h1 class="font-bold text-6xl mb-4">TokoKita</h1>
             <p class="text-1xl mb-4">Toko alat musik terlengkap di Indonesia! Kami menyediakan alat musik professional dan pro audio dari merek ternama.</p>
-            <div>
-                <input type="text" class="rounded-md px-7 py-3 transition duration-300 ease-in-out text-black" placeholder="Telusuri Toko">
-                <button href="" class="bg-red-500 rounded-md font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-red-600 ml-2">
+            <form action="./catalogs.php" method="get">
+                <input type="text" class="rounded-md px-7 py-3 transition duration-300 ease-in-out text-black" placeholder="Telusuri Toko" name="search">
+                <button class="bg-red-500 rounded-md font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-red-600 ml-2">
                     Search
                 </button>
-            </div>
+            </form>
         </div>
         </div>
     </div>
