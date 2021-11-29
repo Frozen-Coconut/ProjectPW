@@ -1,5 +1,12 @@
 <?php
     require_once("./util/connection.php");
+    $documentTitle = ucfirst(basename($_SERVER["REQUEST_URI"]));
+    $documentTitle = str_replace(".php","", $documentTitle);
+    if(strpos($documentTitle, "?") > -1){
+        $documentTitle = str_replace("?"," | ", $documentTitle);
+        $documentTitle = str_replace("%20"," ", $documentTitle);
+        $documentTitle = str_replace(substr($documentTitle, strpos($documentTitle, "|")+2, strpos($documentTitle,"=")-1),"",$documentTitle);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?=$documentTitle?></title>
     <link rel="stylesheet" href="./tailwindcss.css">
     <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"> -->
     <link rel="stylesheet" href="./style.css">
