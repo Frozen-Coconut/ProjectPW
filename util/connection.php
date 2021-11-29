@@ -326,4 +326,16 @@
     function getCurrencyFormatting($price){
         return number_format($price, 2, ',' , '.');
     }
+
+    function reloadPage(){
+        header("Location: ".$_SERVER["REQUEST_URI"]);
+    }
+
+    function addAlert($msg){
+        $_SESSION["onalert"] = $msg;
+    }
+
+    function addNotice($msg){
+        $_SESSION["onnotice"] = $msg;
+    }
 ?>

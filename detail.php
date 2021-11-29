@@ -2,6 +2,7 @@
     require_once("./util/docOpen.php");
     require_once("./util/navbar.php");
 
+
     if(isset($_REQUEST["itemname"])){
         $itemname = $_REQUEST["itemname"];
         $stmt = $conn->query("SELECT i.name as itemname, b.name as brandname, n.name as instrumentname, i.price as price, i.image as itemimg, i.description as itemdesc, i.stock as itemstock, i.id_diskon as disc FROM items i, brand b, instrument n WHERE i.name='$itemname' AND i.id_brand=b.id AND i.id_instrument=n.id;");
@@ -24,6 +25,7 @@
         else{
             $_SESSION["onalert"] = "Anda harus login terlebih dahulu!";
         }
+        header("Location: ".$_SERVER["REQUEST_URI"]);
     }
     if(isset($_REQUEST["towish"])){
         if(isset($_SESSION["loggedIn"])){
@@ -44,6 +46,7 @@
         else{
             $_SESSION["onalert"] = "Anda harus login terlebih dahulu!";
         }
+        header("Location: ".$_SERVER["REQUEST_URI"]);
     }
 ?>
     <div class="container min-h-screen flex justify-evenly">
