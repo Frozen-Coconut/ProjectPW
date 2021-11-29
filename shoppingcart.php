@@ -18,7 +18,7 @@
 ?>
 
 <script>
-    document.title = 'Shopping Cart';
+    // document.title = 'Shopping Cart';
 </script>
 
 <style>

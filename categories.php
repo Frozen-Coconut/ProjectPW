@@ -1,6 +1,6 @@
 <?php require_once("./util/docOpen.php") ?>
     <script>
-        document.title = 'Categories';
+        // document.title = 'Categories';
     </script>
     <div class="min-h-screen flex flex-col">
         <?php require_once("./util/navbar.php") ?>

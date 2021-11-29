@@ -3,7 +3,7 @@
 <?php require_once("./util/navbar.php")?>
 
 <script>
-    document.title = 'Wishlist';
+    // document.title = 'Wishlist';
 </script>
 
 <section class="w-full min-h-screen">

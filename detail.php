@@ -50,7 +50,7 @@
     }
 ?>
     <script>
-        document.title = 'Detail';
+        // document.title = 'Detail';
     </script>
     <div class="container min-h-screen flex justify-evenly">
         <div class="flex flex-col items-center w-11/12 min-h-screen">

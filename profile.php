@@ -22,7 +22,7 @@
     $provinsi = selectProvinsi();
 ?>
     <script>
-        document.title = 'Profile';
+        // document.title = 'Profile';
     </script>
     <div class="container min-h-screen flex justify-evenly">
         <div class="flex flex-col items-center w-4/6 pt-3 px-10  mt-10">

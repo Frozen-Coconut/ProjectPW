@@ -11,7 +11,7 @@
 <?php require_once("./util/navbar.php")?>
 
 <script>
-        document.title = 'Home';
+        // document.title = 'Home';
 </script>
 
 <section class="w-full h-screen bg-center bg-no-repeat bg-cover flex" style="background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80');">

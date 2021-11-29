@@ -1,7 +1,7 @@
 <?php require_once("./util/docOpen.php") ?>
 
 <script>
-    document.title = 'Checkout';
+    // document.title = 'Checkout';
 </script>
 
 <?php

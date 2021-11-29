@@ -1,6 +1,6 @@
 <?php require_once("./util/docOpen.php") ?>
     <script>
-        document.title = 'Catalogs';
+        // document.title = 'Catalogs';
     </script>
     <?php
         if (isset($_REQUEST["filter"])) {

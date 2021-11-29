@@ -3,7 +3,7 @@
     require_once("./util/navbar.php");
 ?>
     <script>
-        document.title = 'About Us';
+        // document.title = 'About Us';
     </script>
     <div class="container min-h-screen flex flex-col justify-evenly items-center">
         <div class="w-3/4 mt-8 mb-3 flex flex-col">
