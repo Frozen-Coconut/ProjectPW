@@ -81,6 +81,9 @@
             }
         });
     });
+    function catSelect(item){
+        window.location.replace("./catalogs.php?filter="+item+"&type=byInstrument");
+    }
 </script>
 
 <?php require_once("./util/footer.php") ?>
