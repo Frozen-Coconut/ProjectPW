@@ -1,5 +1,9 @@
 <?php require_once("./util/docOpen.php") ?>
 
+<script>
+    document.title = 'Checkout';
+</script>
+
 <?php
     // $_SESSION["shoppingCart"]["Fender American Professional Precision Bass Guitar"] = array(
     //     "name" => "Fender American Professional Precision Bass Guitar",

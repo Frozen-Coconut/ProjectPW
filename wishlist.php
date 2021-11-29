@@ -2,6 +2,10 @@
 
 <?php require_once("./util/navbar.php")?>
 
+<script>
+    document.title = 'Wishlist';
+</script>
+
 <section class="w-full min-h-screen">
     <h1 class="text-3xl px-7 py-4">WishList</h1>
     <table class="w-full text-left ">

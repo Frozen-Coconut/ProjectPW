@@ -47,6 +47,9 @@
 
     $provinsi = selectProvinsi();
 ?>
+    <script>
+        document.title = 'Register';
+    </script>
     <div class="min-h-screen flex items-center justify-center bg-gray-500">
         <div class="border-2 border-black border-opacity-25 rounded-lg flex items-center justify-center py-4 px-4 sm:px-6 lg:px-8 bg-gray-400 bg-opacity-50">
             <div class="max-w-md w-full space-y-8">

@@ -17,6 +17,10 @@
     $total = 0;
 ?>
 
+<script>
+    document.title = 'Shopping Cart';
+</script>
+
 <style>
     #shoppingCartTable {
         width: 96%;

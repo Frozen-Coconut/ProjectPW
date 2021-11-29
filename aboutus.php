@@ -2,6 +2,9 @@
     require_once("./util/docOpen.php");
     require_once("./util/navbar.php");
 ?>
+    <script>
+        document.title = 'About Us';
+    </script>
     <div class="container min-h-screen flex flex-col justify-evenly items-center">
         <div class="w-3/4 mt-8 mb-3 flex flex-col">
             <div class="text-hh-orange-dark text-4xl font-bold">Tim Kami</div>
