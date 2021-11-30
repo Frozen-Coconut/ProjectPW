@@ -1,8 +1,7 @@
 <?php
+    require_once("./util/connection.php");
     require_once("./util/docOpen.php");
     require_once("./util/navbarAdmin.php");
-
-
 ?>
 <script>
     // document.title = 'Admin Transaction';

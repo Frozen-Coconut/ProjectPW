@@ -1,7 +1,4 @@
 <?php
-    if(isset($_COOKIE["loggedIn"])){
-        $_SESSION["loggedIn"] = json_decode($_COOKIE["loggedIn"],true);
-    }
 
     if(isset($_SESSION["onalert"])){
         $onalert = $_SESSION["onalert"];

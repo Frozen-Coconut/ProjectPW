@@ -1,5 +1,4 @@
 <?php
-    require_once("./util/connection.php");
     $documentTitle = ucfirst(basename($_SERVER["REQUEST_URI"]));
     $documentTitle = str_replace(".php","", $documentTitle);
     if(strpos($documentTitle, "?") > -1){
@@ -18,6 +17,10 @@
             //     break;
             // }
         }
+    }
+
+    if(isset($_COOKIE["loggedIn"])){
+        $_SESSION["loggedIn"] = json_decode($_COOKIE["loggedIn"],true);
     }
 ?>
 <!DOCTYPE html>

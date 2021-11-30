@@ -1,8 +1,12 @@
 <?php
-    require_once("./util/docOpen.php")
+    require_once("./util/connection.php");
 ?>
 
 <?php
+    if(isset($_SESSION["loggedIn"]) || isset($_COOKIE["loggedIn"])) {
+        header("Location:index.php");
+    }
+
     if(isset($_POST["login"])){
         $username = $_POST["username"];
         $password = $_POST["password"];
@@ -28,6 +32,10 @@
     if(isset($_POST["register"])){
         header("Location:register.php");
     }
+?>
+
+<?php
+    require_once("./util/docOpen.php");
 ?>
     <script>
         // document.title = 'Login';

@@ -1,4 +1,4 @@
-<?php require_once("./util/docOpen.php") ?>
+<?php require_once("./util/connection.php");require_once("./util/docOpen.php"); ?>
 
 <?php
 
