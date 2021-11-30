@@ -10,20 +10,28 @@
         $stmt->execute();
         $colors= $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
+    
     if(isset($_REQUEST["tocart"])){
         if(isset($_SESSION["loggedIn"])){
+            $color_id = $_REQUEST["color_id"];
+            $stmt = $conn->query("SELECT id FROM color WHERE value='$color_id'");
+            $colorpick = $stmt->fetch_assoc();
+            echo "<pre>";
+            print_r($colorpick);
+            echo "</pre>";
             $_SESSION["shoppingCart"][$itemname]=array(
                 "name" => $itemname,
                 "image" => $item["itemimg"],
                 "price" => $item["price"],
-                "qty" => $_REQUEST["qty"]
+                "qty" => $_REQUEST["qty"],
+                "color_id"=> $colorpick["id"]
             );
             $_SESSION["onnotice"] = "Berhasil memasukkan ke keranjang!";
         }
         else{
             $_SESSION["onalert"] = "Anda harus login terlebih dahulu!";
         }
-        header("Location: ".$_SERVER["REQUEST_URI"]);
+        // header("Location: ".$_SERVER["REQUEST_URI"]);
     }
     if(isset($_REQUEST["towish"])){
         if(isset($_SESSION["loggedIn"])){
@@ -74,17 +82,18 @@
                         <span class="text-lg font-semibold ml-2">X (n review)</span>
                     </div>
                     <div class="mt-9 font-semibold">Warna</div>
+                    <form action="" method="POST">
                     <div class="my-3 flex">
                         <?php
                             foreach ($colors as $key => $value) {
                         ?>
-                            <div class="w-5 h-5 rounded-full mx-0.5" style="background-color: <?=$value['cvalue']?>;" title="<?=$value['cname']?>"></div>
+                            <!-- <label class="w-5 h-5 rounded-full mx-0.5" style="background-color: <?=$value['cvalue']?>;"  for=""></label> -->
+                            <input class="p-2 mx-0.5 colorPick" type="radio" name="color_id" id="" value="<?=$value['cvalue']?>"style="background-color: <?=$value['cvalue']?>;" title="<?=$value['cname']?>">
                         <?php
                             }
                         ?>
                     </div>
                     <div>
-                        <form action="" method="POST">
                         <div class="mt-5 w-56 h-12 border-hh-orange-light border-solid border-2 flex flex-row">
                             <button id="qtydown" type="button" class="w-3/12 h-11 text-lg font-bold border-solid border-r-2 border-hh-orange-light bg-hh-orange-light">-</button>
                             <input type="text" name="qty" style="text-align:center;" class="w-6/12 h-8 mt-1 text-2xl border-0" id="qty" value="<?php if (isset($_SESSION["shoppingCart"][$itemName])) {$iniVariabelIsi = $_SESSION["shoppingCart"][$itemName]["qty"]; echo "$iniVariabelIsi";} else echo "0"; ?>"></input>
@@ -96,8 +105,8 @@
                         <div class="mb-6 mt-4">
                             <button type="submit" name="towish" value="clicked" class="w-2/3 h-10 rounded bg-hh-pink-dark text-lg text-hh-white font-semibold">Masukkan Wishlist</button>
                         </div>
-                        </form>
                     </div>
+                    </form>
                 </div>
             </div>
             <div class="w-11/12 my-12 flex flex-col items-center">
