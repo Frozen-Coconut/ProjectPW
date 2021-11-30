@@ -116,7 +116,8 @@ $data = array(
 foreach ($item as $key => $value) {
     $data["item"][] = array(
         "nama" => $value["name"],
-        "qty" => $value["qty"]
+        "qty" => $value["qty"],
+        "color_id" => $value["color_id"]
     );
 }
 
