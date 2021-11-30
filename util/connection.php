@@ -177,6 +177,16 @@
         return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
     }
 
+    function selectTransactionOrderById() {
+        $query = 'SELECT t.id as "id", t.total as "total", t.status as "status", t.alamat as "alamat",
+        u.email as "email", u.username as "username", u.name as "user_name" FROM transaction t, user u 
+        WHERE t.user_email = u.email ORDER BY t.id DESC';
+        
+        global $conn;
+
+        return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+    }
+
     //Function Insert
 
     function insertUser ($data) {
@@ -185,16 +195,6 @@
         $stmt = $conn->prepare("INSERT INTO user(email, username, password, name, id_provinsi, id_kota, birth_date, gender, status) VALUES(?,?,?,?,?,?,?,?,1)");
 
         $stmt->bind_param("ssssiisi", $data["email"], $data["username"], $data["password"], $data["name"], $data["provinsi"], $data["kota"], $data["birth_date"], $data["gender"]);
-
-        $stmt->execute();
-    }
-
-    function insertTransaction ($data) {
-        global $conn;
-
-        $stmt = $conn->prepare("INSERT INTO transaction(user_email, items_name, quantity, total, status) VALUES(?,?,?,?,1)");
-
-        $stmt->bind_param("ssii", $data["user"], $data["items_name"], $data["quantity"], $data["items_price"]*$data["quantity"]);
 
         $stmt->execute();
     }
@@ -211,6 +211,27 @@
         $stmt->bind_param("si", $data["nama"], $data["value"]);
 
         $stmt->execute();
+    }
+
+    function insertTransaction($data) {
+        global $conn;
+
+        $stmt = $conn->prepare("INSERT INTO transaction(user_email, total, alamat,  status) VALUES(?,?,?,1)");
+
+        $stmt->bind_param("sis", $data["email"], $data["total"], $data["alamat"]);
+
+        $stmt->execute();
+
+        $transactionTerbaru = selectTransactionOrderById();
+        $idtransactionTerbaru = $transactionTerbaru[0]["id"];
+
+        foreach ($data["item"] as $key => $x) {
+            $stmt = $conn->prepare("INSERT INTO transaction_items(transaction_id, items_name, quantity, color_id) VALUES(?,?,?,?)");
+
+            $stmt->bind_param("isii", $idtransactionTerbaru, $x["nama"], $x["qty"], $x["color_id"]);
+
+            $stmt->execute();
+        }
     }
 
     //Function Delete
