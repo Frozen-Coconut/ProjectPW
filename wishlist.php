@@ -1,6 +1,13 @@
 <?php require_once("./util/docOpen.php") ?>
 
 <?php require_once("./util/navbar.php")?>
+<?php 
+    require_once("./util/connection.php");
+    $wish = getWishlist();
+
+    
+    // var_dump($wish);
+?>
 
 <script>
     // document.title = 'Wishlist';
@@ -17,11 +24,22 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="border-b">
-                <td class="py-4 px-7"><img src="" alt=""></td>
-                <td class="py-4 px-7">test</td>
-                <td class="py-4 px-7"><button>Hapus</button></td>
-            </tr>
+            <?php
+            foreach ($wish as $key => $value){
+                //echo $value["items_name"];
+                $item = selectItemsName($value["items_name"]);
+                // var_dump($item);
+            ?>
+                <tr class="border-b">
+                    <td class="py-4 px-7"><img src="" alt=""><?= $value["items_name"] ?></td>
+                    <td class="py-4 px-7"><?= $item[0]["price"] ?></td>
+                    <td class="py-4 px-7"><button class="">Hapus</button></td>
+                </tr>
+                
+            <?php
+            
+            }
+            ?>
         </tbody>
     </table>
 </section>

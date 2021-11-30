@@ -359,4 +359,12 @@
     function addNotice($msg){
         $_SESSION["onnotice"] = $msg;
     }
+
+    function getWishlist(){
+        global $conn;
+        $query = "SELECT * FROM wishlist WHERE user_email='".$_SESSION["loggedIn"]["email"]."'";
+        
+        $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+        return $result;
+    }
 ?>

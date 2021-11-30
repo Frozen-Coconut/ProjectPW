@@ -2,7 +2,7 @@
 
 <?php
 
-    if(isset($_POST["logout"])){
+    if(isset($_REQUEST["logout"])){
         unset($_SESSION["loggedIn"]);
         setcookie("loggedIn", "", time()-(60*60*24*10));
     }
@@ -16,8 +16,8 @@
 
 <section class="w-full h-screen bg-center bg-no-repeat bg-cover flex" style="background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80');">
     <div class="w-full h-screen bg-opacity-70 bg-black flex justify-center items-center">
-        <div class="w-1/2"></div>
-        <div class="w-1/2">
+        <div class="sm-none md:w-1/2"></div>
+        <div class="sm-none md:w-1/2">
         <div class="mx-4 text-left text-white px-10">
             <h1 class="font-bold text-6xl mb-4">TokoKita</h1>
             <p class="text-1xl mb-4">Toko alat musik terlengkap di Indonesia! Kami menyediakan alat musik professional dan pro audio dari merek ternama.</p>
@@ -45,7 +45,7 @@
     </div>
 </section>
 <section class="w-full h-screen bg-center bg-no-repeat bg-cover flex" style="background-image: url('https://images.unsplash.com/photo-1620812097331-ff636155488f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80');">
-    <div class="w-full h-screen bg-opacity-70 bg-black flex justify-center items-center">
+    <div class="w-full h-screen bg-opacity-70 bg-black flex justify-center items-center sm:flex-col-reverse md:flex-row">
             <div class="w-1/2">
                 <div class="mx-4 text-left text-white px-10">
                     <h2 class="font-bold text-3xl mb-4">New Release</h2>
