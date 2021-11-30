@@ -11,9 +11,9 @@
         $stmt->execute();
     }
 
-    if(isset($_REQUEST["username"])){
-        $username = $_REQUEST["username"];
-        $stmt = $conn->query("SELECT * FROM user WHERE username='$username'");
+    if(isset($_SESSION["loggedIn"])){
+        $loggedIn = $_SESSION["loggedIn"];
+        $stmt = $conn->query("SELECT * FROM user WHERE username='".$loggedIn["username"]."'");
         $user = $stmt->fetch_assoc();
         foreach ($user as $key => $value) {
             $$key = $value;
