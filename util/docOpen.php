@@ -13,10 +13,10 @@
     } else {
         $firstWords = array("About", "Admin", "Shopping");
         foreach ($firstWords as $key => $value) {
-            if (str_starts_with($documentTitle, $value)) {
-                $documentTitle = ucwords(str_replace($value, "$value ", $documentTitle));
-                break;
-            }
+            // if (str_starts_with($documentTitle, $value)) {
+            //     $documentTitle = ucwords(str_replace($value, "$value ", $documentTitle));
+            //     break;
+            // }
         }
     }
 ?>
