@@ -1,8 +1,6 @@
 <?php
-    require_once("./util/connection.php");require_once("./util/docOpen.php");;
-    require_once("./util/navbar.php");
-
-
+    require_once("./util/connection.php");
+    
     if(isset($_REQUEST["itemname"])){
         $itemname = $_REQUEST["itemname"];
         $stmt = $conn->query("SELECT i.name as itemname, b.name as brandname, n.name as instrumentname, i.price as price, i.image as itemimg, i.description as itemdesc, i.stock as itemstock, i.id_diskon as disc FROM items i, brand b, instrument n WHERE i.name='$itemname' AND i.id_brand=b.id AND i.id_instrument=n.id;");
@@ -49,6 +47,8 @@
         header("Location: ".$_SERVER["REQUEST_URI"]);
     }
 ?>
+<?php require_once("./util/docOpen.php"); ?>
+<?php require_once("./util/navbar.php"); ?>
     <script>
         // document.title = 'Detail';
     </script>

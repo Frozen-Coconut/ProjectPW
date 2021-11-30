@@ -1,7 +1,6 @@
 <?php
     require_once("./util/connection.php");
 ?>
-
 <?php
     if(isset($_SESSION["loggedIn"]) || isset($_COOKIE["loggedIn"])) {
         header("Location:index.php");
@@ -18,7 +17,7 @@
             if ($hasil == 0) echo("<script>alert('Username / Email salah!')</script>"); //Kasi pesan username tidak ketemu
             else if ($hasil == 1) echo("<script>alert('Password salah!')</script>"); //Kasi pesan password salah
             else {
-                if(isset($_POST["remember"])){
+                if($_POST["remember"] == "remember"){
                     setcookie("loggedIn", json_encode($_SESSION["loggedIn"]), time() + (60*60*24*10));
                 }
                 header("Location:index.php");
@@ -63,7 +62,7 @@
         
                 <div class="flex items-center justify-between">
                     <div class="flex items-center">
-                    <input id="remember-me" name="remember" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                    <input id="remember-me" name="remember" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" value="remember">
                     <label for="remember-me" class="ml-2 block text-sm text-gray-900">
                         Remember me
                     </label>
