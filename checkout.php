@@ -72,7 +72,7 @@
         </tbody>
     </table>
     <!-- action ke pembayaran midtrans -->
-    <form action="SOMEWHERE" method="post" class="mt-8 mb-28" style="width: 96%;">
+    <form action="./checkout-process.php" method="post" class="mt-8 mb-28" style="width: 96%;">
         <label for="alamat">Alamat Pengiriman</label><br>
         <input type="text" name="alamat" id="alamat" placeholder="Alamat Pengiriman" class="w-full mt-3"><br>
         <button id="bayar" class="absolute right-8 bottom-8 px-5 py-2 text-white hover:opacity-80 shadow-md bg-green-600">Bayar</button>
