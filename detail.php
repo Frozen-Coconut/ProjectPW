@@ -16,9 +16,6 @@
             $color_id = $_REQUEST["color_id"];
             $stmt = $conn->query("SELECT id FROM color WHERE value='$color_id'");
             $colorpick = $stmt->fetch_assoc();
-            echo "<pre>";
-            print_r($colorpick);
-            echo "</pre>";
             $_SESSION["shoppingCart"][$itemname]=array(
                 "name" => $itemname,
                 "image" => $item["itemimg"],

@@ -27,7 +27,15 @@
         <?php
         if(isset($_SESSION["loggedIn"])){
         ?>
-            <a href="profile.php"><li id="profileButton" class="cursor-pointer text-xl transition-all text-hh-black-light mx-2 px-4 py-0.5 bg-hh-white rounded ring-2 ring-hh-white hover:bg-hh-orange-dark hover:text-hh-white">Profil</li></a>
+            <li id="profileButton" class="cursor-pointer text-xl transition-all text-hh-black-light mx-2 px-4 py-0.5 bg-hh-white rounded ring-2 ring-hh-white hover:bg-hh-orange-dark hover:text-hh-white">Profil</li>
+            <div class="w-1/6 h-56 bg-hh-orange-light absolute top-12 right-5 rounded-xl z-10 flex" id="profileMenuList">
+                <ul class="w-full flex flex-col items-center">
+                    <a href="profile.php" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Edit Profile</li></a>
+                    <a href="profile.php" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Riwayat Transaksi</li></a>
+                    <a href="wishlist.php" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Wishlist</li></a>
+                    <a href="index.php?logout='true'" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Logout</li></a>
+                </ul>
+            </div>
         <?php
         }
         else {
@@ -39,6 +47,7 @@
         ?>
     </ul>
 </nav>
+
 <?php
     if(isset($onalert)){
 ?>
@@ -62,16 +71,19 @@
 
 <script>
     $(document).ready(function () {
-        $("#profileButtonForHover").click(function(){
+        $("#profileMenuList").slideUp(-1);
+        $("#profileButton").click(function(){
             console.log("A");
-            $("#profileMenuList").toggleClass("flex");
-            $("#profileMenuList").toggleClass("hidden");
+            // $("#profileMenuList").toggleClass("flex");
+            // $("#profileMenuList").toggleClass("hidden");
+            $("#profileMenuList").slideToggle();
         });
 
-        $("#profileButtonForHover").focusout(function(){
+        $("#profileButton").focusout(function(){
             console.log("A");
-            $("#profileMenuList").removeClass("flex");
-            $("#profileMenuList").addClass("hidden");
+            // $("#profileMenuList").removeClass("flex");
+            // $("#profileMenuList").addClass("hidden");
+            $("#profileMenuList").slideToggle();
         });
 
         $("#closealertbox").click(function () {
