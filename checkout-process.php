@@ -162,15 +162,16 @@ function printExampleWarningMessage() {
                     // Optional
                     onSuccess: function(result){
                         // /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
-                        $.ajax({
-                            type: "get",
-                            url: "./ajax/insertTransaction.php",
-                            data: {
+                        // $.ajax({
+                        //     type: "get",
+                        //     url: "./ajax/insertTransaction.php",
+                        //     data: {
                                 
-                            }
-                        }).then(res=>{
-                            window.location.assign("./index.php");
-                        })
+                        //     }
+                        // }).then(res=>{
+                        //     window.location.assign("./index.php");
+                        // })
+                        window.location.assign('./ajax/insertTransaction.php');
                     },
                     // // Optional
                     // onPending: function(result){

@@ -6,4 +6,6 @@
     $dataTransaction = $_SESSION["transaction"];
 
     insertTransaction($dataTransaction);
+
+    header("Location: ../index.php");
 ?>
