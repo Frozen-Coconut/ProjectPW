@@ -68,8 +68,19 @@
                 <div class="w-4/12 h-full pt-16">
                     <div class="uppercase text-hh-pink-light text-xl font-medium mb-3"><?=$item["instrumentname"]?></div>
                     <div class="text-5xl font-medium my-3"><?=$item["itemname"]?></div>
-                    <div class="text-2xl font-medium text-hh-orange-light my-3 line-through">Rp <?=getCurrencyFormatting($item["price"])?></div>
-                    <div class="text-4xl font-medium text-hh-orange-dark my-3">Rp <?=getCurrencyFormatting($item["price"])?></div>
+                    <?php
+                        if(isset($item["disc"])){
+                            $stmt = $conn->query("SELECT value FROM diskon WHERE id='".$item["disc"]."'");
+                            $diskon = $stmt->fetch_assoc();
+                            echo "<div class='text-2xl font-medium text-hh-orange-light my-3 line-through'>Rp ". getCurrencyFormatting($item["price"]) . "</div>";
+                            echo "<div class='text-4xl font-medium text-hh-orange-light my-3'>Rp ". getCurrencyFormatting($item["price"] - ($item["price"] * $diskon["value"] / 100)) . "</div>";
+                        }
+                        else{
+                            echo "<div class='text-4xl font-medium text-hh-orange-light my-3'>Rp ". getCurrencyFormatting($item["price"]) . "</div>";
+                        }
+                    ?>
+                    
+                    
                     <div class="uppercase text-xl font-medium mb-3"><?=$item["brandname"]?></div>
                     <div class="my-3">
                         <i class="fas fa-star text-hh-orange-light  text-lg"></i>
@@ -119,6 +130,7 @@
         </div>
     </div>
     <script>
+        let instock = <?=$item["itemstock"]?>;
         $(document).ready(function () {
             if(parseInt($("#qty").val()) == 0){
                 $("#tocart").prop("disabled",true);
@@ -151,8 +163,10 @@
             });
 
             $("#qtyup").click(function(){
-                $("#qty").val(parseInt($("#qty").val())+1);
-                $("#tocart").prop("disabled",false);
+                if(parseInt($("#qty").val()) < instock){
+                    $("#qty").val(parseInt($("#qty").val())+1);
+                    $("#tocart").prop("disabled",false);
+                }
                 console.log($("#tocart").prop("disabled"));
             });
 
