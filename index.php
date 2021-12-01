@@ -1,12 +1,11 @@
-<?php require_once("./util/connection.php");require_once("./util/docOpen.php"); ?>
-
+<?php require_once("./util/connection.php"); ?>
 <?php
-
     if(isset($_REQUEST["logout"])){
         unset($_SESSION["loggedIn"]);
         setcookie("loggedIn", "", time()-(60*60*24*10));
     }
 ?>
+<?php require_once("./util/docOpen.php"); ?>
 
 <?php require_once("./util/navbar.php")?>
 

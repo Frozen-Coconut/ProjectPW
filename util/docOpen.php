@@ -1,21 +1,22 @@
 <?php
-    $documentTitle = ucfirst(basename($_SERVER["REQUEST_URI"]));
-    $documentTitle = str_replace(".php","", $documentTitle);
-    if(strpos($documentTitle, "?") > -1){
+    // $documentTitle = ucfirst(basename($_SERVER["REQUEST_URI"]));
+    $documentTitle = ucfirst(basename($_SERVER["PHP_SELF"], ".php"));
+    // $documentTitle = str_replace(".php","", $documentTitle);
+    // if(strpos($documentTitle, "?") > -1){
         // $documentTitle = str_replace("?"," | ", $documentTitle);
         // $documentTitle = str_replace("%20"," ", $documentTitle);
         // $documentTitle = str_replace(substr($documentTitle, strpos($documentTitle, "|")+2, strpos($documentTitle,"=")-1),"",$documentTitle);
-        $documentTitle = explode("?", $documentTitle)[0];
-    }
+        // $documentTitle = explode("?", $documentTitle)[0];
+    // }
     if ($documentTitle == "Index" || $documentTitle == "ProjectPW") {
         $documentTitle = "Home";
     } else {
         $firstWords = array("About", "Admin", "Shopping");
         foreach ($firstWords as $key => $value) {
-            // if (str_starts_with($documentTitle, $value)) {
-            //     $documentTitle = ucwords(str_replace($value, "$value ", $documentTitle));
-            //     break;
-            // }
+            if (str_starts_with($documentTitle, $value)) {
+                $documentTitle = ucwords(str_replace($value, "$value ", $documentTitle));
+                break;
+            }
         }
     }
 
