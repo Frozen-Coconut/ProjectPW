@@ -54,8 +54,8 @@ $total = 0;
 $item = $_SESSION["shoppingCart"];
 foreach ($item as $key => $value) {
     $item_details[] = array(
-        "id" => $value["name"],
-        "name" => $value["name"],
+        "id" => $key,
+        "name" => $key,
         "price" => $value["price"],
         "quantity" => $value["qty"]
     );

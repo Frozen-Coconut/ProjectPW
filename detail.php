@@ -16,12 +16,13 @@
             $color_id = $_REQUEST["color_id"];
             $stmt = $conn->query("SELECT id FROM color WHERE value='$color_id'");
             $colorpick = $stmt->fetch_assoc();
-            $_SESSION["shoppingCart"][$itemname]=array(
+            $_SESSION["shoppingCart"]["$itemname $color_id"]=array(
                 "name" => $itemname,
                 "image" => $item["itemimg"],
                 "price" => $item["price"],
                 "qty" => $_REQUEST["qty"],
-                "color_id"=> $colorpick["id"]
+                "color_id"=> $colorpick["id"],
+                "color_value" => $color_id
             );
             $_SESSION["onnotice"] = "Berhasil memasukkan ke keranjang!";
         }
@@ -93,7 +94,7 @@
                     <div>
                         <div class="mt-5 w-56 h-12 border-hh-orange-light border-solid border-2 flex flex-row">
                             <button id="qtydown" type="button" class="w-3/12 h-11 text-lg font-bold border-solid border-r-2 border-hh-orange-light bg-hh-orange-light">-</button>
-                            <input type="text" name="qty" style="text-align:center;" class="w-6/12 h-8 mt-1 text-2xl border-0" id="qty" value="<?php if (isset($_SESSION["shoppingCart"][$itemName])) {$iniVariabelIsi = $_SESSION["shoppingCart"][$itemName]["qty"]; echo "$iniVariabelIsi";} else echo "0"; ?>"></input>
+                            <input type="text" name="qty" style="text-align:center;" class="w-6/12 h-8 mt-1 text-2xl border-0" id="qty" value="<?php echo "0"; // if (isset($_SESSION["shoppingCart"][$itemName])) {$iniVariabelIsi = $_SESSION["shoppingCart"][$itemName]["qty"]; echo "$iniVariabelIsi";} else echo "0"; ?>"></input>
                             <button id="qtyup" type="button" class="w-3/12 h-11 text-lg font-bold border-solid border-l-2 border-hh-orange-light bg-hh-orange-light">+</button>
                         </div>
                         <div class="mt-6 mb-4">

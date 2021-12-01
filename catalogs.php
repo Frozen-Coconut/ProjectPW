@@ -20,7 +20,7 @@
     <div class="min-h-screen flex flex-col">
         <?php require_once("./util/navbar.php") ?>
 
-        <div id="container" class="flex px-40 py-20">
+        <div id="container" class="flex px-10 md:px-20 lg:px-30 xl:px-40 py-20">
             <div class="flex flex-col border-2 border-gray-400 rounded-3xl shadow-xl pl-5 pt-5 pb-8 w-60">
                 <p class="text-2xl font-bold">Filter</p>
                 <div class="flex flex-col ml-4 mt-2">
