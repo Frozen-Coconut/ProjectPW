@@ -5,7 +5,10 @@ deployment:
     - /bin/cp -R ajax $DEPLOYPATH
     - /bin/cp -R asset $DEPLOYPATH
     - /bin/cp -R database $DEPLOYPATH
+    - /bin/cp -R document_error_handler $DEPLOYPATH
+    - /bin/cp -R midtrans-php-master $DEPLOYPATH
     - /bin/cp -R node_modules $DEPLOYPATH
     - /bin/cp -R other $DEPLOYPATH
     - /bin/cp -R util $DEPLOYPATH
     - /bin/cp * $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH

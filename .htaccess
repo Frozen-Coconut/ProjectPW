@@ -1,0 +1,12 @@
+RedirectMatch 403 ^/ajax/$
+RedirectMatch 403 ^/asset/$
+RedirectMatch 403 ^/database/.*$
+RedirectMatch 403 ^/document_error_handler/$
+RedirectMatch 403 ^/midtrans-php-master/.*$
+RedirectMatch 403 ^/node_modules/.*$
+RedirectMatch 403 ^/other/.*$
+RedirectMatch 403 ^/util/.*$
+RedirectMatch 403 ^/.*json$
+
+ErrorDocument 403 /document_error_handler/403.html
+ErrorDocument 404 /document_error_handler/404.html
