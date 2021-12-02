@@ -13,7 +13,7 @@
     } else {
         $firstWords = array("About", "Admin", "Shopping");
         foreach ($firstWords as $key => $value) {
-            if (str_starts_with($documentTitle, $value)) {
+            if (substr($documentTitle,0,strlen($value)) == $value) {
                 $documentTitle = ucwords(str_replace($value, "$value ", $documentTitle));
                 break;
             }
