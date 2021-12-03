@@ -356,6 +356,14 @@
 
     //Function Tambahan
 
+    function cheatStock () {
+        global $conn;
+        
+        $query = ("UPDATE items SET stock = 100");
+
+        mysqli_query($conn,$query);
+    }
+
     function login($data){
         global $conn;
 
