@@ -20,7 +20,9 @@
 </header>
 <div class="p-2 pt-5 relative mx-auto text-gray-600 flex justify-end">
   <div class="mr-12">
-  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addItem()">Add Items</button>
+  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addItem()">Tambah Item</button>
+  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addColor()">Tambah Warna</button>
+  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addColorToItem()">Tambah Warna ke Item</button>
   <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="reset()">Hilangkan Filter</button>
     <select id="brandFilter" class="form-select border-2 border-gray-300 bg-white h-10 pr-8 rounded-lg text-sm focus:outline-none" onchange="filterBrand()">
       <option value="" hidden selected>Brand</option>
@@ -138,6 +140,26 @@
       })
     }
 
+    function addItemForm() {
+      $.ajax({
+          type: "get",
+          url: "./ajax/loadItems.php",
+          data: {
+              "add" : 1,
+              "name" : $("#addName").val(),
+              "brand" : $("#addBrand").val(),
+              "instrument" : $("#addInstrument").val(),
+              "price" : $("#addPrice").val(),
+              "stock" : $("#addStock").val(),
+              "desc" : $("#addDesc").val(),
+              "image" : $("#addUrl").val()
+          }
+      }).then(res=>{
+          $("#tableBody").html(res);
+          closeForm();
+      })
+    }
+
     function closeForm() {
       $("#formEdit").css('display','none');
     }
@@ -203,6 +225,88 @@
           $("#inputSearch").val("");
           $("#instrumentFilter").val("");
           $("#brandFilter").val("");
+      })
+    }
+
+    function addColor() {
+      $.ajax({
+          type: "get",
+          url: "./ajax/formAddColor.php",
+          data: {
+              "add" : 1
+          }
+      }).then(res=>{
+          $("#formEdit").html(res);
+      })
+      $("#formEdit").css('display','flex');
+    }
+
+    function addColorForm () {
+      $.ajax({
+          type: "get",
+          url: "./ajax/loadItems.php",
+          data: {
+              "addColor" : 1,
+              "name" : $("#addNameColor").val(),
+              "value" : $("#addValueColor").val()
+          }
+      }).then(res=>{
+          $("#tableBody").html(res);
+          closeForm();
+      })
+    }
+
+    function addColorToItem() {
+      $.ajax({
+          type: "get",
+          url: "./ajax/formAddColor.php",
+          data: {
+              
+          }
+      }).then(res=>{
+          $("#formEdit").html(res);
+      })
+      $("#formEdit").css('display','flex');
+    }
+
+    function searchItem() {
+      $.ajax({
+          type: "get",
+          url: "./ajax/formAddColor.php",
+          data: {
+              "nameSearch" : $("#inputSearchItem").val()
+          }
+      }).then(res=>{
+          $("#formEdit").html(res);
+      })
+      $("#formEdit").css('display','flex');
+    }
+
+    function resetItem() {
+      $.ajax({
+          type: "get",
+          url: "./ajax/formAddColor.php",
+          data: {
+              
+          }
+      }).then(res=>{
+          $("#formEdit").html(res);
+      })
+      $("#formEdit").css('display','flex');
+    }
+
+    function addColorItemForm () {
+      $.ajax({
+          type: "get",
+          url: "./ajax/loadItems.php",
+          data: {
+              "addColorItem" : 1,
+              "name" : $("#addItemSelect").val(),
+              "color" : $("#addColorSelect").val()
+          }
+      }).then(res=>{
+          $("#tableBody").html(res);
+          closeForm();
       })
     }
 </script>

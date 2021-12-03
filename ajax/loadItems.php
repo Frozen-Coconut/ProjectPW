@@ -12,6 +12,39 @@
 
     if(isset($_GET["add"])){
       
+        $data = [
+          "name" => $_GET["name"],
+          "brand" => $_GET["brand"],
+          "instrument" => $_GET["instrument"],
+          "price" => $_GET["price"],
+          "stock" => $_GET["stock"],
+          "desc" => $_GET["desc"],
+          "image" => $_GET["image"]
+        ];
+
+        insertItems($data);
+    }
+
+    if(isset($_GET["addColor"])){
+      $data = [
+        "name" => $_GET["name"],
+        "value" => $_GET["value"]
+      ];
+
+      echo "<pre>";
+      var_dump($data);
+      echo "</pre>";
+
+      insertColor($data);
+    }
+
+    if(isset($_GET["addColorItem"])){
+      $data = [
+        "name" => $_GET["name"],
+        "color" => $_GET["color"]
+      ];
+
+      insertColorItem($data);
     }
 
     $items = selectItem();

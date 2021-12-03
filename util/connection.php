@@ -69,6 +69,17 @@
         return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
     }
 
+    function selectItemsNameLike ($name) {
+        global $conn;
+
+        $query = 'SELECT i.name as "name", i.price as "price", i.image as "image", 
+        i.description as "desc", i.stock as "stock", b.name as "brand", ins.name as "instrument"
+        FROM items i, brand b, instrument ins
+        WHERE i.id_brand = b.id AND i.id_instrument = ins.id AND i.name LIKE "%'.$name.'%"';
+
+        return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+    }
+
     function selectItemsBrand ($brand) {
         global $conn;
 
@@ -187,6 +198,14 @@
         return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
     }
 
+    function selectColor () {
+        global $conn;
+
+        $query = 'SELECT * FROM color';
+
+        return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+    }
+
     //Function Insert
 
     function insertUser ($data) {
@@ -200,13 +219,39 @@
     }
 
     function insertItems($data) {
-        
+        global $conn;
+
+        $stmt = $conn->prepare("INSERT INTO items(name, id_brand, id_instrument, price, image, description, stock) VALUES(?,?,?,?,?,?,?)");
+
+        $stmt->bind_param("siiissi", $data["name"], $data["brand"], $data["instrument"], $data["price"], $data["image"], $data["desc"], $data["stock"]);
+
+        $stmt->execute();
+    }
+
+    function insertColor ($data) {
+        global $conn;
+
+        $stmt = $conn->prepare("INSERT INTO color(name, value) VALUES (?,?)");
+
+        $stmt->bind_param("ss", $data["name"], $data["value"]);
+
+        $stmt->execute();
+    }
+
+    function insertColorItem ($data) {
+        global $conn;
+
+        $stmt = $conn->prepare("INSERT INTO color_items(id_color, items_name) VALUES (?,?)");
+
+        $stmt->bind_param("ss", $data["color"], $data["name"]);
+
+        $stmt->execute();
     }
 
     function insertDiskon($data) {
         global $conn;
 
-        $stmt = $conn->prepare("INSERT INTO diskon(name, value) VALUES(?, ?)");
+        $stmt = $conn->prepare("INSERT INTO diskon(name, value) VALUES (?,?)");
 
         $stmt->bind_param("si", $data["nama"], $data["value"]);
 
