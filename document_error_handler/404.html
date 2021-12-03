@@ -6407,23 +6407,63 @@ Runner.spriteDefinitionByType = {
   
 </head>
 <body id="t" class="neterror" style="font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 75%" jstcache="0">
-    <h1 style="text-align:center;margin-top:6vh;">404 Not Found</h1>
-    <p style="text-align:center;margin-top:2vh;">All rights belong to Google !</p>
-    <a id="xlinkrightx" href="http://tokokita.masuk.id/" style="position:fixed;right:0vw;bottom:0vh;margin:20px;">https://tokokita.masuk.id/</a>
-    <a id="xlinkleftx" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="position:fixed;left:0vw;bottom:0vh;margin:20px;">Do not click !</a>
+    <h1 ondblclick="activateInvulnerableCheat()" style="text-align:center;margin-top:6vh;">404 Not Found</h1>
+    <p ondblclick="deactivateInvulnerableCheat()" style="text-align:center;margin-top:2vh;">All rights belong to Google !</p>
+    <a id="xlinkrightx" href="http://tokokita.masuk.id/" style="position:fixed;right:0;bottom:0;margin:20px;">https://tokokita.masuk.id/</a>
+    <a id="xlinkleftx" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="position:fixed;left:0;bottom:0;margin:20px;">Do not click me !</a>
+    <p id="cheatMessage" style="position:fixed;right:0;top:0;margin:20px;">There is a cheat trigger somewhere !</p>
+    <p id="btnClickMe" style="position:fixed;left:0;top:0;margin:20px;opacity:0;">Click me !</p>
     <script>
+        let vulnerableCheatStatus = false;
+        let original = Runner.prototype.gameOver;
         let xlinkleftxSpeed = 1;
-        setInterval(function(){
-            let x = document.getElementById('xlinkleftx');
-            x.style.left = parseInt(x.style.left.replace('vw', '')) + xlinkleftxSpeed + 'vw';
-            if (parseInt(x.style.left.replace('vw', '')) > 75 || parseInt(x.style.left.replace('vw', '')) < 1) xlinkleftxSpeed = -xlinkleftxSpeed;
-        }, 100)
-        let xlinkrightxSpeed = 1;
-        setInterval(function(){
-            let x = document.getElementById('xlinkrightx');
-            x.style.right = parseInt(x.style.right.replace('vw', '')) + xlinkrightxSpeed + 'vw';
-            if (parseInt(x.style.right.replace('vw', '')) > 75 || parseInt(x.style.right.replace('vw', '')) < 1) xlinkrightxSpeed = -xlinkrightxSpeed;
-        }, 100)
+        // setInterval(function() {
+        //     let x = document.getElementById('xlinkleftx');
+        //     x.style.left = parseInt(x.style.left.replace('vw', '')) + xlinkleftxSpeed + 'vw';
+        //     if (parseInt(x.style.left.replace('vw', '')) > 75 || parseInt(x.style.left.replace('vw', '')) < 1) xlinkleftxSpeed = -xlinkleftxSpeed;
+        // }, 100);
+        // let xlinkrightxSpeed = 1;
+        // setInterval(function() {
+        //     let x = document.getElementById('xlinkrightx');
+        //     x.style.right = parseInt(x.style.right.replace('vw', '')) + xlinkrightxSpeed + 'vw';
+        //     if (parseInt(x.style.right.replace('vw', '')) > 75 || parseInt(x.style.right.replace('vw', '')) < 1) xlinkrightxSpeed = -xlinkrightxSpeed;
+        // }, 100);
+        let intervalClickMe = setInterval(function() {
+            if (Runner.instance_.distanceRan >= 10000) {
+                document.getElementById('btnClickMe').style.opacity = 1;
+                clearInterval(intervalClickMe);
+                document.getElementById('btnClickMe').onclick = function() {
+                    Runner.instance_.setSpeed(-Runner.instance_.currentSpeed)
+                    document.getElementById('btnClickMe').innerHTML = '';
+                    document.getElementById('btnClickMe').onclick = null;
+                    setTimeout(function() {
+                      Runner.instance_.setSpeed(-Runner.instance_.currentSpeed);
+                    }, 3000)
+                }
+            }
+        }, 1000);
+        function activateInvulnerableCheat() {
+            if (!vulnerableCheatStatus) {
+                Runner.prototype.gameOver = function() {/* document.body.style.background = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})` */};
+                Runner.instance_.setSpeed(Runner.instance_.currentSpeed + 14);
+                vulnerableCheatStatus = true;
+                document.getElementById('cheatMessage').innerHTML = 'CHEAT ACTIVATED !';
+                setTimeout(function() {
+                  document.getElementById('cheatMessage').innerHTML = '';
+                }, 3000);
+            }
+        }
+        function deactivateInvulnerableCheat() {
+            if (vulnerableCheatStatus) {
+                Runner.prototype.gameOver = original;
+                Runner.instance_.setSpeed(Runner.instance_.currentSpeed - 14);
+                vulnerableCheatStatus = false;
+                document.getElementById('cheatMessage').innerHTML = 'CHEAT DEACTIVATED !';
+                setTimeout(function() {
+                  document.getElementById('cheatMessage').innerHTML = '';
+                }, 3000);
+            }
+        }
     </script>
   <div id="main-frame-error" class="interstitial-wrapper" jstcache="0">
     <div id="main-content" jstcache="0">
