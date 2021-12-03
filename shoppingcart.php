@@ -54,8 +54,9 @@
                     <td style="text-align: left;">
                         <div class="inline-flex items-center">
                             <div class="bg-contain bg-center bg-no-repeat bg-white w-20 h-20 mr-3 lg:w-24 lg:h-24" style="background-image: url(<?= $value["image"] ?>);"></div>
-                            <p name="name"><?= $value["name"] ?></p>
+                            <p><?= $value["name"] ?></p>
                             <div class="w-5 h-5 border rounded-full ml-2" style="background-color: <?= $value["color_value"] ?>;"></div>
+                            <p name="hiddenKey" class="hidden"><?= $key ?></p>
                         </div>
                     </td>
                     <td>
@@ -93,7 +94,7 @@
             type: "post",
             url: "./ajax/editShoppingCart.php",
             data: {
-                "name": $('p[name=name]', sender.parentElement.parentElement.parentElement).html(),
+                "name": $('p[name=hiddenKey]', sender.parentElement.parentElement.parentElement).html(),
                 "num": 1
             },
             success: function (response) {
@@ -109,7 +110,7 @@
                 type: "post",
                 url: "./ajax/editShoppingCart.php",
                 data: {
-                    "name": $('p[name=name]', sender.parentElement.parentElement.parentElement).html(),
+                    "name": $('p[name=hiddenKey]', sender.parentElement.parentElement.parentElement).html(),
                     "num": -1
                 },
                 success: function (response) {
@@ -125,7 +126,7 @@
             type: "post",
             url: "./ajax/editShoppingCart.php",
             data: {
-                "name": $('p[name=name]', sender.parentElement.parentElement).html()
+                "name": $('p[name=hiddenKey]', sender.parentElement.parentElement).html()
             },
             success: function (response) {
                 // $(sender.parentElement.parentElement).remove();

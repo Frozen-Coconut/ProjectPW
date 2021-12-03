@@ -173,10 +173,11 @@ function printExampleWarningMessage() {
                         // })
                         window.location.assign('./ajax/insertTransaction.php');
                     },
-                    // // Optional
-                    // onPending: function(result){
-                    //     /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
-                    // },
+                    // Optional
+                    onPending: function(result){
+                        /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
+                        window.location.assign("./checkout.php");
+                    },
                     // Optional
                     onError: function(result){
                         // /* You may add your own js here, this is just example */ document.getElementById('result-json').innerHTML += JSON.stringify(result, null, 2);
