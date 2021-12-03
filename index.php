@@ -50,9 +50,9 @@
                     <h2 class="font-bold text-3xl mb-4">New Release</h2>
                     <h1 class="font-bold text-6xl mb-4">Kawaii K-300 48"</h1>
                     <p class="text-1xl mb-4">K-300 dibangun di atas keberhasilan pendahulunya yang memenangkan penghargaan, K-3, yang dinobatkan sebagai "Acoustic Piano of the Year" dari Majalah MMR selama empat tahun berturut-turut. K-300, dengan bangga meneruskan warisan yang luar biasa ini. </p>
-                    <button href="" class="text-lg transition-all text-gray-100 ring-2 px-4 py-0.5 rounded ring-white hover:bg-white hover:text-gray-500">
+                    <a href="./detail.php?itemname=Kawai%20K-300%2048%22%20Professional%20Upright%20Piano" class="text-lg transition-all text-gray-100 ring-2 px-4 py-0.5 rounded ring-white hover:bg-white hover:text-gray-900">
                         Buy Now
-                    </button>
+                    </a>
                 </div> 
             </div>
             <div class="w-1/3">
