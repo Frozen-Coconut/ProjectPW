@@ -43,11 +43,11 @@
 
     </div>
 </section>
-<section class="w-full h-screen bg-center bg-no-repeat bg-cover flex" style="background-image: url('https://images.unsplash.com/photo-1620812097331-ff636155488f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80');">
-    <div class="w-full h-screen bg-opacity-70 bg-black flex justify-center items-center sm:flex-col-reverse md:flex-row">
-            <div class="w-1/2">
-                <div class="mx-4 text-left text-white px-10">
-                    <h2 class="font-bold text-3xl mb-4">New Release</h2>
+<section class="w-full md:h-screen bg-center bg-no-repeat bg-cover flex" style="background-image: url('https://images.unsplash.com/photo-1620812097331-ff636155488f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80');">
+    <div class="w-full md:h-screen bg-opacity-70 bg-black py-5 flex justify-center items-center flex-col-reverse md:flex-row">
+            <div class="md:w-1/2">
+                <div class="mx-4 text-white px-10">
+                    <h2 class="font-bold text-3xl hidden md:flex mb-4">New Release</h2>
                     <h1 class="font-bold text-6xl mb-4">Kawaii K-300 48"</h1>
                     <p class="text-1xl mb-4">K-300 dibangun di atas keberhasilan pendahulunya yang memenangkan penghargaan, K-3, yang dinobatkan sebagai "Acoustic Piano of the Year" dari Majalah MMR selama empat tahun berturut-turut. K-300, dengan bangga meneruskan warisan yang luar biasa ini. </p>
                     <a href="./detail.php?itemname=Kawai%20K-300%2048%22%20Professional%20Upright%20Piano" class="text-lg transition-all text-gray-100 ring-2 px-4 py-0.5 rounded ring-white hover:bg-white hover:text-gray-900">
@@ -55,9 +55,12 @@
                     </a>
                 </div> 
             </div>
-            <div class="w-1/3">
+            <div class="md:w-1/3">
                 <img class ="shadow-inner" src="./asset/img/K-300-Polished-Ebony-600x600-removebg.png" alt="Image of Kawaii K-300">
             </div>    
+            <div class="mx-4 text-white px-10">
+                <h2 class="font-bold text-3xl md:hidden mb-4">New Release</h2>
+            </div>
     </div>
 </section>
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
