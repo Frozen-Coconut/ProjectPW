@@ -26,39 +26,39 @@
         // document.title = 'Profile';
     </script>
     <div class="container min-h-screen flex justify-evenly">
-        <div class="flex flex-col items-center w-4/6 pt-3 px-10  mt-10">
-            <div class="text-5xl font-bold h-16 text-gray-800 w-full">Profil</div>
-            <div class="w-5/6 px-5 py-6 shadow-md border-gray-100 border-2 rounded-2xl mt-10 bg-hh-orange-dark">
+        <div class="flex flex-col items-center w-full sm:w-4/6 pt-3 px-2 sm:px-10  mt-5 sm:mt-10">
+            <div class="text-5xl font-bold sm:h-16 text-gray-800 w-full">Profil</div>
+            <div class="w-full sm:w-5/6 px-5 py-6 shadow-md border-gray-100 border-2 rounded-2xl my-6 sm:my-10 bg-hh-gray-light ">
                 <div class="w-full h-10 mb-12 flex justify-center items-center">
-                    <div class=" border-2 border-hh-gray-dark text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-darker hover:text-white bg-hh-orange-light">Profil Pengguna</div>
-                    <div class=" border-2 border-hh-gray-dark text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-darker hover:text-white">Riwayat Transaksi</div>
-                    <a href="wishlist.php"><div class=" border-2 border-hh-gray-dark text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-darker hover:text-white">Wishlist</div></a>
+                    <div class=" border-2 border-hh-gray-dark text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-lighter hover:text-hh-black-light  bg-hh-orange-darker text-hh-gray-light">Profil Pengguna</div>
+                    <div class=" border-2 border-hh-gray-dark text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-lighter hover:text-hh-black-light bg-white">Riwayat Transaksi</div>
+                    <a href="wishlist.php"><div class=" border-2 border-hh-gray-dark text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-lighter hover:text-hh-black-light bg-white">Wishlist</div></a>
                 </div>
 
                 <form action="" method="POST" class="flex justify-center">
-                <div class="table w-11/12">
+                <div class="table w-full">
                     <div class="table-row-group">
                             <input type="hidden" name="username" value="<?=$username?>">
-                        <div class="table-row">
-                            <div class="table-cell text-xl font-medium border-4 border-hh-orange-dark">Nama</div>
-                            <div class="table-cell border-4 border-hh-orange-dark">:<input class="h-8 ml-3 w-11/12" type="text" name="u_name" id="u_name" value="<?=$name??""?>" onkeydown="isChanged()"></div>
+                        <div class="sm:table-row flex flex-col">
+                            <div class="table-cell text-xl font-medium border-4 border-hh-gray-light">Nama:</div>
+                            <div class="table-cell border-4 border-hh-gray-light"><input class="h-8 sm:ml-3 w-11/12" type="text" name="u_name" id="u_name" value="<?=$name??""?>" onkeydown="isChanged()"></div>
                         </div>
-                        <div class="table-row">
-                            <div class="table-cell text-xl font-medium border-4 border-hh-orange-dark">Username</div>
-                            <div class="table-cell border-4 border-hh-orange-dark">:<input class="h-8 ml-3 w-11/12 disabled:opacity-50" type="text" name="u_username" id="u_username" value="<?=$username??""?>" readonly="true"></div>
+                        <div class="sm:table-row flex flex-col">
+                            <div class="table-cell text-xl font-medium border-4 border-hh-gray-light">Username:</div>
+                            <div class="table-cell border-4 border-hh-gray-light"><input class="h-8 sm:ml-3 w-11/12 text-hh-gray-dark" type="text" name="u_username" id="u_username" value="<?=$username??""?>" readonly="true"></div>
                         </div>
-                        <div class="table-row">
-                            <div class="table-cell text-xl font-medium border-4 border-hh-orange-dark">Password</div>
-                            <div class="table-cell border-4 border-hh-orange-dark">:<input class="h-8 ml-3 w-11/12" type="password" name="u_password" id="u_password" value="<?=$password??""?>" onkeydown="isChanged()"></div>
+                        <div class="sm:table-row flex flex-col">
+                            <div class="table-cell text-xl font-medium border-4 border-hh-gray-light">Password:</div>
+                            <div class="table-cell border-4 border-hh-gray-light"><input class="h-8 sm:ml-3 w-11/12" type="password" name="u_password" id="u_password" value="<?=$password??""?>" onkeydown="isChanged()"></div>
                         </div>
-                        <div class="table-row">
-                            <div class="table-cell text-xl font-medium border-4 border-hh-orange-dark">Email</div>
-                            <div class="table-cell border-4 border-hh-orange-dark">:<input class="h-8 ml-3 w-11/12" type="email" name="u_email" id="u_email" value="<?=$email??""?>" onkeydown="isChanged()"></div>
+                        <div class="sm:table-row flex flex-col">
+                            <div class="table-cell text-xl font-medium border-4 border-hh-gray-light">Email:</div>
+                            <div class="table-cell border-4 border-hh-gray-light"><input class="h-8 sm:ml-3 w-11/12" type="email" name="u_email" id="u_email" value="<?=$email??""?>" onkeydown="isChanged()"></div>
                         </div>
-                        <div class="table-row">
-                            <div class="table-cell text-xl font-medium border-4 border-hh-orange-dark">Alamat</div>
-                            <div class="table-cell border-4 border-hh-orange-dark">:
-                                <select class="ml-3 w-6/12" name="u_province" id="u_province" onchange="loadCity()">
+                        <div class="sm:table-row flex flex-col">
+                            <div class="table-cell text-xl font-medium border-4 border-hh-gray-light">Alamat:</div>
+                            <div class="table-cell border-4 border-hh-gray-light">
+                                <select class="sm:ml-3 w-6/12" name="u_province" id="u_province" onchange="loadCity()">
                                 <?php
                                     foreach ($provinsi as $key => $value) {
                                 ?>
@@ -70,15 +70,15 @@
                                 <select class="w-2/5" name="u_city" id="u_city" onchange="isChanged()"></select>
                             </div>
                         </div>
-                        <div class="table-row">
-                            <div class="table-cell text-xl font-medium border-4 border-hh-orange-dark">Tanggal Lahir</div>
-                            <div class="table-cell border-4 border-hh-orange-dark">:<input class="h-8 ml-3 w-11/12" type="date" name="u_birthday" id="u_birthday" value="<?=$birth_date??""?>" onchange="isChanged()"></div>
+                        <div class="sm:table-row flex flex-col">
+                            <div class="table-cell text-xl font-medium border-4 border-hh-gray-light">Tanggal Lahir:</div>
+                            <div class="table-cell border-4 border-hh-gray-light"><input class="h-8 sm:ml-3 w-11/12" type="date" name="u_birthday" id="u_birthday" value="<?=$birth_date??""?>" onchange="isChanged()"></div>
                         </div>
-                        <div class="table-row">
-                            <div class="table-cell text-xl font-medium border-4 border-hh-orange-dark text-right pt-2"></div>
-                            <div class="table-cell text-xl font-medium border-4 border-hh-orange-dark text-right pt-2 pr-4">
+                        <div class="sm:table-row flex flex-col">
+                            <div class="table-cell text-xl font-medium border-4 border-hh-gray-light text-right pt-2"></div>
+                            <div class="table-cell text-xl font-medium border-4 border-hh-gray-light text-right pt-2 pr-4">
                                 <input type="button" value="Reset" id="reset" class="bg-hh-pink-dark hover:bg-hh-pink-light cursor-pointer px-4 py-1 rounded mx-1 text-white" onclick="resetData()">
-                                <input type="submit" value="Simpan" name="save" id="save" class="bg-hh-orange-darker cursor-pointer px-4 py-1 rounded mx-1 text-white disabled:opacity-50" disabled>
+                                <input type="submit" value="Simpan" name="save" id="save" class="bg-hh-orange-light cursor-pointer px-4 py-1 rounded mx-1 text-hh-black-light disabled:opacity-50" disabled>
                             </div>
                         </div>
                     </div>
