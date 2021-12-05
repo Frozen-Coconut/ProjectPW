@@ -1,5 +1,5 @@
 <footer class="flex-col bg-gray-200 px-10 pt-6 pb-2">
-    <div class="flex justify-between py-3">
+    <div class="flex justify-between py-3 flex-col-reverse sm:flex-row">
         <div id="newsletter" class="flex-col max-w-sm">
             <div class="mb-3 text-lg uppercase font-medium">Dapatkan informasi mengenai produk terbaru kami beserta dengan promo promo menarik disini</div>
             <input type="my-3 text" id="nlmail" placeholder="example@email.com" class="w-72 rounded-l-md p-1 pl-2">
@@ -17,16 +17,6 @@
             <div class="font-medium text-lg uppercase">Kategori</div>
             <a href="categories.php"><div class="text-xs my-2 text-gray-700">Instrumen</div></a>
             <a href="categories.php"><div class="text-xs my-2 text-gray-700">Brand</div></a>
-        </div>
-        <div id="followus" class="w-44">
-            <div class="font-medium text-lg uppercase">Ikuti Kami</div>
-            <div class="flex">
-                <div class="w-7 h-7 bg-cover bg-no-repeat bg-ig-ico"url></div>
-                <div class="w-7 h-7 bg-cover bg-no-repeat bg-fb-ico"></div>
-                <div class="w-7 h-7 bg-cover bg-no-repeat bg-tw-ico"></div>
-                <div class="w-7 h-7 bg-cover bg-no-repeat bg-yt-ico"></div>
-                <div class="w-7 h-7 bg-cover bg-no-repeat bg-in-ico"></div>
-            </div>
         </div>
     </div>
     <div class="text-xs text-center pt-3">&copy 2021 Kelompok PW</div>
