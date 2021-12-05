@@ -26,7 +26,7 @@
         // document.title = 'Profile';
     </script>
     <div class="container min-h-screen flex justify-evenly">
-        <div class="flex flex-col items-center w-full sm:w-4/6 pt-3 px-2 sm:px-10  mt-5 sm:mt-10">
+        <div class="flex flex-col items-center w-full lg:w-4/6 pt-3 px-2 sm:px-10  mt-5 sm:mt-10">
             <div class="text-5xl font-bold sm:h-16 text-gray-800 w-full">Profil</div>
             <div class="w-full sm:w-5/6 px-5 py-6 shadow-md border-gray-100 border-2 rounded-2xl my-6 sm:my-10 bg-hh-gray-light ">
                 <div class="w-full h-10 mb-12 flex justify-center items-center">
