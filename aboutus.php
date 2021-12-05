@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full bg-hh-pink-dark">
+            <div class="w-full">
                 <div class="flex items-center my-5 card">
                     <div class="w-40 h-56 bg-cover shadow-lg rounded-lg bg-center" style="background-image: url('');"></div>
                     <div class="w-2/3 ml-3 transition-all flex flex-col">

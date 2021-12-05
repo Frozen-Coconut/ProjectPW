@@ -11,42 +11,76 @@
     }
 ?>
 
-<nav class="bg-hh-orange-dark flex justify-between py-4 px-4">
-    <ul class="flex ">
-        <a href="index.php">
-            <li class="text-xl text-hh-black-light mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-hh-white"><div id="logo">Ini Logo Gais</div></li>
-        </a>
-        <a href="categories.php">
-            <li class="text-xl text-hh-black-light mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-hh-white">Produk</li>
-        </a>
-        <a href="aboutus.php">
-            <li class="text-xl text-hh-black-light mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-hh-white">Tentang Kami</li>
-        </a>
-    </ul>
-    <ul class="flex ">
-        <?php
-        if(isset($_SESSION["loggedIn"])){
-        ?>
-            <li id="profileButton" class="cursor-pointer text-xl transition-all text-hh-black-light mx-2 px-4 py-0.5 bg-hh-white rounded ring-2 ring-hh-white hover:bg-hh-orange-dark hover:text-hh-white">Profil</li>
-            <div class="w-1/6 h-56 bg-hh-orange-light absolute top-12 right-5 rounded-xl z-10 flex" id="profileMenuList">
-                <ul class="w-full flex flex-col items-center">
-                    <a href="profile.php" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Edit Profile</li></a>
-                    <a href="profile.php" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Riwayat Transaksi</li></a>
-                    <a href="wishlist.php" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Wishlist</li></a>
-                    <a href="index.php?logout='true'" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Logout</li></a>
-                </ul>
-            </div>
-        <?php
-        }
-        else {
-        ?>
-            <a href="login.php"><li id="loginBtn" class="text-xl transition-all text-hh-black-light mx-2 ring-2 px-4 py-0.5 rounded ring-hh-black-light hover:bg-hh-orange-light hover:text-hh-white">Masuk</li></a>
-            <a href="register.php"><li id="registerBtn" class="text-xl transition-all text-hh-orange-dark mx-2 px-4 py-0.5 bg-hh-black-light rounded ring-2 ring-hh-black-light hover:text-hh-white hover:bg-hh-orange-light">Daftar</li></a>
-        <?php
-        }
-        ?>
-    </ul>
+<nav class="bg-hh-orange-dark justify-between py-4 px-4 hidden sm:flex">
+    <div class="w-full flex justify-between">
+        <ul class="flex">
+            <a href="index.php">
+                <li class="text-xl text-hh-black-light mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-hh-white"><div id="logo">Ini Logo Gais</div></li>
+            </a>
+            <a href="categories.php">
+                <li class="text-xl text-hh-black-light mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-hh-white">Produk</li>
+            </a>
+            <a href="aboutus.php">
+                <li class="text-xl text-hh-black-light mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-hh-white">Tentang Kami</li>
+            </a>
+        </ul>
+        <ul class="flex">
+            <?php
+            if(isset($_SESSION["loggedIn"])){
+            ?>
+                <li id="profileButton" class="cursor-pointer text-xl transition-all text-hh-black-light mx-2 px-4 py-0.5 bg-hh-white rounded ring-2 ring-hh-white hover:bg-hh-orange-dark hover:text-hh-white">Profil</li>
+                <div class="w-1/6 h-56 bg-hh-orange-light absolute top-12 right-5 rounded-xl z-10 flex" id="profileMenuList">
+                    <ul class="w-full flex flex-col items-center">
+                        <a href="profile.php" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Edit Profile</li></a>
+                        <a href="profile.php" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Riwayat Transaksi</li></a>
+                        <a href="wishlist.php" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Wishlist</li></a>
+                        <a href="index.php?logout='true'" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Logout</li></a>
+                    </ul>
+                </div>
+            <?php
+            }
+            else {
+            ?>
+                <a href="login.php"><li id="loginBtn" class="text-xl transition-all text-hh-black-light mx-2 ring-2 px-4 py-0.5 rounded ring-hh-black-light hover:bg-hh-orange-light hover:text-hh-white">Masuk</li></a>
+                <a href="register.php"><li id="registerBtn" class="text-xl transition-all text-hh-orange-dark mx-2 px-4 py-0.5 bg-hh-black-light rounded ring-2 ring-hh-black-light hover:text-hh-white hover:bg-hh-orange-light">Daftar</li></a>
+            <?php
+            }
+            ?>
+        </ul>
+    </div>
 </nav>
+    
+<nav class="bg-hh-orange-dark py-4 px-4 flex justify-between sm:hidden">
+    <a href="index.php" class="text-xl text-hh-black-light mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-hh-white"><div id="logo">Ini Logo Gais</div></a>
+    <div class="w-10 h-10 bg-hh-orange-lighter rounded flex flex-col items-center justify-evenly" id="hamburger">
+        <span class="w-3/4 h-1 bg-hh-black-light rounded-full opacity-80 duration-200 ease-in" id="bread-top"></span>
+        <span class="w-3/4 h-1 bg-hh-black-light rounded-full opacity-80 duration-200 ease-in" id="cheese-burger"></span>
+        <span class="w-3/4 h-1 bg-hh-black-light rounded-full opacity-80 duration-200 ease-in" id="bread-bot"></span>
+    </div>
+</nav>
+<div class="w-full bg-hh-orange-darker hidden py-1" id="ham-content">
+    <ul class="w-11/12 mx-5 text-xl">
+        <a href="categories.php"><li class="py-3 border-b-2 border-hh-black-light text-hh-black-light font-semibold">Produk</li></a>
+        <a href="aboutus.php"><li class="py-3 border-b-2 border-hh-black-light text-hh-black-light font-semibold">Tentang kami</li></a>
+        <?php
+            if(isset($_SESSION["loggedIn"])){
+        ?>
+            <a href="profile.php"><li class="py-3 border-b-2 border-hh-black-light text-hh-black-light font-semibold">Edit Profil</li></a>
+            <a href="profile.php"><li class="py-3 border-b-2 border-hh-black-light text-hh-black-light font-semibold">Riwayat Transaksi</li></a>
+            <a href="wishlist.php"><li class="py-3 border-b-2 border-hh-black-light text-hh-black-light font-semibold">Wishlist</li></a>
+            <a href="shoppingcart.php"><li class="py-3 border-b-2 border-hh-black-light text-hh-black-light font-semibold">Keranjang</li></a>
+            <a href="index.php?logout='true'"><li class="py-3 text-hh-black-light font-semibold">Logout</li></a>
+        <?php
+            }
+            else{
+        ?>
+            <a href="login.php"><li class="py-3 border-b-2 border-hh-black-light text-hh-black-light font-semibold">Masuk</li></a>
+            <a href="register.php"><li class="py-3 border-b-2 border-hh-black-light text-hh-black-light font-semibold">Daftar</li></a>
+        <?php
+            }
+        ?>
+    </ul>
+</div>
 
 <?php
     if(isset($onalert)){
@@ -92,6 +126,13 @@
 
         $("#closenoticebox").click(function () {
             $("#noticebox").remove();
+        })
+
+        $("#hamburger").click(function () {
+            $("#bread-top").toggleClass("clicked-top");
+            $("#bread-bot").toggleClass("clicked-bot");
+            $("#cheese-burger").toggleClass("clicked-mid");
+            $("#ham-content").slideToggle(400,"swing");
         })
     });
     

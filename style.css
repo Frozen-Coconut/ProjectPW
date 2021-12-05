@@ -7,3 +7,16 @@
     opacity: 1;
     transform: scaleY(1);
 } */
+
+.clicked-top{
+    transform:rotate(45deg) translate(8px, 8px);
+}
+
+.clicked-mid{
+    transform: scale(0);
+}
+
+.clicked-bot{
+    transform:rotate(-45deg) translate(7px, -8px);
+}
+
