@@ -60,70 +60,70 @@
     </script>
     <div class="container min-h-screen flex justify-evenly">
         <div class="flex flex-col items-center w-11/12 min-h-screen">
-            <div class= "w-full h-4/5 flex justify-evenly">
-                <div class="flex flex-col w-1/2">
+            <div class= "w-full h-4/5 flex flex-col sm:flex-row justify-evenly">
+                <div class="flex flex-col w-full h-screen">
                     <a href="catalogs.php" class="my-5 text-lg hover:text-hh-orange-dark"><b>< Kembali</b></a>
                     <div class="w-full h-full bg-gray-100 shadow-md bg-cover bg-center bg-no-repeat" style='background-image:url(<?=$item["itemimg"]?>);'></div>
                 </div>
-                <div class="w-4/12 h-full pt-16">
-                    <div class="uppercase text-hh-pink-light text-xl font-medium mb-3"><?=$item["instrumentname"]?></div>
-                    <div class="text-5xl font-medium my-3"><?=$item["itemname"]?></div>
+                <div class="w-full sm:h-full pt-4 sm:pt-16">
+                    <div class="uppercase text-hh-pink-light text-xl font-medium mb-3 sm:block hidden"><?=$item["instrumentname"]?></div>
+                    <div class="text-3xl sm:text-5xl font-medium my-3"><?=$item["itemname"]?></div>
                     <?php
                         if(isset($item["disc"])){
                             $stmt = $conn->query("SELECT value FROM diskon WHERE id='".$item["disc"]."'");
                             $diskon = $stmt->fetch_assoc();
-                            echo "<div class='text-2xl font-medium text-hh-orange-light my-3 line-through'>Rp ". getCurrencyFormatting($item["price"]) . "</div>";
-                            echo "<div class='text-4xl font-medium text-hh-orange-light my-3'>Rp ". getCurrencyFormatting($item["price"] - ($item["price"] * $diskon["value"] / 100)) . "</div>";
+                            echo "<div class='text-xl font-medium text-hh-orange-light my-3 line-through'>Rp ". getCurrencyFormatting($item["price"]) . "</div>";
+                            echo "<div class='text-3xl sm:text-4xl font-medium text-hh-orange-light my-3'>Rp ". getCurrencyFormatting($item["price"] - ($item["price"] * $diskon["value"] / 100)) . "</div>";
                         }
                         else{
-                            echo "<div class='text-4xl font-medium text-hh-orange-light my-3'>Rp ". getCurrencyFormatting($item["price"]) . "</div>";
+                            echo "<div class='text-3xl sm:text-4xl font-medium text-hh-orange-light my-3'>Rp ". getCurrencyFormatting($item["price"]) . "</div>";
                         }
                     ?>
                     
                     
-                    <div class="uppercase text-xl font-medium mb-3"><?=$item["brandname"]?></div>
+                    <div class="uppercase text-md sm:text-xl font-medium mb-3"><?=$item["brandname"]?></div>
                     <div class="my-3">
-                        <i class="fas fa-star text-hh-orange-light  text-lg"></i>
-                        <i class="fas fa-star text-hh-orange-light  text-lg"></i>
-                        <i class="fas fa-star-half-alt text-hh-orange-light text-lg"></i>
-                        <i class="far fa-star text-hh-orange-light  text-lg"></i>
-                        <i class="far fa-star text-hh-orange-light  text-lg"></i>
-                        <span class="text-lg font-semibold ml-2">X (n review)</span>
+                        <i class="fas fa-star text-hh-orange-light  text-2xl sm:text-lg"></i>
+                        <i class="fas fa-star text-hh-orange-light  text-2xl sm:text-lg"></i>
+                        <i class="fas fa-star-half-alt text-hh-orange-light text-2xl sm:text-lg"></i>
+                        <i class="far fa-star text-hh-orange-light  text-2xl sm:text-lg"></i>
+                        <i class="far fa-star text-hh-orange-light  text-2xl sm:text-lg"></i>
+                        <span class="text-2xl sm:text-lg font-semibold ml-2">X (n review)</span>
                     </div>
-                    <div class="mt-9 font-semibold">Warna</div>
+                    <div class="mt-3  sm:mt-9 font-semibold">Warna</div>
                     <form action="" method="POST">
                     <div class="my-3 flex">
                         <?php
                             foreach ($colors as $key => $value) {
                         ?>
                             <!-- <label class="w-5 h-5 rounded-full mx-0.5" style="background-color: <?=$value['cvalue']?>;"  for=""></label> -->
-                            <input class="p-2 mx-0.5 colorPick" type="radio" name="color_id" id="" value="<?=$value['cvalue']?>"style="background-color: <?=$value['cvalue']?>;" title="<?=$value['cname']?>">
+                            <input class="p-4 sm:p-2 mx-2 sm:mx-0.5 colorPick" type="radio" name="color_id" id="" value="<?=$value['cvalue']?>"style="background-color: <?=$value['cvalue']?>;" title="<?=$value['cname']?>">
                         <?php
                             }
                         ?>
                     </div>
                     <div>
-                        <div class="mt-5 w-56 h-12 border-hh-orange-light border-solid border-2 flex flex-row">
-                            <button id="qtydown" type="button" class="w-3/12 h-11 text-lg font-bold border-solid border-r-2 border-hh-orange-light bg-hh-orange-light">-</button>
-                            <input type="text" name="qty" style="text-align:center;" class="w-6/12 h-8 mt-1 text-2xl border-0" id="qty" value="<?php echo "0"; // if (isset($_SESSION["shoppingCart"][$itemName])) {$iniVariabelIsi = $_SESSION["shoppingCart"][$itemName]["qty"]; echo "$iniVariabelIsi";} else echo "0"; ?>"></input>
-                            <button id="qtyup" type="button" class="w-3/12 h-11 text-lg font-bold border-solid border-l-2 border-hh-orange-light bg-hh-orange-light">+</button>
+                        <div class="mt-5 w-full sm:w-56 h-12 border-hh-orange-light border-solid border-2 flex flex-row">
+                            <button id="qtydown" type="button" class="w-2/12 sm:w-3/12 h-11 text-lg font-bold border-solid border-r-2 border-hh-orange-light bg-hh-orange-light">-</button>
+                            <input type="text" name="qty" style="text-align:center;" class="w-8/12 sm:w-6/12 h-8 mt-1 text-2xl border-0" id="qty" value="<?php echo "0"; // if (isset($_SESSION["shoppingCart"][$itemName])) {$iniVariabelIsi = $_SESSION["shoppingCart"][$itemName]["qty"]; echo "$iniVariabelIsi";} else echo "0"; ?>"></input>
+                            <button id="qtyup" type="button" class="w-2/12 sm:w-3/12 h-11 text-lg font-bold border-solid border-l-2 border-hh-orange-light bg-hh-orange-light">+</button>
                         </div>
                         <div class="mt-6 mb-4">
-                            <button type="submit" name="tocart" id="tocart" value="clicked" class="w-2/3 h-10 rounded bg-hh-orange-dark text-lg text-hh-black-dark font-semibold disabled:opacity-50" disabled>Masukkan Keranjang</button>
+                            <button type="submit" name="tocart" id="tocart" value="clicked" class="w-full sm:w-2/3 h-10 rounded bg-hh-orange-dark text-lg text-hh-black-dark font-semibold disabled:opacity-50" disabled>Masukkan Keranjang</button>
                         </div>
                         <div class="mb-6 mt-4">
-                            <button type="submit" name="towish" value="clicked" class="w-2/3 h-10 rounded bg-hh-pink-dark text-lg text-hh-white font-semibold">Masukkan Wishlist</button>
+                            <button type="submit" name="towish" value="clicked" class="w-full sm:w-2/3 h-10 rounded bg-hh-pink-dark text-lg text-hh-white font-semibold">Masukkan Wishlist</button>
                         </div>
                     </div>
                     </form>
                 </div>
             </div>
-            <div class="w-11/12 my-12 flex flex-col items-center">
-                <div class="w-2/5 h-16  flex justify-center items-center">
-                    <div class="w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300 bg-hh-orange-light" onclick="openDesc()">Deskripsi</div>
-                    <div class="w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300" onclick="openReview()">Review</div>
+            <div class="w-11/12 mb-5 sm:my-12 flex flex-col items-center">
+                <div class="w-full sm:w-2/5 h-16  flex justify-center items-center">
+                    <div class="w-56 sm:w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300 bg-hh-orange-light" onclick="openDesc()">Deskripsi</div>
+                    <div class="w-56 sm:w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300" onclick="openReview()">Review</div>
                 </div>
-                <div class="w-3/4 bg-hh-orange-light flex flex-col items-center mt-2 py-5 rounded-xl shadow-lg">
+                <div class="w-full sm:w-3/4 bg-hh-orange-light flex flex-col items-center mt-2 py-5 rounded-xl shadow-lg">
                     <div class="w-11/12" id="descContainer"><?=$item["itemdesc"]?></div>
                 </div>
             </div>
