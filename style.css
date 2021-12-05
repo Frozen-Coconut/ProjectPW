@@ -1,4 +1,4 @@
-.card>div:last-child{
+/* .card>div:last-child{
     opacity: 0;
     transform: scaleY(0);
 }
@@ -6,4 +6,4 @@
 .card>div:first-child:hover+div{
     opacity: 1;
     transform: scaleY(1);
-}
+} */
