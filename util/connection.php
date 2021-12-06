@@ -312,6 +312,14 @@
 
         mysqli_query($conn,$query);
     }
+    
+    function deleteWishListItem($name) {
+        global $conn;
+
+        $query = "DELETE FROM wishlist WHERE wishlist.items_name = '".$name."'";
+
+        $hasil = mysqli_query($conn, $query);
+    }
 
     //Function Edit
     function updateStatusUser($status, $email) {
