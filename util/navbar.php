@@ -15,7 +15,7 @@
     <div class="w-full flex justify-between">
         <ul class="flex">
             <a href="index.php">
-                <li class="text-xl text-hh-black-light mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-hh-white"><div id="logo">Ini Logo Gais</div></li>
+                <li class="text-xl text-hh-black-light mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-hh-white"><div class="w-16 h-8 bg-center bg-cover bg-no-repeat" style="background-image: url('asset/logo-tk.svg');"></div></li>
             </a>
             <a href="categories.php">
                 <li class="text-xl text-hh-black-light mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-hh-white">Produk</li>
@@ -51,7 +51,7 @@
 </nav>
     
 <nav class="bg-hh-orange-dark py-4 px-4 flex justify-between sm:hidden">
-    <a href="index.php" class="text-xl text-hh-black-light mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-hh-white"><div id="logo">Ini Logo Gais</div></a>
+    <a href="index.php" class="text-xl text-hh-black-light mx-2 transition-all transform hover:-translate-y-0.5 hover:-translate-x-0.5 hover:text-hh-white"><div class="w-20 h-10 bg-center  bg-cover bg-no-repeat" style="background-image: url('asset/logo-tk.svg');"></div></a>
     <div class="w-10 h-10 bg-hh-orange-lighter rounded flex flex-col items-center justify-evenly" id="hamburger">
         <span class="w-3/4 h-1 bg-hh-black-light rounded-full opacity-80 duration-200 ease-in" id="bread-top"></span>
         <span class="w-3/4 h-1 bg-hh-black-light rounded-full opacity-80 duration-200 ease-in" id="cheese-burger"></span>
