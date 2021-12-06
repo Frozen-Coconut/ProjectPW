@@ -279,6 +279,18 @@
         }
     }
 
+    function insertReview($email, $data) {
+        global $conn;
+        
+        $stmt = $conn->prepare("INSERT INTO review (user_email, items_name, review, rating) VALUES (?, ?, ?, ?)");
+
+        foreach ($data as $key => $value) {
+            $stmt->bind_param("sssi", $email, $value["name"], $value["review"], $value["rating"]);
+
+            $stmt->execute();
+        }
+    }
+
     //Function Delete
 
     function deleteItem($name) {

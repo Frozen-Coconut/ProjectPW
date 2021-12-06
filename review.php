@@ -1,5 +1,10 @@
 <?php require_once("./util/connection.php") ?>
-<?php require_once("./util/docOpen.php") ?>
+<?php 
+    if (!isset($_SESSION["loggedIn"])) {
+        header("Location: index.php");
+    }
+    require_once("./util/docOpen.php") 
+?>
 
 <?php
     $item[] = array(
@@ -53,14 +58,14 @@
             </div>
         <?php } ?>
     </div>
-    <button class="absolute bottom-5 px-5 py-2 text-white hover:opacity-80 shadow-md bg-green-600" style="right: 10%">Submit</button>
+    <button onclick="submit()" class="absolute bottom-5 px-5 py-2 text-white hover:opacity-80 shadow-md bg-green-600" style="right: 10%">Submit</button>
 </div>
 
 <script>
     $(document).ready(function () {
-        data = {}
+        itemData = {}
         <?php foreach ($item as $key => $value) { ?>
-            data['<?= $value["name"] ?>'] = {
+            itemData['<?= $value["name"] ?>'] = {
                 'name': '<?= $value["name"] ?>',
                 'review': '',
                 'rating': 5
@@ -72,16 +77,26 @@
             current.addClass('checked');
             current.prevAll().addClass('checked');
             current.nextAll().removeClass('checked');
-            data[current.attr('name')]['rating'] = parseInt(current.attr('value'));
+            itemData[current.attr('name')]['rating'] = parseInt(current.attr('value'));
         });
         $('input[placeholder="This is a review..."]').change(function (e) { 
             let current = $(this);
-            data[current.attr('name')]['review'] = current.val();
+            itemData[current.attr('name')]['review'] = current.val();
         });
     });
 
     function submit() {
-        
+        $.ajax({
+            type: "post",
+            url: "./ajax/insertReview.php",
+            data: {
+                "email": "<?= $_SESSION["loggedIn"]["email"] ?>",
+                "item": itemData
+            },
+            success: function (response) {
+                window.location.assign('index.php');
+            }
+        });
     }
 </script>
 
