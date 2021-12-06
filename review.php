@@ -3,22 +3,26 @@
     if (!isset($_SESSION["loggedIn"])) {
         header("Location: index.php");
     }
+    if (!isset($_SESSION["reviewItem"])) {
+        header("Location: index.php");
+    }
     require_once("./util/docOpen.php") 
 ?>
 
 <?php
-    $item[] = array(
-        "name" => "Fender American Professional Precision Bass Guitar",
-        "image" => "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FF03-019-3612-776_2FF03-019-3612-776_1573183044250.jpg?v=1573183052"
-    );
-    $item[] = array(
-        "name" => "Amahi UK550C Classic Series Flamed Maple Concert Ukulele",
-        "image" => "https://cdn.shopify.com/s/files/1/1369/1865/products/amahi-uk550c-classic-series-flamed-maple-concert-ukulele-for-sale-waukegan-il-family-piano_2_360x.png?v=1588379861"
-    );
-    $item[] = array(
-        "name" => "Casio CT-X5000 61-Key Portable Keyboard",
-        "image" => "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FC32-CT-X5000_2FC32-CT-X5000_1622175245030.jpg?v=1631182662"
-    );
+    // $item[] = array(
+    //     "name" => "Fender American Professional Precision Bass Guitar",
+    //     "image" => "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FF03-019-3612-776_2FF03-019-3612-776_1573183044250.jpg?v=1573183052"
+    // );
+    // $item[] = array(
+    //     "name" => "Amahi UK550C Classic Series Flamed Maple Concert Ukulele",
+    //     "image" => "https://cdn.shopify.com/s/files/1/1369/1865/products/amahi-uk550c-classic-series-flamed-maple-concert-ukulele-for-sale-waukegan-il-family-piano_2_360x.png?v=1588379861"
+    // );
+    // $item[] = array(
+    //     "name" => "Casio CT-X5000 61-Key Portable Keyboard",
+    //     "image" => "https://cdn.shopify.com/s/files/1/0117/8740/3323/products/products_2FC32-CT-X5000_2FC32-CT-X5000_1622175245030.jpg?v=1631182662"
+    // );
+    $item = $_SESSION["reviewItem"];
 ?>
 
 <style>
