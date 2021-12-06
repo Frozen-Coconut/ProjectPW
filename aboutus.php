@@ -13,11 +13,11 @@
         <div class="w-5/6 mt-3 mb-8 flex flex-col sm:flex-row">
             <div class="w-full">
                 <div class="flex items-center my-5 card">
-                    <div class="w-40 h-56 bg-cover shadow-lg rounded-lg bg-center" style="background-image: url('');"></div>
+                    <div class="w-40 h-56 bg-cover shadow-lg rounded-lg bg-center" style="background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/11/10/59813/red-panda-08-920x518.jpg');"></div>
                     <div class="w-2/3 ml-3 transition-all flex flex-col">
-                        <span>Nama Lengkap : </span>
-                        <span>NRP : </span>
-                        <span>Contacts : </span>
+                        <span>Nama Lengkap : Billy Kelvianto Cahyadi</span>
+                        <span>NRP : 220116868</span>
+                        <span>Contacts : <span title="Email">weifuk678@gmail.com</span>
                     </div>
                 </div>
                 <div class="flex items-center my-5 card">
@@ -31,11 +31,11 @@
             </div>
             <div class="w-full">
                 <div class="flex items-center my-5 card">
-                    <div class="w-40 h-56 bg-cover shadow-lg rounded-lg bg-center" style="background-image: url('');"></div>
+                    <div class="w-40 h-56 bg-cover shadow-lg rounded-lg bg-center" style="background-image: url('https://assets.pokemon.com/assets/cms2/img/pokedex/full/109.png');"></div>
                     <div class="w-2/3 ml-3 transition-all flex flex-col">
-                        <span>Nama Lengkap : </span>
-                        <span>NRP : </span>
-                        <span>Contacts : </span>
+                        <span>Nama Lengkap : Leonard Lianto</span>
+                        <span>NRP : 220116883</span>
+                        <span>Contacts : <a href="linkedin.com/in/leonard-lianto-053ab5203">LinkedIn</a> <a href="https://www.instagram.com/leonard_lianto/">Instagram</a></span>
                     </div>
                 </div>
                 <div class="flex items-center my-5 card">
