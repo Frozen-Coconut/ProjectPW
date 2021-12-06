@@ -58,11 +58,11 @@
     <script>
         // document.title = 'Register';
     </script>
-    <div class="min-h-screen flex items-center justify-center bg-gray-500">
-        <div class="border-2 border-black border-opacity-25 rounded-lg flex items-center justify-center py-4 px-4 sm:px-6 lg:px-8 bg-gray-400 bg-opacity-50">
+    <div class="min-h-screen flex items-center justify-center bg-gray-300">
+        <div class="border-2 border-black border-opacity-25 rounded-lg flex items-center justify-center py-4 px-4 sm:px-6 lg:px-8 bg-hh-white bg-opacity-50">
             <div class="max-w-md w-full space-y-8">
                 <div>
-                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-700 text-opacity-75">
+                <h2 class="mt-6 text-center text-4xl font-abold text-gray-700 text-opacity-75">
                     Register
                 </h2>
                 </div>
@@ -125,13 +125,13 @@
                     </div>
                 </div>
                 <div>
-                    <button type="submit" name="register" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                    <button type="submit" name="register" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-hh-orange-dark hover:bg-hh-orange-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                     Register
                     </button>
                 </div>
                 <div>
                     <a href="login.php">
-                    <button name="login" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                    <button name="login" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-700 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                         Login
                     </button>
                     </a>
