@@ -11,4 +11,3 @@ deployment:
     - /bin/cp -R other $DEPLOYPATH
     - /bin/cp -R util $DEPLOYPATH
     - /bin/cp * $DEPLOYPATH
-    - /bin/cp .htaccess $DEPLOYPATH
