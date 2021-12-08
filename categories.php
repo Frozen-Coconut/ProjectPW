@@ -69,9 +69,9 @@
                     // $('div', container).hover(function() {
                     //     $('p', this).toggle();
                     // });
-                    $('div>div', container).click(function(e) { 
+                    $('div', container).click(function(e) { 
                         e.preventDefault();
-                        window.location.assign(`./catalogs.php?filter=${$('input[type=hidden]', this.parentElement).val()}&type=${$(this.parentElement.parentElement).attr('name')}`);
+                        window.location.assign(`./catalogs.php?filter=${$('input[type=hidden]', this).val()}&type=${$(this.parentElement).attr('name')}`);
                     });
                 }
             });

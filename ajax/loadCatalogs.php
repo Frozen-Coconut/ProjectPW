@@ -60,7 +60,7 @@
     foreach ($item as $key => $value) {
         // $nameList[] = $value["name"];
 ?>
-<div class="flex flex-col p-4 border-2 rounded-xl bg-gray-50 cursor-pointer shadow-md hover:shadow-lg hover:opacity-90" name="catalog">
+<div class="flex flex-col p-4 border-2 rounded-xl bg-gray-50 cursor-pointer shadow-md hover:shadow-lg transform hover:scale-105 hover:opacity-90" name="catalog">
     <div class="border-2 rounded-xl mb-4 bg-contain bg-center bg-no-repeat bg-white" style="background-image: url(<?= $value["image"] ?>)"></div>
     <p><?= $value["name"] ?></p>
     <p>Rp <?= number_format($value["price"], 2, ",", ".") ?></p>

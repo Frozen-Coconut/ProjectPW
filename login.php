@@ -10,6 +10,7 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
         if ($username == "admin" && $password == "admin") {
+            $_SESSION["iniAdmin"] = "iniAdmin";
             header("Location: adminUser.php");
         }
         if ($username != "" && $password != "") {

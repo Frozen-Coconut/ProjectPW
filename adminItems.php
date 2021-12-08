@@ -1,5 +1,9 @@
 <?php
-    require_once("./util/connection.php");require_once("./util/docOpen.php");
+    require_once("./util/connection.php");
+    if (!isset($_SESSION["iniAdmin"])) {
+      header("Location: index.php");
+    }
+    require_once("./util/docOpen.php");
     require_once("./util/navbarAdmin.php");
     unset($_SESSION["filterBrand"]);
     unset($_SESSION["filterInstrument"]);

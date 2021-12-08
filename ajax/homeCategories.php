@@ -7,7 +7,7 @@
     foreach ($arr as $key => $value) {
         
 ?>
-        <div class="w-full bg-white p-12 flex flex-col justify-center items-center" onClick="catSelect('<?= $counter ?>')">
+        <div class="w-full bg-white p-12 flex flex-col justify-center items-center cursor-pointer hover:opacity-90 transform hover:scale-125" onClick="catSelect('<?= $counter ?>')">
             <div class="mb-8">
                 <img class="object-center object-cover h-36 w-36" src="<?= $value["image"] ?>" alt="photo">
             </div>

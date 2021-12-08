@@ -1,5 +1,9 @@
 <?php 
     require_once("./util/connection.php");
+    if (!isset($_SESSION["loggedIn"])) {
+        header("Location: index.php");
+    }
+
     require_once("./util/docOpen.php");
     require_once("./util/navbar.php");
     

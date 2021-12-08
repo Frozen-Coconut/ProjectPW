@@ -17,8 +17,8 @@
         foreach ($arr as $key => $value) {
             $image = $value["image"];
 ?>
-<div class="mr-6 flex flex-col justify-center items-center">
-    <div class="w-40 h-40 border-2 rounded-xl border-black cursor-pointer bg-contain bg-center bg-no-repeat bg-white shadow-md hover:shadow-xl hover:opacity-90 mb-3" style="background-image: url(<?= $image ?>);"></div>   
+<div class="mr-6 flex flex-col justify-center items-center cursor-pointer transform hover:scale-110 hover:opacity-90">
+    <div class="w-40 h-40 border-2 rounded-xl border-black bg-contain bg-center bg-no-repeat bg-white shadow-lg mb-3" style="background-image: url(<?= $image ?>);"></div>   
     <p><?= $value["name"] ?></p>
     <input type="hidden" value='<?= $value["id"] ?>'>
 </div>

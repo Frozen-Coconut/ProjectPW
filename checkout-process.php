@@ -30,7 +30,9 @@ Config::$is3ds = true;
 
 require_once("./util/connection.php");
 
-
+if (!isset($_SESSION["loggedIn"]) || !isset($_SESSION["shoppingCart"])) {
+    header("Location: index.php");
+}
 
 // // Optional
 // $item1_details = array(

@@ -1,4 +1,10 @@
-<?php require_once("./util/connection.php");require_once("./util/docOpen.php"); ?>
+<?php 
+    require_once("./util/connection.php");
+    if (!isset($_SESSION["loggedIn"])) {
+        header("Location: index.php");
+    }
+    require_once("./util/docOpen.php"); 
+?>
 
 <script>
     // document.title = 'Checkout';

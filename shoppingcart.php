@@ -1,4 +1,11 @@
-<?php require_once("./util/connection.php");require_once("./util/docOpen.php"); ?>
+<?php 
+    require_once("./util/connection.php");
+    if (!isset($_SESSION["loggedIn"])) {
+        $_SESSION["onalert"] = "Anda harus login terlebih dahulu!";
+        header("Location: index.php");
+    }
+    require_once("./util/docOpen.php"); 
+?>
 
 <?php
     // $_SESSION["shoppingCart"]["Fender American Professional Precision Bass Guitar"] = array(

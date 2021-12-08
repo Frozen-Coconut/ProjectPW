@@ -4,6 +4,7 @@
         header("Location: index.php");
     }
     if (!isset($_SESSION["reviewItem"])) {
+        $_SESSION["onalert"] = "Belum ada item untuk direview!";
         header("Location: index.php");
     }
     require_once("./util/docOpen.php") 
