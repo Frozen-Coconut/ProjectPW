@@ -435,7 +435,47 @@
 
     function getTotalRevenue() {
         global $conn;
-        $query = "SELECT SUM() FROM wishlist WHERE user_email='".$_SESSION["loggedIn"]["email"]."'";
+        $query = "SELECT SUM(total) as 'sum' FROM transaction";
+        
+        $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+        return $result;
+    }
+
+    function getBanyakUser() {
+        global $conn;
+        $query = "SELECT count(email) as 'total' FROM user";
+        
+        $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+        return $result;
+    }
+
+    function getBanyakItem() {
+        global $conn;
+        $query = "SELECT count(name) as 'total' FROM items";
+        
+        $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+        return $result;
+    }
+
+    function getItemTransaction() {
+        global $conn;
+        $query = "SELECT SUM(ti.quantity) as 'sum', ti.items_name as 'name' FROM transaction_items ti GROUP BY ti.items_name ORDER BY 1 DESC";
+        
+        $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+        return $result;
+    }
+
+    function getBrandTransaction() {
+        global $conn;
+        $query = "SELECT SUM(ti.quantity) as 'sum', b.name as 'brand' FROM transaction_items ti, items i, brand b WHERE ti.items_name = i.name AND i.id_brand = b.id GROUP BY b.id ORDER BY 1 DESC";
+        
+        $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+        return $result;
+    }
+
+    function getInstrumentTransaction() {
+        global $conn;
+        $query = "SELECT SUM(ti.quantity) as 'sum', t.name as 'instrument' FROM transaction_items ti, items i, instrument t WHERE ti.items_name = i.name AND i.id_instrument = t.id GROUP BY t.id ORDER BY 1 DESC";
         
         $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
         return $result;

@@ -8,7 +8,17 @@
 ?>
 
 <?php
-  $totalPendapatan = 0;
+  $totalPendapatan = getTotalRevenue();
+  $totalPendapatan = $totalPendapatan[0]["sum"];
+
+  $totalUser = getBanyakUser();
+  $totalItems = getBanyakItem();
+
+  $item = getItemTransaction();
+
+  $brand = getBrandTransaction();
+
+  $instrument = getInstrumentTransaction();
 ?>
 <script>
     // document.title = 'Admin Reports';
@@ -20,31 +30,88 @@
     </h1>
   </div>
 </header>
-<div class="flex flex-col" style="height: 65vh;">
-  <div class="my-2 overflow-y-auto sm:mx-6 lg:mx-8">
-    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-      <div class="shadow border-b border-gray-200 sm:rounded-lg">
-      <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Metric Card-->
-                    <div class="bg-white border rounded shadow p-2">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded p-3 bg-hh-orange-light"><i class="fa fa-wallet fa-2x fa-fw fa-inverse"></i></div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-500">Total Pendapatan</h5>
-                                <h3 class="font-bold text-3xl">Rp. <?= $totalPendapatan ?></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/Metric Card-->
-                </div>
-      </div>
+<div class="md:w-1/2 xl:w-1/3 p-3">
+    <!--Metric Card-->
+    <div class="bg-white border rounded shadow p-2">
+        <div class="flex flex-row items-center">
+            <div class="flex-1 text-right md:text-center">
+                <h5 class="font-bold uppercase text-gray-500">Total Pendapatan</h5>
+                <h3 class="font-bold text-2xl">Rp. <?= getCurrencyFormatting($totalPendapatan) ?></h3>
+            </div>
+        </div>
     </div>
-  </div>
+    <!--/Metric Card-->
 </div>
-<div class="min-h-screen flex items-center justify-center absolute inset-0 bg-black bg-opacity-75 hidden" id="formTrack">
-
+<div class="md:w-1/2 xl:w-1/3 p-3">
+    <!--Metric Card-->
+    <div class="bg-white border rounded shadow p-2">
+        <div class="flex flex-row items-center">
+            <div class="flex-1 text-right md:text-center">
+                <h5 class="font-bold uppercase text-gray-500">Banyak User</h5>
+                <h3 class="font-bold text-2xl"><?= $totalUser[0]["total"] ?> User</h3>
+            </div>
+        </div>
+    </div>
+    <!--/Metric Card-->
+</div>
+<div class="md:w-1/2 xl:w-1/3 p-3">
+    <!--Metric Card-->
+    <div class="bg-white border rounded shadow p-2">
+        <div class="flex flex-row items-center">
+            <div class="flex-1 text-right md:text-center">
+                <h5 class="font-bold uppercase text-gray-500">Banyak Item</h5>
+                <h3 class="font-bold text-2xl"><?= $totalItems[0]["total"] ?> Item</h3>
+            </div>
+        </div>
+    </div>
+    <!--/Metric Card-->
+</div>
+<div class="w-1/3 md:w-1/2 xl:w-1/3 p-3">
+    <!--Metric Card-->
+    <div class="bg-white border rounded shadow p-2">
+        <div class="flex flex-row items-center">
+            <div class="flex-1 text-right md:text-center">
+                <h5 class="font-bold uppercase text-gray-500">Item Terlaku</h5>
+                <h3 class="font-bold text-xl"><?= $item[0]["name"] ?></h3>
+            </div>
+        </div>
+    </div>
+    <!--/Metric Card-->
+</div>
+<div class="w-full md:w-1/2 p-3">
+    <!--Graph Card-->
+    <div class="bg-white border rounded shadow">
+        <div class="border-b p-3">
+            <h5 class="font-bold uppercase text-gray-600">Graph</h5>
+        </div>
+        <div class="p-5">
+            <canvas id="chartjs-7" class="chartjs" width="undefined" height="undefined"></canvas>
+            <script>
+            new Chart(document.getElementById("chartjs-7"), {
+                "type": "bar",
+                "data": {
+                    "labels": ["Amahi"],
+                    "datasets": [{
+                        "label": "Brand",
+                        "data": [10],
+                        "borderColor": "rgb(255, 99, 132)",
+                        "backgroundColor": "rgba(255, 99, 132, 0.2)"
+                    }]
+                },
+                "options": {
+                    "scales": {
+                        "yAxes": [{
+                            "ticks": {
+                                "beginAtZero": true
+                            }
+                        }]
+                    }
+                }
+            });
+            </script>
+        </div>
+    </div>
+    <!--/Graph Card-->
 </div>
 <script>
     loadTransaction();
