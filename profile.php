@@ -31,7 +31,7 @@
             <div class="w-full sm:w-5/6 px-5 py-6 shadow-md border-gray-100 border-2 rounded-2xl my-6 sm:my-10 bg-hh-gray-light ">
                 <div class="w-full h-10 mb-12 flex justify-center items-center">
                     <div class=" border-2 border-hh-gray-dark text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-lighter hover:text-hh-black-light  bg-hh-orange-darker text-hh-gray-light">Profil Pengguna</div>
-                    <div class=" border-2 border-hh-gray-dark text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-lighter hover:text-hh-black-light bg-white">Riwayat Transaksi</div>
+                    <a href="orderHistory.php"><div class=" border-2 border-hh-gray-dark text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-lighter hover:text-hh-black-light bg-white">Riwayat Transaksi</div></a>
                     <a href="wishlist.php"><div class=" border-2 border-hh-gray-dark text-center py-0.5 px-4 mx-2 rounded-full cursor-pointer hover:bg-hh-orange-lighter hover:text-hh-black-light bg-white">Wishlist</div></a>
                 </div>
 
