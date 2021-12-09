@@ -6,6 +6,10 @@
     require_once("./util/docOpen.php");
     require_once("./util/navbarAdmin.php");
 ?>
+
+<?php
+  $totalPendapatan = 0;
+?>
 <script>
     // document.title = 'Admin Reports';
 </script>
@@ -20,7 +24,21 @@
   <div class="my-2 overflow-y-auto sm:mx-6 lg:mx-8">
     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
       <div class="shadow border-b border-gray-200 sm:rounded-lg">
-        
+      <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                    <!--Metric Card-->
+                    <div class="bg-white border rounded shadow p-2">
+                        <div class="flex flex-row items-center">
+                            <div class="flex-shrink pr-4">
+                                <div class="rounded p-3 bg-hh-orange-light"><i class="fa fa-wallet fa-2x fa-fw fa-inverse"></i></div>
+                            </div>
+                            <div class="flex-1 text-right md:text-center">
+                                <h5 class="font-bold uppercase text-gray-500">Total Pendapatan</h5>
+                                <h3 class="font-bold text-3xl">Rp. <?= $totalPendapatan ?></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Metric Card-->
+                </div>
       </div>
     </div>
   </div>

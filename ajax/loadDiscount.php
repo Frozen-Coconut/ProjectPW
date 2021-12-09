@@ -8,24 +8,36 @@
     if(isset($_GET["add"])){
       $nama = $_GET["nama"];
       $value = $_GET["value"];
-      $data = [
-        "nama" => $nama,
-        "value" => $value
-      ];
+      if ($nama != "" && $value != "") {
+        if ($value > 100) {
+          addNotice("Diskon tidak boleh melebihi 100 !");
+        }
+        else {
+        $data = [
+          "nama" => $nama,
+          "value" => $value
+        ];insertDiskon($data);}
+      }
+      else addNotice("Isi semua input !");
 
-      insertDiskon($data);
     }
 
     if(isset($_GET["edit"])){
       $id = $_GET["id"];
       $nama = $_GET["nama"];
       $value = $_GET["value"];
-      $data = [
-        "nama" => $nama,
-        "value" => $value
-      ];
+      if ($nama != "" && $value != "") {
+        if ($value > 100) {
+          addNotice("Diskon tidak boleh melebihi 100 !");
+        }
+        else {
+        $data = [
+          "nama" => $nama,
+          "value" => $value
+        ];updateDiscount($id,$data);}
+      }
+      else addNotice("Isi semua input !");
 
-      updateDiscount($id,$data);
     }
 
     $discount = selectDiscount();

@@ -44,6 +44,9 @@
 
   </nav>
 </div>
+<?php
+  require_once('./util/notice.php');
+?>
 
 <script>
     function mobileMenu() {

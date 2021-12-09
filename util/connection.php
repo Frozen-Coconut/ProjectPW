@@ -433,6 +433,14 @@
         $_SESSION["onnotice"] = $msg;
     }
 
+    function getTotalRevenue() {
+        global $conn;
+        $query = "SELECT SUM() FROM wishlist WHERE user_email='".$_SESSION["loggedIn"]["email"]."'";
+        
+        $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+        return $result;
+    }
+
     function getWishlist(){
         global $conn;
         $query = "SELECT * FROM wishlist WHERE user_email='".$_SESSION["loggedIn"]["email"]."'";

@@ -36,13 +36,13 @@
                         insertUser($userBaru);
                         header("Location: login.php");
                     }
-                    else echo("Message2"); // Kasi pesan password dan confirm salah
+                    else addNotice("Password dan Confirm tidak sama !"); // Kasi pesan password dan confirm salah 
                 }
-                else echo("Message1"); // Kasi pesan username atau email tidak boleh kembar
+                else addNotice("Username atau email tidak boleh kembar !"); // Kasi pesan username atau email tidak boleh kembar
             }
-            else echo("Message3"); // Kasi pesan accept terms and condition
+            else addNotice("Terima terms dan condition !"); // Kasi pesan accept terms and condition
         }
-        else echo("Message"); // Kasi pesan semua input harus di isi
+        else addNotice("Isi semua input !"); // Kasi pesan semua input harus di isi
     }
 
     if(isset($_POST["login"])){
@@ -54,6 +54,9 @@
 
 <?php
     require_once("./util/docOpen.php");
+?>
+<?php
+  require_once('./util/notice.php');
 ?>
     <script>
         // document.title = 'Register';

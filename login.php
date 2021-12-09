@@ -15,8 +15,8 @@
         }
         if ($username != "" && $password != "") {
             $hasil = login(["username" => $username, "password" => $password]);
-            if ($hasil == 0) echo("<script>alert('Username / Email salah!')</script>"); //Kasi pesan username tidak ketemu
-            else if ($hasil == 1) echo("<script>alert('Password salah!')</script>"); //Kasi pesan password salah
+            if ($hasil == 0) addNotice("Username atau Email salah !"); //Kasi pesan username tidak ketemu
+            else if ($hasil == 1) addNotice("Password salah !"); //Kasi pesan password salah
             else {
                 if($_POST["remember"] == "remember"){
                     setcookie("loggedIn", json_encode($_SESSION["loggedIn"]), time() + (60*60*24*10));
@@ -26,7 +26,7 @@
             //Apabila login berhasil, user login yang sedang masuk tersimpan dalam $_SESSION["login"]
             //Apabila ada remember me masukkan ke dalam cookie.
         }
-        else echo("<script>alert('Isi semua input!')</script>"); // Kasi pesan semua input harus di isi
+        else addNotice("Isi semua input !"); // Kasi pesan semua input harus di isi
     }
     
     if(isset($_POST["register"])){
@@ -36,6 +36,9 @@
 
 <?php
     require_once("./util/docOpen.php");
+?>
+<?php
+  require_once('./util/notice.php');
 ?>
     <script>
         // document.title = 'Login';

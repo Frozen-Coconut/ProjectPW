@@ -7,11 +7,13 @@
     }
 
     if(isset($_GET["stockBaru"]) && isset($_GET["name"])){
-        updateStock($_GET["stockBaru"], $_GET["name"]);
+        if($_GET["stockBaru"] != "") updateStock($_GET["stockBaru"], $_GET["name"]);
+        else addNotice("Isi stock !");
     }
 
     if(isset($_GET["add"])){
-      
+
+      if ($_GET["name"]!= "" && $_GET["brand"] != "" && $_GET["instrument"] != "" && $_GET["price"] != "" && $_GET["stock"] != "" && $_GET["desc"] != "" && $_GET["image"] != "") {
         $data = [
           "name" => $_GET["name"],
           "brand" => $_GET["brand"],
@@ -21,30 +23,33 @@
           "desc" => $_GET["desc"],
           "image" => $_GET["image"]
         ];
-
         insertItems($data);
+      }
+      else addNotice("Isi semua input !");
     }
 
     if(isset($_GET["addColor"])){
+     if ($_GET["name"] != "" && $_GET["value"] != "") {
       $data = [
         "name" => $_GET["name"],
         "value" => $_GET["value"]
       ];
-
-      echo "<pre>";
-      var_dump($data);
-      echo "</pre>";
-
       insertColor($data);
+     }
+     else addNotice("Isi semua input !");
+
     }
 
     if(isset($_GET["addColorItem"])){
+      if ($_GET["name"] != "" && $_GET["color"] != "") {
       $data = [
         "name" => $_GET["name"],
         "color" => $_GET["color"]
       ];
-
       insertColorItem($data);
+    }
+    else addNotice("Isi semua input !");
+
     }
 
     $items = selectItem();

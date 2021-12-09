@@ -9,13 +9,16 @@
         $kota =$_GET["kotaBaru"];
         $birth_date = $_GET["birthDateBaru"];
 
-        $data = [
-            "name" => $nama,
-            "password" => $password,
-            "provinsi" => $provinsi,
-            "kota" => $kota,
-            "birth_date" => $birth_date
-        ];
+        if ($nama != "" && $password != "" && $provinsi != "" && $kota !="" && $birth_date != "") {
+            // Birth date dicek apakah lebih besar dari yang sekarang
+            $data = [
+                "name" => $nama,
+                "password" => $password,
+                "provinsi" => $provinsi,
+                "kota" => $kota,
+                "birth_date" => $birth_date
+            ];
+        }
         updateProfileUser($data,$email);
     }
 ?>
