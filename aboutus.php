@@ -10,7 +10,7 @@
             <div class="text-hh-orange-dark text-4xl font-bold">Tim Kami</div>
             <div class="text-gray-600 text-xl mt-5">Kelompok ini merupakan kelompok yang terdiri atas 4 mahasiswa Institut Sains & Teknologi Terpadu Surabaya (iSTTS) , yang terbentuk untuk mengerjakan proyek yang diberikan sebagai tugas Mata Kuliah Pengembangan Aplikasi Internet. Website ini merupakan website non profit dan hanya bertujuan sebagai sarana kami untuk belajar mengembangan sebuah online shop.</div>
         </div>
-        <div class="w-5/6 mt-3 mb-8 flex flex-col sm:flex-row">
+        <div class="w-5/6 md:w-4/6 mt-3 mb-8 flex flex-col sm:flex-row">
             <div class="w-full">
                 <div class="flex items-center my-5 card">
                     <div class="w-40 h-56 bg-cover shadow-lg rounded-lg bg-center" style="background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/11/10/59813/red-panda-08-920x518.jpg');"></div>

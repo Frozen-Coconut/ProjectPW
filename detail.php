@@ -63,9 +63,9 @@
             <div class= "w-full h-4/5 flex flex-col sm:flex-row justify-evenly">
                 <div class="flex flex-col w-full h-screen">
                     <a href="catalogs.php" class="my-5 text-lg hover:text-hh-orange-dark"><b>< Kembali</b></a>
-                    <div class="w-full h-full bg-gray-100 shadow-md bg-cover bg-center bg-no-repeat" style='background-image:url(<?=$item["itemimg"]?>);'></div>
+                    <div class="w-full h-full bg-gray-100 shadow-md bg-contain sm:bg-cover bg-center bg-no-repeat" style='background-image:url(<?=$item["itemimg"]?>);'></div>
                 </div>
-                <div class="w-full sm:h-full pt-4 sm:pt-16 ml-10">
+                <div class="w-full sm:h-full pt-4 sm:pt-16 sm:ml-10">
                     <div class="uppercase text-hh-pink-light text-xl font-medium mb-3 sm:block hidden"><?=$item["instrumentname"]?></div>
                     <div class="text-3xl sm:text-5xl font-medium my-3"><?=$item["itemname"]?></div>
                     <?php
