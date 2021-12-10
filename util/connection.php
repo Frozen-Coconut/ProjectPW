@@ -54,8 +54,10 @@
         i.description as "desc", i.stock as "stock", b.name as "brand", ins.name as "instrument"
         FROM items i, brand b, instrument ins
         WHERE i.id_brand = b.id AND i.id_instrument = ins.id';
+        
 
-        return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+        $data =  $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+        return $data;
     }
 
     function selectItemsName ($name) {
@@ -473,9 +475,25 @@
         return $result;
     }
 
+    function getItemRating() {
+        global $conn;
+        $query = "SELECT AVG(r.rating) as 'rating', r.items_name as 'name' FROM review r GROUP BY r.items_name ORDER BY 1 DESC";
+        
+        $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+        return $result;
+    }
+
     function getInstrumentTransaction() {
         global $conn;
         $query = "SELECT SUM(ti.quantity) as 'sum', t.name as 'instrument' FROM transaction_items ti, items i, instrument t WHERE ti.items_name = i.name AND i.id_instrument = t.id GROUP BY t.id ORDER BY 1 DESC";
+        
+        $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+        return $result;
+    }
+
+    function getTopUser() {
+        global $conn;
+        $query = "SELECT COUNT(t.id) as 'count', u.name as 'user' FROM transaction t, user u WHERE t.user_email = u.email GROUP BY t.user_email ORDER BY 1 DESC";
         
         $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
         return $result;

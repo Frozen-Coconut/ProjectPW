@@ -15,10 +15,8 @@
   $totalItems = getBanyakItem();
 
   $item = getItemTransaction();
-
-  $brand = getBrandTransaction();
-
-  $instrument = getInstrumentTransaction();
+  $itemRating = getItemRating();
+  $topUser = getTopUser();
 ?>
 <script>
     // document.title = 'Admin Reports';
@@ -35,7 +33,7 @@
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
         <div class="shadow border-b border-gray-200 sm:rounded-lg">
             <div class="flex flex-wrap">
-            <div class="md:w-1/2 xl:w-1/3 p-3">
+            <div class="w-full sm:w-11/12 md:w-1/2 xl:w-1/3 p-3">
                 <!--Metric Card-->
                 <div class="bg-white border rounded shadow p-2">
                     <div class="flex flex-row items-center">
@@ -50,7 +48,7 @@
                 </div>
                 <!--/Metric Card-->
             </div>
-            <div class="md:w-1/2 xl:w-1/3 p-3">
+            <div class="w-full sm:w-11/12 md:w-1/2 xl:w-1/3 p-3">
                 <!--Metric Card-->
                 <div class="bg-white border rounded shadow p-2">
                     <div class="flex flex-row items-center">
@@ -65,7 +63,7 @@
                 </div>
                 <!--/Metric Card-->
             </div>
-            <div class="md:w-1/2 xl:w-1/3 p-3">
+            <div class="w-full sm:w-11/12 md:w-1/2 xl:w-1/3 p-3">
                 <!--Metric Card-->
                 <div class="bg-white border rounded shadow p-2">
                     <div class="flex flex-row items-center">
@@ -80,7 +78,7 @@
                 </div>
                 <!--/Metric Card-->
             </div>
-            <div class="w-1/3 md:w-1/2 xl:w-1/3 p-3">
+            <div class="w-full sm:w-11/12 md:w-1/2 xl:w-1/3 p-3">
                 <!--Metric Card-->
                 <div class="bg-white border rounded shadow p-2">
                     <div class="flex flex-row items-center">
@@ -92,13 +90,28 @@
                 </div>
                 <!--/Metric Card-->
             </div>
-            <div class="w-1/3 md:w-1/2 xl:w-1/3 p-3">
+            <div class="w-full sm:w-11/12 md:w-1/2 xl:w-1/3 p-3">
                 <!--Metric Card-->
                 <div class="bg-white border rounded shadow p-2">
                     <div class="flex flex-row items-center">
                         <div class="flex-1 text-right md:text-center">
                             <h5 class="font-bold uppercase text-gray-500">Item Rating Terbaik</h5>
-                            <h3 class="font-bold text-xl"><?= $item[0]["name"] ?></h3>
+                            <h3 class="font-bold text-xl"><?= $itemRating[0]["name"] ?></h3>
+                        </div>
+                    </div>
+                </div>
+                <!--/Metric Card-->
+            </div>
+            <div class="w-full sm:w-11/12 md:w-1/2 xl:w-1/3 p-3">
+                <!--Metric Card-->
+                <div class="bg-white border rounded shadow p-2">
+                    <div class="flex flex-row items-center">
+                    <div class="flex-shrink pr-4">
+                            <div class="rounded p-3 bg-hh-gray-dark"><i class="fas fa-user fa-2x fa-fw fa-inverse"></i></div>
+                        </div>
+                        <div class="flex-1 text-right md:text-center">
+                            <h5 class="font-bold uppercase text-gray-500">Top User</h5>
+                            <h3 class="font-bold text-xl"><?= $topUser[0]["user"] ?></h3>
                         </div>
                     </div>
                 </div>
