@@ -59,13 +59,13 @@
         // document.title = 'Detail';
     </script>
     <div class="container min-h-screen flex justify-evenly">
-        <div class="flex flex-col items-center w-11/12 min-h-screen">
+        <div class="flex flex-col items-center w-10/12 min-h-screen">
             <div class= "w-full h-4/5 flex flex-col sm:flex-row justify-evenly">
                 <div class="flex flex-col w-full h-screen">
                     <a href="catalogs.php" class="my-5 text-lg hover:text-hh-orange-dark"><b>< Kembali</b></a>
                     <div class="w-full h-full bg-gray-100 shadow-md bg-cover bg-center bg-no-repeat" style='background-image:url(<?=$item["itemimg"]?>);'></div>
                 </div>
-                <div class="w-full sm:h-full pt-4 sm:pt-16">
+                <div class="w-full sm:h-full pt-4 sm:pt-16 ml-10">
                     <div class="uppercase text-hh-pink-light text-xl font-medium mb-3 sm:block hidden"><?=$item["instrumentname"]?></div>
                     <div class="text-3xl sm:text-5xl font-medium my-3"><?=$item["itemname"]?></div>
                     <?php
@@ -83,12 +83,29 @@
                     
                     <div class="uppercase text-md sm:text-xl font-medium mb-3"><?=$item["brandname"]?></div>
                     <div class="my-3">
-                        <i class="fas fa-star text-hh-orange-light  text-2xl sm:text-lg"></i>
-                        <i class="fas fa-star text-hh-orange-light  text-2xl sm:text-lg"></i>
-                        <i class="fas fa-star-half-alt text-hh-orange-light text-2xl sm:text-lg"></i>
-                        <i class="far fa-star text-hh-orange-light  text-2xl sm:text-lg"></i>
-                        <i class="far fa-star text-hh-orange-light  text-2xl sm:text-lg"></i>
-                        <span class="text-2xl sm:text-lg font-semibold ml-2">X (n review)</span>
+                        <?php
+                            $stmt = $conn->prepare("SELECT rating FROM review WHERE items_name='".$item["itemname"]."'");
+                            $stmt->execute();
+                            $rate= $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+                            $totalrate = 0; 
+                            foreach ($rate as $key => $value) {
+                                $totalrate+= $value["rating"];
+                            }
+                            $avgrate = $totalrate/((count($rate)==0)?1:count($rate));
+                            $fullstar = floor($avgrate);
+                            
+                            $halfstar = ($avgrate*10%10!=0);
+                            for($i = 0 ; $i < $fullstar ; $i++){
+                                echo "<i class='fas fa-star text-hh-orange-light text-lg'></i>";
+                            }
+                            if($halfstar){
+                                echo "<i class='fas fa-star-half-alt text-hh-orange-light text-lg'></i>";
+                            }
+                            for($i = $fullstar+$halfstar ; $i < 5 ; $i++){
+                                echo "<i class='far fa-star text-hh-orange-light text-lg'></i>";
+                            }
+                            echo "<span class='text-2xl sm:text-lg font-semibold ml-2'>".$avgrate." (".count($rate)." review)</span>";
+                        ?>
                     </div>
                     <div class="mt-3  sm:mt-9 font-semibold">Warna</div>
                     <form action="" method="POST">
