@@ -15,7 +15,7 @@
             $it = selectItemTransaction($v["id"]);
             echo "<div class='align-baseline table-row ".(($key%2==0)?"bg-hh-orange-lighter":"bg-hh-gray-light")."'>";
                 echo "<div class='table-cell p-2 align-middle'>".($key+1)."</div>";
-                echo "<div class='table-cell p-2 align-middle'><ul>";
+                echo "<div class='sm:table-cell hidden p-2 align-middle'><ul>";
                 foreach ($it as $k => $item) {
                     echo "<li class='flex my-1'>";
                         echo "<div class='w-12 h-12 bg-hh-black-light mix-blend-darken mr-2 bg-center bg-cover' style='background-image:url(".$item["image"].")'></div>";
@@ -23,9 +23,9 @@
                     echo "</li>";
                 }
                 echo "</ul></div>";
-                echo "<div class='table-cell p-2 align-middle text-center'>".(($v["status"]==3)?"<span class='rounded-full p-2 px-4 border-4 border-green-600'>Selesai</span>":($v["status"]==2?"<span class='rounded-full p-2 px-4 border-4 border-yellow-500'>Dalam Perjalanan</span>":"<span class='rounded-full p-2 px-4 border-4 border-red-600'>Menunggu Konfirmasi</span>"))."</div>";
-                echo "<div class='table-cell p-2 align-middle'>Rp ".getCurrencyFormatting($v["total"])."</div>";
-                echo "<div class='table-cell p-2 align-middle'>".(($v["status"]==3)?"<div class='text-blue-600 hover:text-blue-400 hover:underline cursor-pointer w-min text-lg' onclick='makeReview(\"".$v["id"]."\")'>Review</div>":"")."</div>";
+                echo "<div class='table-cell p-2 align-middle text-center'>".(($v["status"]==3)?"<div class='rounded-full p-2 px-4 border-4 border-green-600'>Selesai</div>":($v["status"]==2?"<div class='rounded-full p-2 px-4 border-4 border-yellow-500'>Dalam Perjalanan</div>":"<div class='rounded-full p-2 px-4 border-4 border-red-600'>Menunggu Konfirmasi</div>"))."</div>";
+                echo "<div class='table-cell p-2 align-middle text-sm md:text-md'>Rp ".getCurrencyFormatting($v["total"])."</div>";
+                echo "<div class='table-cell p-2 align-middle'>".(($v["status"]==3)?"<div class='text-blue-600 hover:text-blue-400 hover:underline cursor-pointer w-min text-lg' onclick='makeReview(\"".$v["id"]."\")'>Review</div>":"")."<div class='text-blue-600 hover:text-blue-400 hover:underline cursor-pointer w-min text-lg sm:hidden' onclick='viewDetail(\"".$v["id"]."\")'>Detail</div></div>";
             echo "</div>";
         }
     }
@@ -38,5 +38,16 @@
                 "image" => $value["image"]
             );
         }
+    }
+    else if($action=="detail"){
+        $it = selectItemTransaction($transid);
+        echo "<div class='flex flex-col items-center overflow-auto max-h-screen'>";
+        foreach ($it as $key => $value) {
+            echo "<div class='w-11/12 flex my-1 rounded'>";
+                echo "<div class='w-12 h-12 bg-cover bg-no-repeat bg-center mix-blend-darken' style='background-image:url(\"".$value["image"]."\")'></div>";
+                echo "<div>".$value["item_name"]." - ".$value["warna"]." - ".$value["quantity"]."pcs</div>";
+            echo "</div>";
+        }
+        echo "</div>";
     }
 ?>

@@ -5,7 +5,7 @@
 ?>
 <div class="container min-h-screen flex flex-col justify-evenly items-center mx-auto w-11/12">
     <div class="text-5xl w-full my-5">Order History</div>
-    <div class="w-full h-10 flex justify-end mb-4 items-center">
+    <div class="w-full h-min flex flex-col sm:flex-row items-start sm:items-center justify-end mb-4  ">
         Filter:
         <select id="filter" class="mx-2">
             <option value="0">All</option>
@@ -18,15 +18,17 @@
             <option value="0">Nomor</option>
             <option value="1">Total</option>
         </select>
-        <button class="rounded bg-hh-pink-light text-hh-black-light font-semibold p-2 px-5 mx-1 hover:bg-hh-pink-dark hover:text-white" onclick="resetFilter()">Reset</button>
-        <button class="rounded bg-hh-orange-light text-hh-black-light font-semibold p-2 px-5 mx-1 hover:bg-hh-orange-dark hover:text-white" onclick="loadHistory()">Filter</button>
+        <div class="flex mt-5 sm:mt-0">
+            <button class="rounded bg-hh-pink-light text-hh-black-light font-semibold p-2 px-5 mx-1 hover:bg-hh-pink-dark hover:text-white" onclick="resetFilter()">Reset</button>
+            <button class="rounded bg-hh-orange-light text-hh-black-light font-semibold p-2 px-5 mx-1 hover:bg-hh-orange-dark hover:text-white" onclick="loadHistory()">Filter</button>
+        </div>
     </div>
     <div class="w-full mb-5">
         <div class="table w-full rounded">
             <div class="table-row bg-hh-orange-dark">
                 <div class="table-cell p-2">NO</div>
-                <div class="table-cell p-2 w-7/12">ITEMS</div>
-                <div class="table-cell p-2 w-2/12">STATUS</div>
+                <div class="sm:table-cell hidden p-2 w-7/12">ITEMS</div>
+                <div class="table-cell p-2 w-2/12 ">STATUS</div>
                 <div class="table-cell p-2 w-2/12">TOTAL</div>
                 <div class="table-cell p-2 w-1/12">ACTION</div>
             </div>
@@ -88,6 +90,26 @@
                 window.location.assign("./review.php");
             }
         });
+    }
+
+    function viewDetail(transid){
+        $.alert({
+            content: function() {
+                var self = this;
+                return $.ajax({
+                    title:"",
+                    type: "post",
+                    url: "./ajax/loadOrderHistory.php",
+                    data: {
+                        "action":"detail",
+                        "transid":transid
+                    }
+                }).done(function(response){
+                    self.setContent(response);
+                    self.setTitle("Transaction Detail");
+                });
+            }
+        })
     }
 
 </script>
