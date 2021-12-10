@@ -64,6 +64,7 @@
         <?php } ?>
     </div>
     <button onclick="submit()" class="absolute bottom-5 px-5 py-2 text-white hover:opacity-80 shadow-md bg-green-600" style="right: 10%">Submit</button>
+    <button onclick="window.history.back()" class="absolute left-8 top-8 px-5 py-2 bg-gray-400 hover:opacity-80 shadow-md">Kembali</button>
 </div>
 
 <script>
