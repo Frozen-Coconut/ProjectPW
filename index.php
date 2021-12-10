@@ -42,7 +42,7 @@
             Lihat Kategori Kami
         </h1>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6" id="categories">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2" id="categories">
 
     </div>
 </section>
@@ -58,7 +58,7 @@
                     </a>
                 </div> 
             </div>
-            <div class="md:w-1/3">
+            <div class="w-3/5 md:w-1/3">
                 <img class ="shadow-inner" src="./asset/img/K-300-Polished-Ebony-600x600-removebg.png" alt="Image of Kawaii K-300">
             </div>    
             <div class="mx-4 text-white px-10">
@@ -71,6 +71,7 @@
         <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-900">
             Our Partners
         </h1>
+        <img src="./asset/img/partners.png" alt="partners">
     </div>
 </section>
 
