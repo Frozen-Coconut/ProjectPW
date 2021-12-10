@@ -35,13 +35,13 @@
   <div class="my-2 overflow-y-auto sm:mx-6 lg:mx-8">
     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
       <div class="shadow border-b border-gray-200 sm:rounded-lg">
-        <table class="min-w-full divide-y divide-gray-200 table-fixed">
+        <table class="min-w-full divide-y divide-gray-200 table-auto">
           <thead class="bg-gray-50">
           <tr>
               <th scope="col" class="w-1/16 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                 Id
               </th>
-              <th scope="col" class="pr-6 pl-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th scope="col" class="w-2/5 pl-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                 Item
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">

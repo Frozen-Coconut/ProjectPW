@@ -15,7 +15,7 @@
 <?php foreach($transaction as $x) :?>
     <tr>
         <td class="px-4 py-4 whitespace-nowrap"><?= $x["id"] ?></td>
-        <td class="pr-6 py-4 whitespace-nowrap">
+        <td class="pr-6 py-4">
             <?php foreach($x["item"] as $y) :?>
                 <div class="flex items-center">
                 <div class="flex-shrink-0 h-10 w-10">

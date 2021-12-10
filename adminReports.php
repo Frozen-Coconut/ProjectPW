@@ -123,7 +123,7 @@
                 <!--Graph Card-->
                 <div class="bg-white border rounded shadow">
                     <div class="border-b p-3">
-                        <h5 class="font-bold uppercase text-gray-600">5 Brand Terlaku
+                        <h5 class="font-bold uppercase text-gray-600">Brand Terlaku
                         </h5>
                     </div>
                     <div class="p-5">
@@ -137,7 +137,7 @@
                 <div class="bg-white border rounded shadow">
                     <div class="border-b p-3">
                         <h5 class="font-bold uppercase text-gray-600">
-                            5 Instrument Terlaku</h5>
+                            Instrument Terlaku</h5>
                     </div>
                     <div class="p-5">
                         <canvas id="chartjs-ins" class="chartjs" width="undefined" height="undefined"></canvas>

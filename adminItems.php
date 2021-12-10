@@ -27,6 +27,7 @@
   <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addItem()">Tambah Item</button>
   <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addColor()">Tambah Warna</button>
   <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addColorToItem()">Tambah Warna ke Item</button>
+  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="randomColor()">Tambah Warna Acak</button>
   <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="reset()">Hilangkan Filter</button>
     <select id="brandFilter" class="form-select border-2 border-gray-300 bg-white h-10 pr-8 rounded-lg text-sm focus:outline-none" onchange="filterBrand()">
       <option value="" hidden selected>Brand</option>
@@ -102,6 +103,18 @@
           }
       }).then(res=>{
           $("#tableBody").html(res);
+      })
+    }
+
+    function randomColor() {
+      $.ajax({
+          type: "get",
+          url: "./ajax/randomWarnaItem.php",
+          data: {
+              
+          }
+      }).then(res=>{
+          
       })
     }
 

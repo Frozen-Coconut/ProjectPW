@@ -108,6 +108,14 @@
         $data = $conn->query('SELECT c.name as "name", c.value as "value" FROM color c, color_items ci WHERE ci.id_color = c.id AND ci.items_name = \''.$itemsName.'\'' )->fetch_all(MYSQLI_ASSOC);
         return $data;
     }
+
+    function selectAllColor() {
+        global $conn;
+
+        $query = 'SELECT * FROM color';
+
+        return $conn->query($query)->fetch_all(MYSQLI_ASSOC);
+    }
     
     function selectRating ($itemsName) {
         global $conn;
@@ -505,5 +513,39 @@
         
         $result = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
         return $result;
+    }
+
+    function randomWarnaItem () {
+        global $conn;
+        $query = 'TRUNCATE TABLE color_items';
+
+        mysqli_query($conn, $query);
+
+        $semuaItem = selectItem();
+        $semuaWarna = selectAllColor();
+        $banyakWarna = sizeof($semuaWarna);
+        foreach($semuaItem as $x) {
+            $hasilRand = rand(1,4);
+            $temp = [];
+            $warna = [];
+            for ($i=0; $i < $hasilRand; $i++) { 
+                do {
+                    $cek = false;
+                    $randWarna = rand(0, $banyakWarna-1);
+                    for ($i=0; $i < sizeof($temp); $i++) { 
+                        if ($randWarna == $temp[$i]) $cek = true;
+                    }
+                } while ($cek);
+                $temp[] = $randWarna;
+                $warna[] = $semuaWarna[$randWarna];
+            }
+            for ($i=0; $i < $hasilRand; $i++) { 
+                $stmt = $conn->prepare("INSERT INTO color_items(id_color, items_name) VALUES(?,?)");
+
+                $stmt->bind_param("is", $warna[$i]["id"], $x["name"]);
+
+                $stmt->execute();
+            }
+        }
     }
 ?>

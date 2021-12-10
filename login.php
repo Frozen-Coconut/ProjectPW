@@ -9,7 +9,7 @@
     if(isset($_POST["login"])){
         $username = $_POST["username"];
         $password = $_POST["password"];
-        if ($username == "admin" && $password == "admin") {
+        if ($username == "admin" && $password == "SX*C-72Eln1o5n") {
             $_SESSION["iniAdmin"] = "iniAdmin";
             header("Location: adminUser.php");
         }
