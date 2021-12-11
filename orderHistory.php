@@ -62,7 +62,7 @@
         if(parseInt($("#filter").val()) >0){
             q += "AND status="+$("#filter").val();
         }
-        q += "ORDER BY ";
+        q += " ORDER BY ";
         if(parseInt($("#order").val()) == 0){
             q +="id";
         }
