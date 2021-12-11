@@ -18,14 +18,14 @@
 
 <section class="w-full h-screen bg-center bg-no-repeat bg-cover flex" style="background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80');">
     <div class="w-full h-screen bg-opacity-70 bg-black flex justify-center items-center">
-        <div class="sm-none md:w-1/2"></div>
-        <div class="sm-none md:w-1/2">
+        <div class="sm-none lg:w-1/2"></div>
+        <div class="sm-none md:w-3/4 lg:w-1/2">
         <div class="mx-4 text-left text-white px-10">
             <h1 class="font-bold text-6xl mb-4">TokoKita</h1>
             <p class="text-1xl mb-4">Toko alat musik terlengkap di Indonesia! Kami menyediakan alat musik professional dan pro audio dari merek ternama.</p>
             <form action="./catalogs.php" method="get">
-                <input type="text" class="rounded-md px-7 py-3 transition duration-300 ease-in-out text-black" placeholder="Telusuri Toko" name="search">
-                <button class="bg-red-500 rounded-md font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-red-600 ml-2">
+                <input type="text" class="rounded-md px-5 py-3 transition duration-300 ease-in-out text-black" placeholder="Telusuri Toko" name="search">
+                <button class="bg-red-500 rounded-md font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-red-600">
                     Search
                 </button>
             </form>

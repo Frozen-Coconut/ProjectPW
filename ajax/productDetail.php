@@ -11,7 +11,7 @@
         $r= $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
         if(count($r)>0){
             foreach ($r as $key => $v) {
-                echo "<div class='w-full h-20 bg-hh-gray-light rounded p-2'>";
+                echo "<div class='w-full h-20 shadow-sm rounded p-2'>";
                 echo "<div class='text-xl'>";
                 echo $v["uname"];
                 // $satuan = $v["rrating"]*10/10;

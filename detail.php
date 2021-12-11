@@ -140,7 +140,7 @@
                     <div class="w-56 sm:w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300 bg-hh-orange-light" onclick="openDesc()">Deskripsi</div>
                     <div class="w-56 sm:w-24 h-10 pt-1 text-center rounded-3xl border-2 border-solid border-gray-00 shadow-lg mx-5 cursor-pointer desc transition-colors duration-300" onclick="openReview()">Review</div>
                 </div>
-                <div class="w-full sm:w-3/4 bg-hh-orange-light flex flex-col items-center mt-2 py-5 rounded-xl shadow-lg">
+                <div class="w-full sm:w-3/4 bg-gray-100 flex flex-col items-center mt-2 py-5 rounded-xl shadow-lg">
                     <div class="w-11/12" id="descContainer"><?=$item["itemdesc"]?></div>
                 </div>
             </div>

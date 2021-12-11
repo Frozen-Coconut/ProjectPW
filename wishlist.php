@@ -40,7 +40,7 @@
             ?>
                 <tr class="border-b">
                     <td class="py-4 px-7"><img src="<?= $item[0]["image"] ?>" style="width: 3em; height: 3em;" alt=""></td>
-                    <td class="py-4 px-7"><?= $value["items_name"] ?></td>
+                    <td class="py-4 px-7"><a href="./detail.php?itemname=<?=$value["items_name"]?>"><?= $value["items_name"] ?></a></td>
                     <td class="py-4 px-7"><?= $item[0]["price"] ?></td>
                     <td class="py-4 px-7">
                         <form action="" method="post">
