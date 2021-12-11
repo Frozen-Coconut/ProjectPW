@@ -7,7 +7,7 @@
     }
 ?>
 
-<div class="border-2 border-black border-opacity-25 rounded-lg flex items-center justify-center py-4 px-4 sm:px-6 lg:px-8 bg-gray-400" style="width: 600px;">
+<div class="overflow-y-fixed border-2 border-black border-opacity-25 rounded-lg flex items-center justify-center py-4 px-4 sm:px-6 lg:px-8 bg-gray-400" style="width: 500px;">
   <div class="max-w-md w-full space-y-8 relative">
       <div class="mt-8 space-y-6 px-3">
       <button type="button" class="bg-white rounded-md p-0.5 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 absolute top-0 right-0" onclick="closeForm()">
@@ -26,7 +26,7 @@
           <h5 class="mt-6 text-l font-extrabold text-gray-700 text-opacity-100">Email : <?= $transaction["email"] ?></h5>
           <h5 class="mt-6 text-l font-extrabold text-gray-700 text-opacity-100">Name : <?= $transaction["user_name"] ?></h5>
       </div>
-      <div class="rounded-md -space-y-px bg-white p-5">
+      <div class="rounded-md -space-y-px bg-white p-5 overflow-y-auto" style="height:20vh;">
           <h3 class="mb-6 text-xl font-extrabold text-gray-700 text-opacity-75">Item Details</h3>
           <?php foreach($transaction["item"] as $y) :?>
             <div class="flex items-center m-2">
