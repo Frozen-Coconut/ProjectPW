@@ -5,7 +5,7 @@
     $instrument = query('SELECT * FROM instrument');
 ?>
 
-<div class="border-2 border-black border-opacity-25 rounded-lg flex items-center justify-center py-4 px-4 sm:px-6 lg:px-8 bg-gray-400" style="width: 400px;">
+<div class="border-2 border-black border-opacity-25 rounded-lg flex items-center justify-center py-4 px-4 sm:px-6 lg:px-8 bg-hh-white" style="width: 400px;">
   <div class="max-w-md w-full space-y-8 relative">
       <div>
       <button type="button" class="bg-white rounded-md p-0.5 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 absolute top-0 right-0" onclick="closeForm()">
@@ -14,7 +14,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
-      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-700 text-opacity-75">
+      <h2 class="mt-6 text-center text-3xl font-bold text-gray-700 text-opacity-75">
           Tambah Item
       </h2>
       </div class="mt-8 space-y-6 px-3">
