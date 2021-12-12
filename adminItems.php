@@ -24,24 +24,24 @@
 </header>
 <div class="p-2 pt-5 relative mx-auto text-gray-600 flex justify-end">
   <div class="mr-12">
-  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addItem()">Tambah Item</button>
-  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addColor()">Tambah Warna</button>
-  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addColorToItem()">Tambah Warna ke Item</button>
-  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="randomColor()">Tambah Warna Acak</button>
-  <button class="border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="reset()">Hilangkan Filter</button>
-    <select id="brandFilter" class="form-select border-2 border-gray-300 bg-white h-10 pr-8 rounded-lg text-sm focus:outline-none" onchange="filterBrand()">
+  <button class="my-2 md:my-0 border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addItem()">Tambah Item</button>
+  <button class="my-2 md:my-0 border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addColor()">Tambah Warna</button>
+  <button class="my-2 md:my-0 border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="addColorToItem()">Tambah Warna ke Item</button>
+  <button class="my-2 md:my-0 border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="randomColor()">Tambah Warna Acak</button>
+  <button class="my-2 md:my-0 border-2 border-gray-300 bg-white h-10 px-4 rounded-lg text-sm hover:border-indigo-500" onclick="reset()">Hilangkan Filter</button>
+    <select id="brandFilter" class="my-2 md:my-0 form-select border-2 border-gray-300 bg-white h-10 pr-8 rounded-lg text-sm focus:outline-none" onchange="filterBrand()">
       <option value="" hidden selected>Brand</option>
       <?php foreach($brand as $x) :?>
         <option value="<?= $x["id"] ?>"><?= $x["name"] ?></option>
       <?php endforeach; ?>
     </select>
-    <select id="instrumentFilter" class="form-select border-2 border-gray-300 bg-white h-10 pr-8 rounded-lg text-sm focus:outline-none" onchange="filterInstrument()">
+    <select id="instrumentFilter" class="my-2 md:my-0 form-select border-2 border-gray-300 bg-white h-10 pr-8 rounded-lg text-sm focus:outline-none" onchange="filterInstrument()">
       <option value="" hidden selected disabled>Instrument</option>
       <?php foreach($instrument as $x) :?>
         <option value="<?= $x["id"] ?>"><?= $x["name"] ?></option>
       <?php endforeach; ?>
     </select>
-    <input class="border-2 border-gray-300 bg-white h-10 px-5 rounded-lg text-sm focus:outline-none"
+    <input class="my-2 md:my-0 border-2 border-gray-300 bg-white h-10 px-5 rounded-lg text-sm focus:outline-none"
       type="search" name="search" placeholder="Search" id="inputSearch">
     <button type="submit" class="ml-2" onclick="search()">
       <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@
               "name" : namaItem
           }
       }).then(res=>{
-          $("#formEdit").html(res);
+          $("body").css('overflow', 'hidden');$("#formEdit").html(res);
       })
       $("#formEdit").css('display','flex');
     }
@@ -178,6 +178,7 @@
     }
 
     function closeForm() {
+      $("body").css('overflow', 'auto');
       $("#formEdit").css('display','none');
     }
 
@@ -225,7 +226,7 @@
               
           }
       }).then(res=>{
-          $("#formEdit").html(res);
+          $("body").css('overflow', 'hidden');$("#formEdit").html(res);
       })
       $("#formEdit").css('display','flex');
     }
@@ -253,7 +254,7 @@
               "add" : 1
           }
       }).then(res=>{
-          $("#formEdit").html(res);
+          $("body").css('overflow', 'hidden');$("#formEdit").html(res);
       })
       $("#formEdit").css('display','flex');
     }
@@ -281,7 +282,7 @@
               
           }
       }).then(res=>{
-          $("#formEdit").html(res);
+          $("body").css('overflow', 'hidden');$("#formEdit").html(res);
       })
       $("#formEdit").css('display','flex');
     }
@@ -294,7 +295,7 @@
               "nameSearch" : $("#inputSearchItem").val()
           }
       }).then(res=>{
-          $("#formEdit").html(res);
+          $("body").css('overflow', 'hidden');$("#formEdit").html(res);
       })
       $("#formEdit").css('display','flex');
     }
@@ -307,7 +308,7 @@
               
           }
       }).then(res=>{
-          $("#formEdit").html(res);
+          $("body").css('overflow', 'hidden');$("#formEdit").html(res);
       })
       $("#formEdit").css('display','flex');
     }
