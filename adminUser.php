@@ -149,7 +149,7 @@
               "email" : email
           }
       }).then(res=>{
-          $("#formEdit").html(res);
+          $("body").css('overflow', 'hidden');$("#formEdit").html(res);
           loadSelectKotaBaru();
           $("#formEdit").css('display','flex');
       })
