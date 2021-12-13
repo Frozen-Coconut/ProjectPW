@@ -60,7 +60,7 @@
     </script>
     <div class="container min-h-screen flex justify-evenly">
         <div class="flex flex-col items-center w-10/12 min-h-screen">
-            <div class= "w-full h-4/5 flex flex-col sm:flex-row justify-evenly">
+            <div class= "w-full h-1/2 sm:h-4/5 flex flex-col sm:flex-row justify-evenly">
                 <div class="flex flex-col w-full h-screen">
                     <a href="catalogs.php" class="my-5 text-lg hover:text-hh-orange-dark"><b>< Kembali</b></a>
                     <div class="w-full h-full bg-gray-100 shadow-md bg-contain sm:bg-cover bg-center bg-no-repeat" style='background-image:url(<?=$item["itemimg"]?>);'></div>
