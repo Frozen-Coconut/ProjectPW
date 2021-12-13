@@ -17,10 +17,16 @@
                 $color_id = $_REQUEST["color_id"];
                 $stmt = $conn->query("SELECT id FROM color WHERE value='$color_id'");
                 $colorpick = $stmt->fetch_assoc();
+                $itemprice = $item["price"];
+                if($item["disc"]>0){
+                    $stmt = $conn->query("SELECT value FROM diskon WHERE id='".$item["disc"]."'");
+                    $diskon = $stmt->fetch_assoc();
+                    $itemprice = $item["price"] - ($item["price"] * $diskon["value"] / 100);
+                }
                 $_SESSION["shoppingCart"]["$itemname $color_id"]=array(
                     "name" => $itemname,
                     "image" => $item["itemimg"],
-                    "price" => $item["price"],
+                    "price" => $itemprice,
                     "qty" => $_REQUEST["qty"],
                     "color_id"=> $colorpick["id"],
                     "color_value" => $color_id
