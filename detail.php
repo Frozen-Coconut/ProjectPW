@@ -13,18 +13,23 @@
     
     if(isset($_REQUEST["tocart"])){
         if(isset($_SESSION["loggedIn"])){
-            $color_id = $_REQUEST["color_id"];
-            $stmt = $conn->query("SELECT id FROM color WHERE value='$color_id'");
-            $colorpick = $stmt->fetch_assoc();
-            $_SESSION["shoppingCart"]["$itemname $color_id"]=array(
-                "name" => $itemname,
-                "image" => $item["itemimg"],
-                "price" => $item["price"],
-                "qty" => $_REQUEST["qty"],
-                "color_id"=> $colorpick["id"],
-                "color_value" => $color_id
-            );
-            $_SESSION["onnotice"] = "Berhasil memasukkan ke keranjang!";
+            if(isset($_REQUEST["color_id"])){
+                $color_id = $_REQUEST["color_id"];
+                $stmt = $conn->query("SELECT id FROM color WHERE value='$color_id'");
+                $colorpick = $stmt->fetch_assoc();
+                $_SESSION["shoppingCart"]["$itemname $color_id"]=array(
+                    "name" => $itemname,
+                    "image" => $item["itemimg"],
+                    "price" => $item["price"],
+                    "qty" => $_REQUEST["qty"],
+                    "color_id"=> $colorpick["id"],
+                    "color_value" => $color_id
+                );
+                $_SESSION["onnotice"] = "Berhasil memasukkan ke keranjang!";
+            }
+            else{
+                $_SESSION["onalert"] = "Pilih warna terlebih dahulu!";
+            }
         }
         else{
             $_SESSION["onalert"] = "Anda harus login terlebih dahulu!";
