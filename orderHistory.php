@@ -112,6 +112,22 @@
         })
     }
 
+    function confirmSampai(transid) {
+        $.ajax({
+            type: "post",
+            url: "./ajax/loadOrderHistory.php",
+            data: {
+                "confirm":1,
+                "transid":transid,
+                "action":"fetch",
+                "filter":getFilter()
+            },
+            success: function (response) {
+                $("#contents").html(response);
+            }
+        });
+    }
+
 </script>
 <?php
     require_once("./util/footer.php");

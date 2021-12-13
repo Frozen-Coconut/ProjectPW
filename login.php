@@ -17,6 +17,7 @@
             $hasil = login(["username" => $username, "password" => $password]);
             if ($hasil == 0) addNotice("Username atau Email salah !"); //Kasi pesan username tidak ketemu
             else if ($hasil == 1) addNotice("Password salah !"); //Kasi pesan password salah
+            else if ($hasil == 2) addNotice("User masih di ban!");
             else {
                 if($_POST["remember"] == "remember"){
                     setcookie("loggedIn", json_encode($_SESSION["loggedIn"]), time() + (60*60*24*10));

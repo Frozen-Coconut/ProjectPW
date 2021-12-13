@@ -406,7 +406,10 @@
         if ($cek != -1) {
             if ($data["password"] == $user[$cek]["password"]) {
                 $hasil +=1;
-                $_SESSION["loggedIn"] = $user[$cek];
+                if ($user[$cek]["status"] == 1) {
+                    $hasil +=1;
+                    $_SESSION["loggedIn"] = $user[$cek];
+                }
             }
         }
         return $hasil;

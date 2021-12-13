@@ -19,26 +19,29 @@
 
         if ($name != "" && $username != "" && $email != "" && $password != "" && $confirm != "" && $gender != "" && $birth_date != "" && $provinsi !="" && $kota != "") {
             if(isset($_POST["accept"])){
-                $cek = cekKembar(["username" => $username, "email" => $email]);
-                if ($cek == 0) {
-                    //regis
-                    if ($password == $confirm) {
-                        $userBaru = [
-                            "email" => $email,
-                            "username" => $username,
-                            "password" => $password,
-                            "name" => $name,
-                            "provinsi" => $provinsi,
-                            "kota" => $kota,
-                            "birth_date" => $birth_date,
-                            "gender" => $gender
-                        ];
-                        insertUser($userBaru);
-                        header("Location: login.php");
+                if (strtolower($username) != "admin") {
+                    $cek = cekKembar(["username" => $username, "email" => $email]);
+                    if ($cek == 0) {
+                        //regis
+                        if ($password == $confirm) {
+                            $userBaru = [
+                                "email" => $email,
+                                "username" => $username,
+                                "password" => $password,
+                                "name" => $name,
+                                "provinsi" => $provinsi,
+                                "kota" => $kota,
+                                "birth_date" => $birth_date,
+                                "gender" => $gender
+                            ];
+                            insertUser($userBaru);
+                            header("Location: login.php");
+                        }
+                        else addNotice("Password dan Confirm tidak sama !"); // Kasi pesan password dan confirm salah 
                     }
-                    else addNotice("Password dan Confirm tidak sama !"); // Kasi pesan password dan confirm salah 
+                    else addNotice("Username atau email tidak boleh kembar !"); // Kasi pesan username atau email tidak boleh kembar
                 }
-                else addNotice("Username atau email tidak boleh kembar !"); // Kasi pesan username atau email tidak boleh kembar
+                else addNotice ("Username tidak dapat menggunakan admin !");
             }
             else addNotice("Terima terms dan condition !"); // Kasi pesan accept terms and condition
         }
