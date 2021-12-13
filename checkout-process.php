@@ -6,7 +6,7 @@
 
 namespace Midtrans;
 
-require_once dirname(__FILE__) . './midtrans-php-master/Midtrans.php';
+require_once dirname(__FILE__) . '/midtrans-php-master/Midtrans.php';
 // Set Your server key
 // can find in Merchant Portal -> Settings -> Access keys
 Config::$serverKey = 'SB-Mid-server-9U6RzSWl0Qug_Vt7bMfxYtdf';
