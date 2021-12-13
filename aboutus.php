@@ -25,7 +25,7 @@
                     <div class="w-2/3 ml-3 transition-all flex flex-col">
                         <span>Nama Lengkap : Hartoyo Lijaya</span>
                         <span>NRP : 220116874</span>
-                        <span>Contacts : <a href="https://www.instagram.com/hartoyo_lijaya/">Instagram</a></span>
+                        <span>Contacts : <div><a href="https://www.instagram.com/hartoyo_lijaya/"><img src="asset/icons/instagram.png" alt="" style="width: 30px ;height:30px"></a></span></div>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                     <div class="w-2/3 ml-3 transition-all flex flex-col">
                         <span>Nama Lengkap : Leonard Lianto</span>
                         <span>NRP : 220116883</span>
-                        <span>Contacts : <a href="https://www.linkedin.com/in/leonard-lianto-053ab5203/">LinkedIn</a> <a href="https://www.instagram.com/leonard_lianto/">Instagram</a></span>
+                        <span>Contacts : <span class="flex"><a href="https://www.linkedin.com/in/leonard-lianto-053ab5203/"><img src="asset/icons/linkedin.png" alt="" style="width: 30px ;height:30px"></a> <a href="https://www.instagram.com/leonard_lianto/"><img src="asset/icons/instagram.png" alt="" style="width: 30px ;height:30px"></a></span></span>
                     </div>
                 </div>
                 <div class="flex items-center my-5 card">
@@ -43,7 +43,7 @@
                     <div class="w-2/3 ml-3 transition-all flex flex-col">
                         <span>Nama Lengkap : Mikhael Chris</span>
                         <span>NRP : 220116890</span>
-                        <span>Contacts : <a href="https://www.instagram.com/mikhael_09/">Instagram</a> <a href="https://www.linkedin.com/in/mikhael-chris/">LinkedIn</a> <a href="https://github.com/mikhaelc09">Github</a></span>
+                        <span>Contacts : <span class="flex"><a href="https://www.instagram.com/mikhael_09/"><img src="asset/icons/instagram.png" alt="" style="width: 30px ;height:30px"></a></a> <a href="https://www.linkedin.com/in/mikhael-chris/"><img src="asset/icons/linkedin.png" alt="" style="width: 30px ;height:30px"></a></a> <a href="https://github.com/mikhaelc09"><img src="asset/icons/github.png" alt="" style="width: 30px; height:30px;"></a></span></span>
                     </div>
                 </div>
             </div>
