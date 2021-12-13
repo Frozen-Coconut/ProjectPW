@@ -131,13 +131,13 @@
                         ?>
                     </div>
                     <div>
-                        <div class="mt-5 w-full sm:w-56 h-12 border-hh-orange-light border-solid border-2 flex flex-row">
-                            <button id="qtydown" type="button" class="w-2/12 sm:w-3/12 h-11 text-lg font-bold border-solid border-r-2 border-hh-orange-light bg-hh-orange-light">-</button>
+                        <div class="mt-5 w-full sm:w-56 h-12 border-hh-gray-light border-solid border-2 flex flex-row">
+                            <button id="qtydown" type="button" class="w-2/12 sm:w-3/12 h-11 text-lg text-hh-white font-bold border-solid border-r-2 border-hh-gray-light bg-gray-700">-</button>
                             <input type="text" name="qty" style="text-align:center;" class="w-8/12 sm:w-6/12 h-8 mt-1 text-2xl border-0" id="qty" value="<?php echo "0"; // if (isset($_SESSION["shoppingCart"][$itemName])) {$iniVariabelIsi = $_SESSION["shoppingCart"][$itemName]["qty"]; echo "$iniVariabelIsi";} else echo "0"; ?>"></input>
-                            <button id="qtyup" type="button" class="w-2/12 sm:w-3/12 h-11 text-lg font-bold border-solid border-l-2 border-hh-orange-light bg-hh-orange-light">+</button>
+                            <button id="qtyup" type="button" class="w-2/12 sm:w-3/12 h-11 text-lg text-hh-white font-bold border-solid border-l-2 border-hh-gray-light bg-gray-700">+</button>
                         </div>
                         <div class="mt-6 mb-4">
-                            <button type="submit" name="tocart" id="tocart" value="clicked" class="w-full sm:w-2/3 h-10 rounded bg-hh-orange-dark text-lg text-hh-black-dark font-semibold disabled:opacity-50" disabled>Masukkan Keranjang</button>
+                            <button type="submit" name="tocart" id="tocart" value="clicked" class="w-full sm:w-2/3 h-10 rounded bg-hh-orange-dark text-lg text-gray-800 font-semibold disabled:opacity-50" disabled>Masukkan Keranjang</button>
                         </div>
                         <div class="mb-6 mt-4">
                             <button type="submit" name="towish" value="clicked" class="w-full sm:w-2/3 h-10 rounded bg-hh-pink-dark text-lg text-hh-white font-semibold">Masukkan Wishlist</button>

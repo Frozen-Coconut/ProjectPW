@@ -29,7 +29,7 @@
             if(isset($_SESSION["loggedIn"])){
             ?>
                 <li id="profileButton" class="cursor-pointer text-xl transition-all text-hh-black-light mx-2 px-4 py-0.5 bg-hh-white rounded ring-2 ring-hh-white hover:bg-hh-orange-dark hover:text-hh-white">Profil</li>
-                <div class="w-1/6 h-56 bg-hh-orange-light absolute top-12 right-5 rounded-xl z-10 flex" id="profileMenuList">
+                <div class="w-1/6 h-56 bg-gray-300 opacity-90 absolute top-12 right-5 rounded-md z-10 flex" id="profileMenuList">
                     <ul class="w-full flex flex-col items-center">
                         <a href="profile.php" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Edit Profile</li></a>
                         <a href="orderHistory.php" class="w-11/12"><li class="w-full border-b-2 border-hh-black-light h-10 text-xl my-2">Riwayat Transaksi</li></a>
