@@ -34,6 +34,8 @@
         }
     }
     else if($action=="review"){
+        unset($_SESSION["idTransactionReview"]);
+        $_SESSION["idTransactionReview"] = $transid;
         $transItems = selectItemTransaction($transid);
         unset($_SESSION["reviewItem"]);
         foreach ($transItems as $key => $value) {

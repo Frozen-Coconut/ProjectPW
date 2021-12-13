@@ -41,6 +41,8 @@
     }
 </style>
 
+<input type="hidden" name="" id="idTransactionReview" value="<?= $_SESSION["idTransactionReview"] ?>">
+
 <div class="min-h-screen flex flex-col items-center relative bg-gray-50 relative">
     <p class="text-4xl my-10">Review dan Peringkat</p>
     <div class="w-4/5 bg-gray-100 flex flex-col items-center pt-10 mb-20">
@@ -97,7 +99,8 @@
             url: "./ajax/insertReview.php",
             data: {
                 "email": "<?= $_SESSION["loggedIn"]["email"] ?>",
-                "item": itemData
+                "item": itemData,
+                "idTransaction" : $("#idTransactionReview").val()
             },
             success: function (response) {
                 window.location.assign('index.php');
