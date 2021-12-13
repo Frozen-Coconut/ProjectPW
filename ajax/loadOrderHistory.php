@@ -27,7 +27,7 @@
                     echo "</li>";
                 }
                 echo "</ul></div>";
-                echo "<div class='table-cell p-2 align-middle text-center'>".(($v["status"]==3)?"<div class='rounded-full p-2 px-4 border-4 border-green-600'>Selesai</div>":($v["status"]==2?"<div class='rounded-full p-2 px-4 border-4 border-yellow-500'>Dalam Perjalanan</div>":"<div class='rounded-full p-2 px-4 border-4 border-red-600'>Menunggu Konfirmasi</div>"))."</div>";
+                echo "<div class='table-cell p-2 align-middle text-center'>".(($v["status"]==3)?"<div class='rounded-full p-2 px-4 border-4 border-green-600'>Selesai</div>":($v["status"]==2?"<div class='rounded-full p-2 px-4 border-4 border-yellow-500'>Dalam Perjalanan</div>":($v["status"]==4?"":"<div class='rounded-full p-2 px-4 border-4 border-red-600'>Menunggu Konfirmasi</div>")))."</div>";
                 echo "<div class='table-cell p-2 align-middle text-sm md:text-md'>Rp ".getCurrencyFormatting($v["total"])."</div>";
                 echo "<div class='table-cell p-2 align-middle'>".(($v["status"]==3)?"<div class='text-blue-600 hover:text-blue-400 hover:underline cursor-pointer w-min text-lg' onclick='makeReview(\"".$v["id"]."\")'>Review</div>":($v["status"]==2?"<div class='text-blue-600 hover:text-blue-400 hover:underline cursor-pointer w-min text-lg' onclick='confirmSampai(\"".$v["id"]."\")'>Konfirmasi Sampai</div>":""))."<div class='text-blue-600 hover:text-blue-400 hover:underline cursor-pointer w-min text-lg sm:hidden' onclick='viewDetail(\"".$v["id"]."\")'>Detail</div></div>";
             echo "</div>";
