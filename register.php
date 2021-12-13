@@ -64,8 +64,8 @@
     <script>
         // document.title = 'Register';
     </script>
-    <a href="index.php"><button class="absolute left-4 top-4 px-5 py-2 bg-gray-400 hover:opacity-80 shadow-md">Kembali</button></a>
-    <div class="min-h-screen flex items-center justify-center bg-gray-300">
+    <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-hh-orange-light to-hh-pink-light">
+        <a href="index.php"><button class="absolute left-4 top-4 px-5 py-2 bg-gray-400 hover:opacity-80 shadow-md">Kembali</button></a>
         <div class="border-2 border-black border-opacity-25 rounded-lg flex items-center justify-center py-4 px-4 sm:px-6 lg:px-8 bg-hh-white bg-opacity-50">
             <div class="max-w-md w-full space-y-8">
                 <div>
