@@ -35,7 +35,7 @@
                     <div class="w-2/3 ml-3 transition-all flex flex-col">
                         <span>Nama Lengkap : Leonard Lianto</span>
                         <span>NRP : 220116883</span>
-                        <span>Contacts : <a href="linkedin.com/in/leonard-lianto-053ab5203">LinkedIn</a> <a href="https://www.instagram.com/leonard_lianto/">Instagram</a></span>
+                        <span>Contacts : <a href="https://www.linkedin.com/in/leonard-lianto-053ab5203/">LinkedIn</a> <a href="https://www.instagram.com/leonard_lianto/">Instagram</a></span>
                     </div>
                 </div>
                 <div class="flex items-center my-5 card">
