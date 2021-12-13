@@ -66,7 +66,7 @@
             if(isset($_SESSION["loggedIn"])){
         ?>
             <a href="profile.php"><li class="py-3 border-b-2 border-hh-black-light text-hh-black-light font-semibold">Edit Profil</li></a>
-            <a href="profile.php"><li class="py-3 border-b-2 border-hh-black-light text-hh-black-light font-semibold">Riwayat Transaksi</li></a>
+            <a href="orderHistory.php"><li class="py-3 border-b-2 border-hh-black-light text-hh-black-light font-semibold">Riwayat Transaksi</li></a>
             <a href="wishlist.php"><li class="py-3 border-b-2 border-hh-black-light text-hh-black-light font-semibold">Wishlist</li></a>
             <a href="shoppingcart.php"><li class="py-3 border-b-2 border-hh-black-light text-hh-black-light font-semibold">Keranjang</li></a>
             <a href="index.php?logout='true'"><li class="py-3 text-hh-black-light font-semibold">Logout</li></a>
