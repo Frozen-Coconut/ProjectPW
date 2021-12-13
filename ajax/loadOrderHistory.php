@@ -5,7 +5,7 @@
         $$key = $value;
     }
 
-    if ($confirm == 1) {
+    if(isset($confirm)){
         updateStatusTransaction($transid,3);
     }
 
