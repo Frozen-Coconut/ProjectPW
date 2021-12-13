@@ -44,7 +44,7 @@
     <script>
         // document.title = 'Login';
     </script>
-    <div class="min-h-screen flex items-center justify-center bg-gray-300">
+    <div class="min-h-screen flex items-center justify-center bg-gradient-to-r from-hh-orange-darker to-hh-orange-light">
         <div class="border-2 border-black border-opacity-25 rounded-lg flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-hh-white bg-opacity-50">
             <div class="max-w-md w-full space-y-8">
                 <div>
