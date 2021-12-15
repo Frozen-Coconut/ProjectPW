@@ -62,10 +62,27 @@
     require_once("./util/docOpen.php");
 ?>
 <?php
-  require_once('./util/notice.php');
+    if(isset($_SESSION["onnotice"])){
+        $onnotice = $_SESSION["onnotice"];
+        unset($_SESSION["onnotice"]);
+    }
+?>
+
+<?php
+    if(isset($onnotice)){
+?>
+    <div class="flex justify-between fixed w-1/3 bg-hh-orange-dark opacity-80 top-5 right-2 p-3 rounded-lg font-semibold" id="noticebox">
+        <?=$onnotice?>
+        <div class="cursor-pointer border-2 border-hh-black-light text-hh-black-light w-5 text-center h-5 rounded-full text leading-none" id="closenoticebox">X</div>
+    </div>
+<?php
+    }
 ?>
     <script>
         // document.title = 'Register';
+        $("#closenoticebox").click(function () {
+            $("#noticebox").remove();
+        })
     </script>
     <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-hh-orange-light to-hh-pink-light">
         <a href="index.php"><button class="absolute left-4 top-4 px-5 py-2 bg-hh-pink-dark text-white hover:opacity-80 shadow-md rounded">Kembali</button></a>
