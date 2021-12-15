@@ -11,14 +11,20 @@
 
         if ($nama != "" && $password != "" && $provinsi != "" && $kota !="" && $birth_date != "") {
             // Birth date dicek apakah lebih besar dari yang sekarang
-            $data = [
-                "name" => $nama,
-                "password" => $password,
-                "provinsi" => $provinsi,
-                "kota" => $kota,
-                "birth_date" => $birth_date
-            ];
+
+            if (date('Y-m-d', strtotime($birth_date)) <= date('Y-m-d')) {
+                $data = [
+                    "name" => $nama,
+                    "password" => $password,
+                    "provinsi" => $provinsi,
+                    "kota" => $kota,
+                    "birth_date" => $birth_date
+                ];
+                updateProfileUser($data,$email);
+                echo("Data user berhasil diubah !");
+            }
+            else echo('Tanggal lahir tidak boleh lebih besar dari tanggal sekarang !');
         }
-        updateProfileUser($data,$email);
+        else echo('Isi semua input !');
     }
 ?>

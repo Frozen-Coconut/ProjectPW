@@ -97,15 +97,16 @@
     function addDiscountForm() {
       $.ajax({
           type: "get",
-          url: "./ajax/loadDiscount.php",
+          url: "./ajax/dataDiscount.php",
           data: {
               "add" : 1,
               "nama" : $("#addName").val(),
               "value" : $("#addValue").val()
           }
       }).then(res=>{
-          $("#tableBody").html(res);
-          $("#formEdit").css('display','none');
+          closeForm();
+          loadDiscount();
+          loadNotice(res);
       })
     }
 
@@ -126,7 +127,7 @@
     function editDiscountForm(id) {
       $.ajax({
           type: "get",
-          url: "./ajax/loadDiscount.php",
+          url: "./ajax/dataDiscount.php",
           data: {
               "edit" : 1,
               "id" : id,
@@ -134,8 +135,9 @@
               "value" : $("#editValue").val()
           }
       }).then(res=>{
-          $("#tableBody").html(res);
-          $("#formEdit").css('display','none');
+          closeForm();
+          loadDiscount();
+          loadNotice(res);
       })
     }
 
@@ -174,7 +176,7 @@
             "diskon" : $("#diskonPilihan").val()
           }
       }).then(res=>{
-        alert("Success!");
+        alert('Success');
       })
     }
 
@@ -198,6 +200,23 @@
     function reset() {
       $("#inputSearch").val("");
       loadDiscount();
+    }
+
+    function loadNotice(notice) {
+      $.ajax({
+          type: "get",
+          url: "./ajax/loadNotice.php",
+          data: {
+            "notice" : notice
+          }
+      }).then(res=>{
+          $("#noticebox").html(res);
+          $("#noticebox").css('display','flex');
+      })
+    }
+
+    function closeNotice() {
+      $("#noticebox").css('display','none');
     }
 </script>
 <?php

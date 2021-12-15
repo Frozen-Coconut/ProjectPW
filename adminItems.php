@@ -146,21 +146,22 @@
     function addStock(namaItem) {
       $.ajax({
           type: "get",
-          url: "./ajax/loadItems.php",
+          url: "./ajax/dataItem.php",
           data: {
               "stockBaru" : $("#stockBaru").val(),
               "name" : namaItem
           }
       }).then(res=>{
-          $("#tableBody").html(res);
-          $("#formEdit").css('display','none');
+          closeForm();
+          loadItems();
+          loadNotice(res);
       })
     }
 
     function addItemForm() {
       $.ajax({
           type: "get",
-          url: "./ajax/loadItems.php",
+          url: "./ajax/dataItem.php",
           data: {
               "add" : 1,
               "name" : $("#addName").val(),
@@ -172,8 +173,9 @@
               "image" : $("#addUrl").val()
           }
       }).then(res=>{
-          $("#tableBody").html(res);
           closeForm();
+          loadItems();
+          loadNotice(res);
       })
     }
 
@@ -262,15 +264,16 @@
     function addColorForm () {
       $.ajax({
           type: "get",
-          url: "./ajax/loadItems.php",
+          url: "./ajax/dataItem.php",
           data: {
               "addColor" : 1,
               "name" : $("#addNameColor").val(),
               "value" : $("#addValueColor").val()
           }
       }).then(res=>{
-          $("#tableBody").html(res);
           closeForm();
+          loadItems();
+          loadNotice(res);
       })
     }
 
@@ -316,16 +319,34 @@
     function addColorItemForm () {
       $.ajax({
           type: "get",
-          url: "./ajax/loadItems.php",
+          url: "./ajax/dataItem.php",
           data: {
               "addColorItem" : 1,
               "name" : $("#addItemSelect").val(),
               "color" : $("#addColorSelect").val()
           }
       }).then(res=>{
-          $("#tableBody").html(res);
           closeForm();
+          loadItems();
+          loadNotice(res);
       })
+    }
+
+    function loadNotice(notice) {
+      $.ajax({
+          type: "get",
+          url: "./ajax/loadNotice.php",
+          data: {
+            "notice" : notice
+          }
+      }).then(res=>{
+          $("#noticebox").html(res);
+          $("#noticebox").css('display','flex');
+      })
+    }
+
+    function closeNotice() {
+      $("#noticebox").css('display','none');
     }
 </script>
 <?php

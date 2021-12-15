@@ -170,6 +170,7 @@
       }).then(res=>{
         $("#formEdit").css('display','none');
         loadUser();
+        loadNotice(res);
       })
     }
 
@@ -180,6 +181,23 @@
     function reset() {
       $("#inputSearch").val("");
       loadUser();
+    }
+
+    function loadNotice(notice) {
+      $.ajax({
+          type: "get",
+          url: "./ajax/loadNotice.php",
+          data: {
+            "notice" : notice
+          }
+      }).then(res=>{
+          $("#noticebox").html(res);
+          $("#noticebox").css('display','flex');
+      })
+    }
+
+    function closeNotice() {
+      $("#noticebox").css('display','none');
     }
 </script>
 

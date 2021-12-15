@@ -5,41 +5,6 @@
       deleteDiscount($_GET["delete"]);
     }
 
-    if(isset($_GET["add"])){
-      $nama = $_GET["nama"];
-      $value = $_GET["value"];
-      if ($nama != "" && $value != "") {
-        if ($value > 100) {
-          addNotice("Diskon tidak boleh melebihi 100 !");
-        }
-        else {
-        $data = [
-          "nama" => $nama,
-          "value" => $value
-        ];insertDiskon($data);}
-      }
-      else addNotice("Isi semua input !");
-
-    }
-
-    if(isset($_GET["edit"])){
-      $id = $_GET["id"];
-      $nama = $_GET["nama"];
-      $value = $_GET["value"];
-      if ($nama != "" && $value != "") {
-        if ($value > 100) {
-          addNotice("Diskon tidak boleh melebihi 100 !");
-        }
-        else {
-        $data = [
-          "nama" => $nama,
-          "value" => $value
-        ];updateDiscount($id,$data);}
-      }
-      else addNotice("Isi semua input !");
-
-    }
-
     $discount = selectDiscount();
     if(isset($_GET["search"])){
       $discount = selectDiscountSearch($_GET["search"]);

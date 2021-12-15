@@ -24,18 +24,21 @@
                     if ($cek == 0) {
                         //regis
                         if ($password == $confirm) {
-                            $userBaru = [
-                                "email" => $email,
-                                "username" => $username,
-                                "password" => $password,
-                                "name" => $name,
-                                "provinsi" => $provinsi,
-                                "kota" => $kota,
-                                "birth_date" => $birth_date,
-                                "gender" => $gender
-                            ];
-                            insertUser($userBaru);
-                            header("Location: login.php");
+                            if (date('Y-m-d', strtotime($birth_date)) <= date('Y-m-d')) {
+                                $userBaru = [
+                                    "email" => $email,
+                                    "username" => $username,
+                                    "password" => $password,
+                                    "name" => $name,
+                                    "provinsi" => $provinsi,
+                                    "kota" => $kota,
+                                    "birth_date" => $birth_date,
+                                    "gender" => $gender
+                                ];
+                                insertUser($userBaru);
+                                header("Location: login.php");
+                            }
+                            else addNotice("Tanggal lahir tidak boleh lebih besar dari tanggal sekarang !");
                         }
                         else addNotice("Password dan Confirm tidak sama !"); // Kasi pesan password dan confirm salah 
                     }
