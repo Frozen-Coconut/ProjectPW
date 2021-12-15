@@ -34,7 +34,7 @@
           <input type="text" name="" placeholder="Nama Warna" id="addNameColor" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
           </div>
           <div>
-          <input type="text" name="" placeholder="Value Warna" id="addValueColor" class="my-2 appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">
+          <input type="color" name="" placeholder="Value Warna" id="addValueColor" class="my-2 appearance-none rounded-md relative block w-full px-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 value="#ff0000">
           </div>
       </div>
       <div>
