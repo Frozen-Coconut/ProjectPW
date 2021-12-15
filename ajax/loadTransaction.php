@@ -48,27 +48,29 @@
           <div class="text-sm text-gray-500"><?= "Rp. ". getCurrencyFormatting($x["total"]) ?></div>
         </td>
         <td class="px-6 py-5 whitespace-nowrap">
-            <?php
-            if ($x["status"] == 1) {
-            ?>
-            <span class="text-sm rounded-full border-4 border-red-300 p-1.5 -mx-1.5">
-                Menunggu Konfirmasi
-            </span>
-            <?php
-            } else if ($x["status"] == 2) {
-            ?>
-            <span class="text-sm rounded-full border-4 border-yellow-300 p-1.5 -mx-1.5">
-                Sedang di Perjalanan
-            </span>
-            <?php
-            } else {
-            ?>
-            <span class="text-sm rounded-full border-4 border-green-300 p-1.5 -mx-1.5">
-                Selesai
-            </span>
-            <?php
-            }
-            ?>
+            <div class="flex items-center justify-center">
+                <?php
+                if ($x["status"] == 1) {
+                ?>
+                <span class="text-sm rounded-full border-4 border-red-300 p-1.5 -mx-1.5">
+                    Menunggu Konfirmasi
+                </span>
+                <?php
+                } else if ($x["status"] == 2) {
+                ?>
+                <span class="text-sm rounded-full border-4 border-yellow-300 p-1.5 -mx-1.5">
+                    Sedang di Perjalanan
+                </span>
+                <?php
+                } else {
+                ?>
+                <span class="text-sm rounded-full border-4 border-green-300 p-1.5 -mx-1.5">
+                    Selesai
+                </span>
+                <?php
+                }
+                ?>
+            </div>
         </td>
         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
             <?php
