@@ -78,12 +78,12 @@
 <?php
     }
 ?>
-    <script>
-        // document.title = 'Register';
-        $("#closenoticebox").click(function () {
-            $("#noticebox").remove();
-        })
-    </script>
+<script>
+    // document.title = 'Register';
+    $("#closenoticebox").click(function () {
+        $("#noticebox").remove();
+    })
+</script>
     <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-hh-orange-light to-hh-pink-light">
         <a href="index.php"><button class="absolute left-4 top-4 px-5 py-2 bg-hh-pink-dark text-white hover:opacity-80 shadow-md rounded">Kembali</button></a>
         <div class="border-2 border-black border-opacity-25 rounded-lg flex items-center justify-center py-4 px-4 sm:px-6 lg:px-8 bg-hh-white bg-opacity-50">
